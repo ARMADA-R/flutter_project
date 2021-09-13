@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
-        S.delegate
+        GlobalCupertinoLocalizations.delegate,
+        S.delegate,
       ],
     );
   }

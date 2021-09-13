@@ -8,5 +8,4 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   MySchool.routeName :(context) => MySchool(title: 'MySchool',),
   MyRegistrationScreen.routeName :(context) => MyRegistrationScreen(title: 'MyRegistrationScreen',),
 
-
 };

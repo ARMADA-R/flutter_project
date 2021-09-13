@@ -1,3 +1,4 @@
+import 'package:experienceapp/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import '../widgets/mainDrawer.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
@@ -24,7 +25,7 @@ class _MySchoolState extends State<MySchool> {
     return Scaffold(
         backgroundColor: Colors.black26,
         appBar: AppBar(
-          title: Text('نظام المبرمجون لإدارة المدارس'),
+          title: Text(S.of(context).homeScreenTitle),
           centerTitle: true,
           backgroundColor: Colors.black12,
           elevation: 40,

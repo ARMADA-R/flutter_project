@@ -59,6 +59,16 @@ class S {
       args: [],
     );
   }
+
+  /// `نظام المبرمجون لإدارة المدارس`
+  String get homeScreenTitle {
+    return Intl.message(
+      'نظام المبرمجون لإدارة المدارس',
+      name: 'homeScreenTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
