@@ -1,3 +1,4 @@
+import 'package:experienceapp/screens/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       //home: InputScreen(),
       debugShowCheckedModeBanner: false,
-      initialRoute: MySchool.routeName,
+      initialRoute: Splash.routeName,
       routes: routes,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
