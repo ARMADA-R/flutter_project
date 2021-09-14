@@ -29,6 +29,7 @@ dependencies:
 
   flutter_image_slideshow:
   animated_splash_screen:
+  provider:
 
 
   # The following adds the Cupertino Icons font to your application.

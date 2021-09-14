@@ -1,4 +1,20 @@
 {
   "appTitle": "SMS",
-  "homeScreenTitle" : "نظام المبرمجون لإدارة المدارس"
+  "homeScreenTitle" : "نظام المبرمجون لادارة المدارس",
+  "login": "تسجيل الدخول",
+  "email": "البريد الالكتروني",
+  "password": "كلمة المرور",
+  "home": "الرئيسية",
+  "learningType": "نظام النعلم",
+  "generalEducation": "تعليم عام",
+  "memorization": "تحفيظ",
+  "materials": "مقررات",
+  "createAccount": "انشاء حساب",
+  "schoolName": "اسم المدرسة",
+  "ministerialNumber": "الرقم الوزاري",
+  "city": "المدينة",
+  "area": "المنطقة",
+  "rePassword": "اعادة كلمة المرور",
+  "phone": "الجوال",
+  "doYouHaveAccount": "هل لديك حساب؟"
 }
