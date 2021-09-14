@@ -22,7 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
+        "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
+        "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "doYouHaveAccount":
+            MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "generalEducation": MessageLookupByLibrary.simpleMessage("تعليم عام"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage(
-            "نظام المبرمجون لإدارة المدارس")
+            "نظام المبرمجون لادارة المدارس"),
+        "learningType": MessageLookupByLibrary.simpleMessage("نظام النعلم"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "materials": MessageLookupByLibrary.simpleMessage("مقررات"),
+        "memorization": MessageLookupByLibrary.simpleMessage("تحفيظ"),
+        "ministerialNumber":
+            MessageLookupByLibrary.simpleMessage("الرقم الوزاري"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "phone": MessageLookupByLibrary.simpleMessage("الجوال"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("اعادة كلمة المرور"),
+        "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة")
       };
 }

@@ -1,4 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'HomeScreen.dart';
@@ -31,7 +32,7 @@ class _SplashState extends State<Splash> {
 
     return Scaffold(
       body: AnimatedSplashScreen(
-        nextScreen: MySchool(title: 'MySchool',),
+        nextScreen: IntroScreen(title: 'IntroScreen',),
         splash: Icons.school,
         duration: 3000,
       ),
