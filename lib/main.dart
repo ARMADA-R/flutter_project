@@ -13,9 +13,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
