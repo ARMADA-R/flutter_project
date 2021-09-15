@@ -22,8 +22,26 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
+        "area": MessageLookupByLibrary.simpleMessage("Area"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "doYouHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Do you have account?"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "generalEducation":
+            MessageLookupByLibrary.simpleMessage("General education"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage(
-            "نظام المبرمجون لإدارة المدارس"),
-        "login": MessageLookupByLibrary.simpleMessage("login")
+            "Al-Mobarmejon for manage schools"),
+        "learningType": MessageLookupByLibrary.simpleMessage("Learning type"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "materials": MessageLookupByLibrary.simpleMessage("Materials"),
+        "memorization": MessageLookupByLibrary.simpleMessage("Memorization"),
+        "ministerialNumber":
+            MessageLookupByLibrary.simpleMessage("Ministerial number"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("re enter password"),
+        "schoolName": MessageLookupByLibrary.simpleMessage("School name")
       };
 }

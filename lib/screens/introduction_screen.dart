@@ -1,0 +1,94 @@
+import 'package:experienceapp/screens/login_screen.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:flutter/material.dart';
+class IntroScreen extends StatefulWidget {
+  const IntroScreen({Key? key, required this.title}) : super(key: key);
+  final String title;
+  static final String routeName = 'IntroScreen';
+
+
+  @override
+  IntroScreenState createState() => IntroScreenState();
+}
+
+class IntroScreenState extends State<IntroScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+        body: IntroductionScreen(
+          showDoneButton: true,
+          showSkipButton: true,
+          showNextButton: true,
+          next: Text('Next'),
+          skip: Text('Skip'),
+          done: Text('Done'),
+          onDone: (){
+           Navigator.pushNamed(context, LogInScreen.routeName,);
+          },
+          onSkip: (){
+            Navigator.pushNamed(context, LogInScreen.routeName,);
+
+          },
+          pages: [
+            PageViewModel(
+              image: Image.asset('images/school1.jpg', width: 600, height: 600,) ,
+              title: 'SMS',
+              body: 'Welcome',
+              footer: Text(''),
+              decoration: const PageDecoration(
+                pageColor:  Colors.white54,
+                bodyTextStyle: TextStyle(fontSize: 30),
+                titleTextStyle: TextStyle(fontSize: 45),
+              ),
+            ),
+            PageViewModel(
+              image: Image.asset('images/school2.jpeg', width: 600, height: 600,) ,
+              title: 'تتبع أولياء الأمور',
+              body: 'تتبع طفلك وتواصل مع الإداريين',
+              footer: Text(''),
+              decoration: const PageDecoration(
+                pageColor:  Colors.white54,
+                bodyTextStyle: TextStyle(fontSize: 30),
+                titleTextStyle: TextStyle(fontSize: 45),
+              ),
+            ),
+
+            PageViewModel(
+              image: Image.asset('images/school3.jpg', width: 600, height: 600,) ,
+              title: 'تعليم الأطفال',
+              body: 'مناهج حديثة وكوادر مؤهلة',
+              footer: Text(''),
+              decoration: const PageDecoration(
+                pageColor:  Colors.white54,
+                bodyTextStyle: TextStyle(fontSize: 30),
+                titleTextStyle: TextStyle(fontSize: 45),
+              ),
+            ),
+            PageViewModel(
+              image: Image.asset('images/school4.jpg', width: 600, height: 600,) ,
+              title: 'خدمات متنوعة',
+              body: 'أنشطة ومناسبات',
+              footer: Text(''),
+              decoration: const PageDecoration(
+                pageColor:  Colors.white54,
+                bodyTextStyle: TextStyle(fontSize: 30),
+                titleTextStyle: TextStyle(fontSize: 45),
+              ),
+            ),
+//            PageViewModel(
+//              image: Image.asset('images/school2.jpeg', width: 500, height: 500,) ,
+//              title: 'تتبع أولياء الأمور',
+//              body: 'تتبع طفلك وتواصل مع الإداريين',
+//              footer: Text('fsd'),
+//              decoration: const PageDecoration(
+//                pageColor:  Colors.black26,
+//              ),
+//            ),
+
+
+          ],
+        ),
+      );
+  }
+}

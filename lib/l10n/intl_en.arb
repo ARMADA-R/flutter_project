@@ -1,5 +1,20 @@
 {
   "appTitle": "SMS",
-  "homeScreenTitle" : "نظام المبرمجون لإدارة المدارس",
-  "login" : "login"
+  "homeScreenTitle" : "Al-Mobarmejon for manage schools",
+  "login": "Login",
+  "email": "Email",
+  "password": "Password",
+  "home": "Home",
+  "learningType": "Learning type",
+  "generalEducation": "General education",
+  "memorization": "Memorization",
+  "materials": "Materials",
+  "createAccount": "Create Account",
+  "schoolName": "School name",
+  "ministerialNumber": "Ministerial number",
+  "city": "City",
+  "area": "Area",
+  "rePassword": "re enter password",
+  "phone": "Phone",
+  "doYouHaveAccount": "Do you have account?"
 }
