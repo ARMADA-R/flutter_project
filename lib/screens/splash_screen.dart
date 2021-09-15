@@ -34,7 +34,7 @@ class _SplashState extends State<Splash> {
       body: AnimatedSplashScreen(
         nextScreen: IntroScreen(title: 'IntroScreen',),
         splash: Icons.school,
-        duration: 3000,
+        duration: 1000,
       ),
     );
   }

@@ -15,13 +15,25 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-//  Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
+  // String lang = AppDeterminants().lang;
+  String? lang;
+
+  // langfun() async {
+  //
+  //   print(await AppDeterminants().lang);
+  //   return await AppDeterminants().lang;
+  // }
 
   @override
   Widget build(BuildContext context) {
-//    S.load(Locale(Provider.of<AppDeterminants>(context).lang));
+    Future.delayed(Duration.zero, () async {
+      this.lang = await AppDeterminants().lang;
+      S.load(Locale(this.lang!));
+    });
+
     return MaterialApp(
       //home: InputScreen(),
       debugShowCheckedModeBanner: false,

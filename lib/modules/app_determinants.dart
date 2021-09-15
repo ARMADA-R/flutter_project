@@ -12,10 +12,8 @@ SharedPreferences? prefs ;
  }
 
 
- get lang {
-   Future.delayed(Duration.zero, () async {
+ get lang async{
     this.prefs = await _prefs;
-   });
    return (prefs!.getString('lang')) ?? "en";
  }
 
