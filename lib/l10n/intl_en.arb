@@ -1,4 +1,5 @@
 {
   "appTitle": "SMS",
-  "homeScreenTitle" : "نظام المبرمجون لإدارة المدارس"
+  "homeScreenTitle" : "نظام المبرمجون لإدارة المدارس",
+  "login" : "login"
 }
