@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const Splash({Key? key}) : super(key: key);
   static final String routeName = 'Splash';
 
   @override
