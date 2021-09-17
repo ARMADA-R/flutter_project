@@ -16,9 +16,12 @@ class AppDeterminants with ChangeNotifier {
   }
   AppDeterminants._internal();
 
-  initializeAll() async{
+  Future initializeAll() async{
     await initializeIsLunchesStatus();
     await initializeLang();
+    await Future.delayed(Duration(milliseconds: 1500),);
+    return true;
+
   }
 
 
@@ -36,11 +39,11 @@ class AppDeterminants with ChangeNotifier {
     notifyListeners();
   }
 
-  get isLunched {
+  bool get isLunched {
     if(_lunchedForFirst == null) {
       _lunchedForFirst = false;
     }
-      return _lunchedForFirst;
+      return _lunchedForFirst!;
   }
 
   get lang {
@@ -52,14 +55,12 @@ class AppDeterminants with ChangeNotifier {
 
 
   initializeIsLunchesStatus() async {
-    SharedPreferences? prefs;
-      prefs = await _prefs;
-      _lunchedForFirst = (prefs!.getBool('lunchedForFirst')) ?? false;
+    SharedPreferences prefs= await _prefs;
+      _lunchedForFirst = (prefs.getBool('lunchedForFirst')) ?? false;
   }
 
   initializeLang() async {
-    SharedPreferences? prefs;
-      prefs = await _prefs;
-      _lang = (prefs!.getString('lang')) ?? "en";
+    SharedPreferences prefs = await _prefs;
+      _lang = (prefs.getString('lang')) ?? "en";
   }
 }

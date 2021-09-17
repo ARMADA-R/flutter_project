@@ -9,7 +9,7 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   LogInScreen.routeName : (context) => LogInScreen(title: 'LogInScreen',),
   MySchool.routeName :(context) => MySchool(title: 'MySchool',),
   MyRegistrationScreen.routeName :(context) => MyRegistrationScreen(title: 'MyRegistrationScreen',),
-  Splash.routeName :(context) => Splash(),
+ // Splash.routeName :(context) => Splash(),
   IntroScreen.routeName :(context) => IntroScreen(title: 'IntroScreen',),
 
 

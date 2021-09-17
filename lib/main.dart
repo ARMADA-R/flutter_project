@@ -1,4 +1,5 @@
 import 'package:experienceapp/modules/app_determinants.dart';
+import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:experienceapp/screens/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -30,10 +31,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration.zero, () async {
-      this.lang = await AppDeterminants().lang;
-      S.load(Locale(this.lang!));
-    });
+//    Future.delayed(Duration.zero, () async {
+//      this.lang = await AppDeterminants().lang;
+//      S.load(Locale(this.lang!));
+//    });
 
     return MaterialApp(
       //home: InputScreen(),
@@ -47,15 +48,22 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       home: FutureBuilder(
-        future: AppDeterminants().lang,
+        future: AppDeterminants().initializeAll(),
           builder: (context, snapshot) {
             if (snapshot.hasData){
-              S.load(Locale(snapshot.data as String));
+              S.load(Locale(AppDeterminants().lang));
+             if(AppDeterminants().isLunched){
+               return LogInScreen(title: 'LoginScreen');
+             }
+             else return IntroScreen(title: 'IntroScreen',);
             }
 
-            return Splash();
+            return Center(
+              child: Image.asset('images/school1.jpg') ,
 
-      }),
+            );
+
+            }),
     );
   }
 }

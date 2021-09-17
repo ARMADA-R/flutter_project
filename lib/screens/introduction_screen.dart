@@ -28,6 +28,7 @@ class IntroScreenState extends State<IntroScreen> {
           onDone: (){
            AppDeterminants().setFirstLunch();
            Navigator.pushNamed(context, LogInScreen.routeName,);
+
           },
           onSkip: (){
             AppDeterminants().setFirstLunch();
