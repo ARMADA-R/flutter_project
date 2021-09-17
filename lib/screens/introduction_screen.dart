@@ -1,3 +1,5 @@
+import 'package:experienceapp/modules/app_determinants.dart';
+import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -24,11 +26,12 @@ class IntroScreenState extends State<IntroScreen> {
           skip: Text('Skip'),
           done: Text('Done'),
           onDone: (){
+           AppDeterminants().setFirstLunch();
            Navigator.pushNamed(context, LogInScreen.routeName,);
           },
           onSkip: (){
+            AppDeterminants().setFirstLunch();
             Navigator.pushNamed(context, LogInScreen.routeName,);
-
           },
           pages: [
             PageViewModel(

@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import 'HomeScreen.dart';
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key, required this.title}) : super(key: key);
-  final String title;
+  const Splash({Key? key}) : super(key: key);
   static final String routeName = 'Splash';
 
   @override
@@ -32,10 +31,9 @@ class _SplashState extends State<Splash> {
 
     return Scaffold(
       body: AnimatedSplashScreen(
-
         nextScreen: IntroScreen(title: 'IntroScreen',),
-        splash: Icons.ac_unit_sharp,
-        duration: 3000,
+        splash: Icons.school,
+        duration: 1000,
       ),
     );
   }

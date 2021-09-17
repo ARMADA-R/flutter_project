@@ -1,3 +1,4 @@
+import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,12 +43,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                       children: [
-                        Text('تسجيل الدخول', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                        Text(S.of(context).login, style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
                         TextFormField(
                           textAlignVertical: TextAlignVertical.center,
                           textAlign: TextAlign.end,
                           decoration: InputDecoration(
-                              labelText: 'البريد الإلكتروني',
+                              labelText: S.of(context).email,
                               labelStyle: TextStyle(color: Colors.black),
                               hoverColor: Colors.black),
                           keyboardType: TextInputType.emailAddress,
@@ -57,7 +58,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           textAlignVertical: TextAlignVertical.center,
                           textAlign: TextAlign.end,
                           decoration: InputDecoration(
-                              labelText: 'كلمة المرور',
+                              labelText: S.of(context).password,
                               labelStyle: TextStyle(color : Colors.black),
                               hoverColor: Colors.black),
                           keyboardType: TextInputType.visiblePassword,
@@ -69,7 +70,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold)
                             ),
-                          child: Text('تسجيل الدخول'),
+                          child: Text(S.of(context).login),
                           onPressed: () {
                         },
                         ),
@@ -88,7 +89,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           });
 
                           },
-                            child: Text('الرئيسية'))
+                            child: Text(S.of(context).home))
                       ],
                     ),
                   ),
