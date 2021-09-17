@@ -32,8 +32,9 @@ class _SplashState extends State<Splash> {
 
     return Scaffold(
       body: AnimatedSplashScreen(
+
         nextScreen: IntroScreen(title: 'IntroScreen',),
-        splash: Icons.school,
+        splash: Icons.ac_unit_sharp,
         duration: 3000,
       ),
     );
