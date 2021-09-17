@@ -2,10 +2,26 @@ import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppDeterminants with ChangeNotifier {
+
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  SharedPreferences? prefs;
+
   static String? _lang;
   static bool? _lunchedForFirst;
+
+
+  static final AppDeterminants _appDeterminants = AppDeterminants._internal();
+
+  factory AppDeterminants() {
+    return _appDeterminants;
+  }
+  AppDeterminants._internal();
+
+  initializeAll() async{
+    await initializeIsLunchesStatus();
+    await initializeLang();
+  }
+
+
   setLang(String lang) async {
     SharedPreferences prefs = await _prefs;
     prefs.setString('lang', lang);
@@ -20,22 +36,30 @@ class AppDeterminants with ChangeNotifier {
     notifyListeners();
   }
 
-  get isLunched async {
+  get isLunched {
     if(_lunchedForFirst == null) {
-      this.prefs = await _prefs;
-      return (prefs!.getBool('lunchedForFirst')) ?? false;
-    } else {
-      return _lunchedForFirst;
+      _lunchedForFirst = false;
     }
+      return _lunchedForFirst;
   }
 
-  get lang async {
+  get lang {
     if(_lang == null) {
-      this.prefs = await _prefs;
-      return (prefs!.getString('lang')) ?? "en";
-    }else
+      _lang = "en";
+    }
       return _lang;
+  }
 
 
+  initializeIsLunchesStatus() async {
+    SharedPreferences? prefs;
+      prefs = await _prefs;
+      _lunchedForFirst = (prefs!.getBool('lunchedForFirst')) ?? false;
+  }
+
+  initializeLang() async {
+    SharedPreferences? prefs;
+      prefs = await _prefs;
+      _lang = (prefs!.getString('lang')) ?? "en";
   }
 }
