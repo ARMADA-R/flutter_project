@@ -49,13 +49,17 @@ class MyApp extends StatelessWidget {
             if (snapshot.hasData){
               S.load(Locale(AppDeterminants().lang));
              if(AppDeterminants().isLunched){
+
+//               if(AppDeterminants().token != "" && DateTime.fromMicrosecondsSinceEpoch(int.parse(AppDeterminants().loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
+//                 return FirstScreen;
+//               }
                return LogInScreen(title: 'LoginScreen');
              }
              else return IntroScreen(title: 'IntroScreen',);
             }
 
             return Center(
-              child: Image.asset('images/school1.jpg') ,
+              child: Icon(Icons.school) ,
 
             );
 
