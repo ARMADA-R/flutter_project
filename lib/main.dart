@@ -1,15 +1,11 @@
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:experienceapp/screens/login_screen.dart';
-import 'package:experienceapp/screens/splash_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'generated/l10n.dart';
-import 'screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'routes/routes.dart';
-import 'widgets/mainDrawer.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(

@@ -1,5 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
+import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class LogInScreen extends StatefulWidget {
@@ -74,6 +75,23 @@ class _LogInScreenState extends State<LogInScreen> {
                           onPressed: () {
                         },
                         ),
+
+                        ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.black45,
+                                textStyle: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold)
+                            ),
+
+                            onPressed: (){
+                              setState(() {
+                                Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
+                              });
+
+                            },
+                            child: Text(S.of(context).ForgetPassword)),
+
 
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(

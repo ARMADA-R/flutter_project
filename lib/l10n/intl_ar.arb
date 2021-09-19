@@ -16,5 +16,7 @@
   "area": "المنطقة",
   "rePassword": "اعادة كلمة المرور",
   "phone": "الجوال",
-  "doYouHaveAccount": "هل لديك حساب؟"
+  "doYouHaveAccount": "هل لديك حساب؟",
+  "resetPassword": "إعادة تعيين كلمة المرور",
+  "ForgetPassword": "هل نسيت كلمة المرور؟"
 }

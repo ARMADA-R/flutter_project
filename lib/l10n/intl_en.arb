@@ -16,5 +16,7 @@
   "area": "Area",
   "rePassword": "re enter password",
   "phone": "Phone",
-  "doYouHaveAccount": "Do you have account?"
+  "doYouHaveAccount": "Do you have account?",
+  "resetPassword": "Reset Password",
+  "ForgetPassword": "Forget Password?"
 }

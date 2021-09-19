@@ -229,6 +229,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Reset Password`
+  String get resetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'resetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get ForgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'ForgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

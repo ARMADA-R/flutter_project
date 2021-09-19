@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ForgetPassword":
+            MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
         "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
@@ -41,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone": MessageLookupByLibrary.simpleMessage("الجوال"),
         "rePassword": MessageLookupByLibrary.simpleMessage("اعادة كلمة المرور"),
+        "resetPassword":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة")
       };
 }
