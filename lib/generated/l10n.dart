@@ -70,11 +70,31 @@ class S {
     );
   }
 
-  /// `Login`
+  /// `Public Messages Forms`
+  String get PublicMessagesForms {
+    return Intl.message(
+      'Public Messages Forms',
+      name: 'PublicMessagesForms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in`
   String get login {
     return Intl.message(
-      'Login',
+      'Log in',
       name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logout {
+    return Intl.message(
+      'Log out',
+      name: 'logout',
       desc: '',
       args: [],
     );
@@ -200,10 +220,10 @@ class S {
     );
   }
 
-  /// `re enter password`
+  /// `re-enter password`
   String get rePassword {
     return Intl.message(
-      're enter password',
+      're-enter password',
       name: 'rePassword',
       desc: '',
       args: [],
@@ -245,6 +265,106 @@ class S {
     return Intl.message(
       'Forget Password?',
       name: 'ForgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Profile`
+  String get Profile {
+    return Intl.message(
+      'Your Profile',
+      name: 'Profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get Next {
+    return Intl.message(
+      'Next',
+      name: 'Next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get Skip {
+    return Intl.message(
+      'Skip',
+      name: 'Skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Done`
+  String get Done {
+    return Intl.message(
+      'Done',
+      name: 'Done',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome`
+  String get Welcome {
+    return Intl.message(
+      'Welcome',
+      name: 'Welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number Of Notifications`
+  String get NumberOfNotifications {
+    return Intl.message(
+      'Number Of Notifications',
+      name: 'NumberOfNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Sender's Name`
+  String get TheSendersName {
+    return Intl.message(
+      'The Sender\'s Name',
+      name: 'TheSendersName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add a Form`
+  String get AddaForm {
+    return Intl.message(
+      'Add a Form',
+      name: 'AddaForm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Form's Name`
+  String get FormsName {
+    return Intl.message(
+      'Form\'s Name',
+      name: 'FormsName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text Message`
+  String get Text {
+    return Intl.message(
+      'Text Message',
+      name: 'Text',
       desc: '',
       args: [],
     );

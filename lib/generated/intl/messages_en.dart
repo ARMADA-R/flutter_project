@@ -21,8 +21,22 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AddaForm": MessageLookupByLibrary.simpleMessage("Add a Form"),
+        "Done": MessageLookupByLibrary.simpleMessage("Done"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
+        "FormsName": MessageLookupByLibrary.simpleMessage("Form\'s Name"),
+        "Next": MessageLookupByLibrary.simpleMessage("Next"),
+        "NumberOfNotifications":
+            MessageLookupByLibrary.simpleMessage("Number Of Notifications"),
+        "Profile": MessageLookupByLibrary.simpleMessage("Your Profile"),
+        "PublicMessagesForms":
+            MessageLookupByLibrary.simpleMessage("Public Messages Forms"),
+        "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "Text": MessageLookupByLibrary.simpleMessage("Text Message"),
+        "TheSendersName":
+            MessageLookupByLibrary.simpleMessage("The Sender\'s Name"),
+        "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
@@ -36,14 +50,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage(
             "Al-Mobarmejon for manage schools"),
         "learningType": MessageLookupByLibrary.simpleMessage("Learning type"),
-        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "login": MessageLookupByLibrary.simpleMessage("Log in"),
+        "logout": MessageLookupByLibrary.simpleMessage("Log out"),
         "materials": MessageLookupByLibrary.simpleMessage("Materials"),
         "memorization": MessageLookupByLibrary.simpleMessage("Memorization"),
         "ministerialNumber":
             MessageLookupByLibrary.simpleMessage("Ministerial number"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
-        "rePassword": MessageLookupByLibrary.simpleMessage("re enter password"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("re-enter password"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "schoolName": MessageLookupByLibrary.simpleMessage("School name")
       };

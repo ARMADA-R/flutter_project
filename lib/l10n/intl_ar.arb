@@ -1,15 +1,17 @@
 {
   "appTitle": "SMS",
-  "homeScreenTitle" : "نظام المبرمجون لادارة المدارس",
+  "homeScreenTitle": "نظام المبرمجون لادارة المدارس",
+  "PublicMessagesForms": "قوالب الرسائل العامة",
   "login": "تسجيل الدخول",
+  "logout": "تسجيل خروج",
   "email": "البريد الالكتروني",
   "password": "كلمة المرور",
   "home": "الرئيسية",
-  "learningType": "نظام النعلم",
+  "learningType": "نظام التعليم",
   "generalEducation": "تعليم عام",
   "memorization": "تحفيظ",
   "materials": "مقررات",
-  "createAccount": "انشاء حساب",
+  "createAccount": "إنشاء حساب",
   "schoolName": "اسم المدرسة",
   "ministerialNumber": "الرقم الوزاري",
   "city": "المدينة",
@@ -18,5 +20,18 @@
   "phone": "الجوال",
   "doYouHaveAccount": "هل لديك حساب؟",
   "resetPassword": "إعادة تعيين كلمة المرور",
-  "ForgetPassword": "هل نسيت كلمة المرور؟"
+  "ForgetPassword": "هل نسيت كلمة المرور؟",
+  "Profile": "حسابك",
+  "Next" :"التالي",
+  "Skip": "تخطي",
+  "Done": "تم",
+  "Welcome": "أهلاً بك",
+  "NumberOfNotifications": "رصيد الإشعارات",
+  "TheSender'sName": "اسم المرسل",
+  "AddaForm": "أضف قالبًا",
+  "FormsName": "اسم القالب",
+  "Text": "النص"
+
+
+
 }

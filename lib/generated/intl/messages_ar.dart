@@ -21,12 +21,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AddaForm": MessageLookupByLibrary.simpleMessage("أضف قالبًا"),
+        "Done": MessageLookupByLibrary.simpleMessage("تم"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
+        "FormsName": MessageLookupByLibrary.simpleMessage("اسم القالب"),
+        "Next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "NumberOfNotifications":
+            MessageLookupByLibrary.simpleMessage("رصيد الإشعارات"),
+        "Profile": MessageLookupByLibrary.simpleMessage("حسابك"),
+        "PublicMessagesForms":
+            MessageLookupByLibrary.simpleMessage("قوالب الرسائل العامة"),
+        "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "Text": MessageLookupByLibrary.simpleMessage("النص"),
+        "Welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
         "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
-        "createAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
@@ -34,8 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage(
             "نظام المبرمجون لادارة المدارس"),
-        "learningType": MessageLookupByLibrary.simpleMessage("نظام النعلم"),
+        "learningType": MessageLookupByLibrary.simpleMessage("نظام التعليم"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "logout": MessageLookupByLibrary.simpleMessage("تسجيل خروج"),
         "materials": MessageLookupByLibrary.simpleMessage("مقررات"),
         "memorization": MessageLookupByLibrary.simpleMessage("تحفيظ"),
         "ministerialNumber":

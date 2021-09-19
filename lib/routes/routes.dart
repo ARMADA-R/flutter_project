@@ -1,5 +1,7 @@
 import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
+import 'package:experienceapp/screens/profileScreen.dart';
+import 'package:experienceapp/screens/public_messages_forms.dart';
 import 'package:experienceapp/screens/registeration_screen.dart';
 import 'package:experienceapp/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -13,5 +15,7 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
  // Splash.routeName :(context) => Splash(),
   IntroScreen.routeName :(context) => IntroScreen(title: 'IntroScreen',),
   ForgetPasswordScreen.routeName :(context) => ForgetPasswordScreen(title: 'ForgetPassword',),
+  ProfileScreen.routeName :(context) => ProfileScreen(title: 'ProfileScreen',),
+  PublicMessagesForms.routeName :(context) => PublicMessagesForms(title: 'PublicMessagesForms',)
 
 };

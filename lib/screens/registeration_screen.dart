@@ -1,3 +1,4 @@
+import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,10 +13,7 @@ class MyRegistrationScreen extends StatefulWidget{
 }
 
 class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
-  String dropdownValue = 'نوع التعليم';
-  List lst=['نوع التعليم','نظام عام','تحفيظ','نظام مقررات'];
-
-
+ String dropdownValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +43,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                   children: [
-                    Text('إنشاء حساب', style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+                    Text(S.of(context).createAccount, style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
 
                     Container(
                       width: width*0.6,
@@ -54,7 +52,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'اسم المدرسة',
+                            labelText: S.of(context).schoolName,
                             labelStyle: TextStyle(color: Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.emailAddress,
@@ -75,7 +73,11 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         dropdownValue = newValue!;
                       });
                     },
-                    items: <String>['نوع التعليم','نظام عام','تحفيظ','نظام مقررات']
+                    items: <String>[
+                      S.of(context).learningType,
+                      S.of(context).generalEducation,
+                      S.of(context).memorization,
+                      S.of(context).materials,]
                         .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
@@ -93,7 +95,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'الرقم الوزاري',
+                            labelText: S.of(context).ministerialNumber,
                             labelStyle: TextStyle(color: Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.emailAddress,
@@ -107,7 +109,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'المدينة',
+                            labelText: S.of(context).city,
                             labelStyle: TextStyle(color: Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.emailAddress,
@@ -121,7 +123,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'المنطقة',
+                            labelText: S.of(context).area,
                             labelStyle: TextStyle(color: Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.emailAddress,
@@ -139,7 +141,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'البريد الإلكتروني',
+                            labelText: S.of(context).email,
                             labelStyle: TextStyle(color: Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.emailAddress,
@@ -153,7 +155,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'كلمة المرور',
+                            labelText: S.of(context).password,
                             labelStyle: TextStyle(color : Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.visiblePassword,
@@ -167,7 +169,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'إعادة كلمة المرور',
+                            labelText:S.of(context).rePassword,
                             labelStyle: TextStyle(color : Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.visiblePassword,
@@ -181,7 +183,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                         textAlignVertical: TextAlignVertical.center,
                         textAlign: TextAlign.end,
                         decoration: InputDecoration(
-                            labelText: 'الجوال',
+                            labelText: S.of(context).phone,
                             labelStyle: TextStyle(color : Colors.black),
                             hoverColor: Colors.black),
                         keyboardType: TextInputType.number,
@@ -202,7 +204,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                           });
 
                         },
-                        child: Text('إنشاء حساب')),
+                        child: Text(S.of(context).createAccount,)),
 
 
 
@@ -216,12 +218,12 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold)
                           ),
-                          child: Text('تسجيل الدخول'),
+                          child: Text(S.of(context).login),
                           onPressed: () {
                             Navigator.pushNamed(context, LogInScreen.routeName,);
                           },
                         ),
-                        Text('هل لديك حساب؟'),
+                        Text(S.of(context).doYouHaveAccount),
 
                       ],
                     ),
@@ -240,7 +242,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                           });
 
                         },
-                        child: Text('الرئيسية'))
+                        child: Text(S.of(context).home))
                   ],
                 ),
               ),

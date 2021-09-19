@@ -1,7 +1,9 @@
 {
   "appTitle": "SMS",
   "homeScreenTitle" : "Al-Mobarmejon for manage schools",
-  "login": "Login",
+  "PublicMessagesForms": "Public Messages Forms",
+  "login": "Log in",
+  "logout": "Log out",
   "email": "Email",
   "password": "Password",
   "home": "Home",
@@ -14,9 +16,23 @@
   "ministerialNumber": "Ministerial number",
   "city": "City",
   "area": "Area",
-  "rePassword": "re enter password",
+  "rePassword": "re-enter password",
   "phone": "Phone",
   "doYouHaveAccount": "Do you have account?",
   "resetPassword": "Reset Password",
-  "ForgetPassword": "Forget Password?"
+  "ForgetPassword": "Forget Password?",
+  "Profile": "Your Profile",
+  "Next" :"Next",
+  "Skip": "Skip",
+  "Done": "Done",
+  "Welcome": "Welcome",
+  "NumberOfNotifications": "Number Of Notifications",
+  "TheSendersName": "The Sender's Name",
+  "AddaForm": "Add a Form",
+  "FormsName": "Form's Name",
+  "Text": "Text Message"
+
+
+
+
 }

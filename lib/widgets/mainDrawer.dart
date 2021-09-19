@@ -51,9 +51,8 @@ class MainDrawer extends StatelessWidget  {
 //            buildListTile('Log Out', Icons.logout, (){}),
           ListTile(
             leading: Icon(Icons.login),
-            title: Text('Log In'),
+            title: Text(S.of(context).login),
             onTap: (){
-              print('vdva');
               Navigator.pushNamed(context, LogInScreen.routeName, );
             },
           ),
@@ -67,7 +66,7 @@ class MainDrawer extends StatelessWidget  {
             ),
             ListTile(
               leading: Icon(Icons.logout),
-              title: Text('Log Out'),
+              title: Text(S.of(context).logout),
               onTap: (){
                 print('vdva');
           //      Navigator.pushNamed(context, LogInScreen.routeName, );

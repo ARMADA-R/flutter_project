@@ -1,3 +1,4 @@
+import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/login_screen.dart';
@@ -22,9 +23,9 @@ class IntroScreenState extends State<IntroScreen> {
           showDoneButton: true,
           showSkipButton: true,
           showNextButton: true,
-          next: Text('Next'),
-          skip: Text('Skip'),
-          done: Text('Done'),
+          next: Text(S.of(context).Next),
+          skip: Text(S.of(context).Skip),
+          done: Text(S.of(context).Done),
           onDone: (){
            AppDeterminants().setFirstLunch();
            Navigator.pushNamed(context, LogInScreen.routeName,);
@@ -37,8 +38,8 @@ class IntroScreenState extends State<IntroScreen> {
           pages: [
             PageViewModel(
               image: Image.asset('images/school1.jpg', width: 600, height: 600,) ,
-              title: 'SMS',
-              body: 'Welcome',
+              title: S.of(context).appTitle,
+              body: S.of(context).Welcome,
               footer: Text(''),
               decoration: const PageDecoration(
                 pageColor:  Colors.white54,

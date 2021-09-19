@@ -1,5 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
+import 'package:experienceapp/screens/public_messages_forms.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class ForgetPasswordScreen extends StatefulWidget {
@@ -63,6 +64,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
                       ),
                       child: Text(S.of(context).resetPassword),
                       onPressed: () {
+
                       },
                     ),
 
@@ -76,7 +78,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 
                         onPressed: (){
                           setState(() {
-                            Navigator.pop(context);
+                            Navigator.pushNamed(context, PublicMessagesForms.routeName);
                           });
 
                         },

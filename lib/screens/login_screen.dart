@@ -1,6 +1,7 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
+import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class LogInScreen extends StatefulWidget {
@@ -103,11 +104,11 @@ class _LogInScreenState extends State<LogInScreen> {
 
                             onPressed: (){
                           setState(() {
-                            Navigator.pop(context);
+                            Navigator.pushNamed(context, ProfileScreen.routeName);
                           });
 
                           },
-                            child: Text(S.of(context).home))
+                            child: Text(S.of(context).Profile))
                       ],
                     ),
                   ),
