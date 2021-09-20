@@ -16,7 +16,7 @@ class DatabaseManager {
   DatabaseManager._internal();
 
   initDB() async {
-    await Hive.initFlutter();
+    // await Hive.initFlutter();
   }
 
   static final _dbName = "Database.db";
