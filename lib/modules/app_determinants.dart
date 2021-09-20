@@ -25,7 +25,7 @@ class AppDeterminants with ChangeNotifier {
     await initializeToken();
     await initializeUserId();
     await initializeSchoolName();
-    initializeLoginAt();
+    await initializeLoginAt();
     await Future.delayed(
       Duration(milliseconds: 400),
     );
