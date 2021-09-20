@@ -5,9 +5,6 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class DatabaseManager {
-
-
-
   static final DatabaseManager _databaseManager = DatabaseManager._internal();
 
   factory DatabaseManager() {
@@ -21,7 +18,6 @@ class DatabaseManager {
 
   static final _dbName = "Database.db";
   // Use this class as a singleton
-
 
   static Database? _database;
 

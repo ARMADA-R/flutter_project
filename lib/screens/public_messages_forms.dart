@@ -1,4 +1,5 @@
 import 'package:experienceapp/generated/l10n.dart';
+import 'package:experienceapp/screens/Form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:data_tables/data_tables.dart';
@@ -67,7 +68,9 @@ class _PublicMessagesFormsState extends State<PublicMessagesForms> {
                       Card(
                         child: ElevatedButton(
                           child: Text(S.of(context).AddaForm),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, UserForm.routeName);
+                          },
                         ),
                       ),
                       DataTable(

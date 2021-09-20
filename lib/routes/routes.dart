@@ -1,3 +1,4 @@
+import 'package:experienceapp/screens/Form.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
@@ -16,6 +17,7 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   IntroScreen.routeName :(context) => IntroScreen(title: 'IntroScreen',),
   ForgetPasswordScreen.routeName :(context) => ForgetPasswordScreen(title: 'ForgetPassword',),
   ProfileScreen.routeName :(context) => ProfileScreen(title: 'ProfileScreen',),
-  PublicMessagesForms.routeName :(context) => PublicMessagesForms(title: 'PublicMessagesForms',)
+  PublicMessagesForms.routeName :(context) => PublicMessagesForms(title: 'PublicMessagesForms',),
+  UserForm.routeName :(context) => UserForm(title: 'UserForm',),
 
 };
