@@ -10,6 +10,7 @@ class AppDeterminants with ChangeNotifier {
   static String? _token;
   static String? _loginAt;
   static String? _schoolName;
+  static String? _username;
   static bool? _lunchedForFirst;
 
   static final AppDeterminants _appDeterminants = AppDeterminants._internal();
@@ -39,6 +40,14 @@ class AppDeterminants with ChangeNotifier {
     }
     prefs!.setString('lang', lang);
     _lang = lang;
+    notifyListeners();
+  }
+  setUsername(String username) async {
+    if (prefs == null) {
+      prefs = await _prefs;
+    }
+    prefs!.setString('username', username);
+    _username = username;
     notifyListeners();
   }
 
