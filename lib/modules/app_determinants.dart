@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'AuthController.dart';
 class AppDeterminants with ChangeNotifier {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   SharedPreferences? prefs;
@@ -29,6 +29,7 @@ class AppDeterminants with ChangeNotifier {
     await Future.delayed(
       Duration(milliseconds: 400),
     );
+    await AuthController().login("school", "123456");
     return true;
   }
 
