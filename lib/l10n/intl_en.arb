@@ -30,7 +30,10 @@
   "TheSendersName": "The Sender's Name",
   "AddaForm": "Add a Form",
   "FormsName": "Form's Name",
-  "Text": "Text Message"
+  "Text": "Text Message",
+  "EnterYourEmail": "Enter Your Email",
+  "EnterSomeText": "Enter Some Text"
+
 
 
 

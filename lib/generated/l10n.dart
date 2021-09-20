@@ -369,6 +369,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter Your Email`
+  String get EnterYourEmail {
+    return Intl.message(
+      'Enter Your Email',
+      name: 'EnterYourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Some Text`
+  String get EnterSomeText {
+    return Intl.message(
+      'Enter Some Text',
+      name: 'EnterSomeText',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

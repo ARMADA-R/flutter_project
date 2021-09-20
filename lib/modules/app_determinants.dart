@@ -27,6 +27,7 @@ class AppDeterminants with ChangeNotifier {
     await initializeUserId();
     await initializeSchoolName();
     await initializeLoginAt();
+    await initializeUserName();
     await Future.delayed(
       Duration(milliseconds: 400),
     );
@@ -136,6 +137,20 @@ class AppDeterminants with ChangeNotifier {
       _schoolName = "en";
     }
     return _schoolName;
+  }
+
+  get userName{
+    if (_username==null){
+      _username ="";
+    }
+    return _username;
+  }
+
+  initializeUserName() async {
+    if (prefs == null) {
+      prefs = await _prefs;
+    }
+    _username = (prefs!.getString('username')) ?? "";
   }
 
   initializeIsLunchesStatus() async {

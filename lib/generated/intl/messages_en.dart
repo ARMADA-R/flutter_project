@@ -23,6 +23,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AddaForm": MessageLookupByLibrary.simpleMessage("Add a Form"),
         "Done": MessageLookupByLibrary.simpleMessage("Done"),
+        "EnterSomeText":
+            MessageLookupByLibrary.simpleMessage("Enter Some Text"),
+        "EnterYourEmail":
+            MessageLookupByLibrary.simpleMessage("Enter Your Email"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "FormsName": MessageLookupByLibrary.simpleMessage("Form\'s Name"),

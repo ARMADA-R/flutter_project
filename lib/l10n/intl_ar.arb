@@ -30,7 +30,10 @@
   "TheSender'sName": "اسم المرسل",
   "AddaForm": "أضف قالبًا",
   "FormsName": "اسم القالب",
-  "Text": "النص"
+  "Text": "النص",
+  "EnterYourEmail": "أدخل البريد الإلكتروني",
+  "EnterSomeText": "أدخل نص"
+
 
 
 
