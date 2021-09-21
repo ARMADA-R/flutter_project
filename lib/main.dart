@@ -1,6 +1,7 @@
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:experienceapp/screens/login_screen.dart';
+import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
-  // String lang = AppDeterminants().lang;
+  AppDeterminants appDeterminants = AppDeterminants();
   String? lang;
 
   // langfun() async {
@@ -44,15 +45,15 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       home: FutureBuilder(
-        future: AppDeterminants().initializeAll(),
+        future: appDeterminants.initializeAll(),
           builder: (context, snapshot) {
             if (snapshot.hasData){
-              S.load(Locale(AppDeterminants().lang));
-             if(AppDeterminants().isLunched){
+              S.load(Locale(appDeterminants.lang));
+             if(appDeterminants.isLunched){
 
-//               if(AppDeterminants().token != "" && DateTime.fromMicrosecondsSinceEpoch(int.parse(AppDeterminants().loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
-//                 return FirstScreen;
-//               }
+               if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
+                 return ProfileScreen(title: appDeterminants.userName);
+               }
                return LogInScreen(title: 'LoginScreen');
              }
              else return IntroScreen(title: 'IntroScreen',);

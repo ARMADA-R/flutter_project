@@ -31,7 +31,6 @@ class AppDeterminants with ChangeNotifier {
     await Future.delayed(
       Duration(milliseconds: 400),
     );
-    await AuthController().login("school", "123456");
     return true;
   }
 
