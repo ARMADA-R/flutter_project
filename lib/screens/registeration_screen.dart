@@ -47,8 +47,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.01),
+                                padding: EdgeInsets.symmetric(vertical: height * 0.01),
                                 child: Text(
                                   S.of(context).createAccount,
                                   style: TextStyle(
