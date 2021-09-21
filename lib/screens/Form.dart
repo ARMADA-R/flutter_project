@@ -48,8 +48,8 @@ class _UserFormState extends State<UserForm> {
                             Padding(
                               padding: EdgeInsets.symmetric(vertical: height * 0.01,horizontal: width*0.08),
                               child: TextFormField(
-                                decoration: const InputDecoration(
-                                  hintText: "TheAddress",
+                                decoration:  InputDecoration(
+                                  hintText: S.of(context).TheAddress,
                                 ),
                                 validator: (String? value){
                                   if(value==null || value.isEmpty){
