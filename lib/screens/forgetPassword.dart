@@ -1,6 +1,8 @@
 import 'package:experienceapp/generated/l10n.dart';
+import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
+import 'package:experienceapp/screens/registeration_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class ForgetPasswordScreen extends StatefulWidget {
@@ -13,6 +15,8 @@ class ForgetPasswordScreen extends StatefulWidget {
 }
 
 class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
 
 
   @override
@@ -22,9 +26,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
 //          appBar: AppBar(
 //
 //          ),
-      body:LayoutBuilder(builder:(context, constraints) {
-        double width = constraints.maxWidth;
-        return Container(
+      body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/school1.jpg',),
@@ -32,65 +34,62 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               fit: BoxFit.cover,
             ),
           ),
-          child: Center(
-            child: Container(
-              width: width * 0.7,
-              height: 400,
-              margin: EdgeInsets.all(20),
-              color: Colors.white60,
-              child: Form(
+          child: LayoutBuilder(
+              builder: (context, constraints ) {
+                double width = constraints.maxWidth;
+                double height = constraints.maxHeight;
+                return Center(
+                    child: Container(
+                      width: width*0.7,
+                      height: height*0.5,
+                      child: Card(
+                        color: Colors.white70,
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(15),
+                                child: TextFormField(
+                                  decoration: const InputDecoration(
+                                    hintText: "EnterYourEmail",
+                                  ),
+                                  validator: (String? value){
+                                    if(value==null || value.isEmpty){
+                                      return S.of(context).EnterSomeText;
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    // Validate will return true if the form is valid, or false if
+                                    // the form is invalid.
+                                    if (_formKey.currentState!.validate()) {
+                                      Navigator.pushNamed(context, MyRegistrationScreen.routeName);
+                                     // AuthController; // Process data.
+                                    }
+                                  },
+                                  child:  Text(S.of(context).resetPassword),
+                                ),
+                              ),
 
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                  children: [
-                    Text(S.of(context).login, style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-                    TextFormField(
-                      textAlignVertical: TextAlignVertical.center,
-                      textAlign: TextAlign.end,
-                      decoration: InputDecoration(
-                          labelText: S.of(context).email,
-                          labelStyle: TextStyle(color: Colors.black),
-                          hoverColor: Colors.black),
-                      keyboardType: TextInputType.emailAddress,
-
-                    ),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.black45,
-                          textStyle: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold)
-                      ),
-                      child: Text(S.of(context).resetPassword),
-                      onPressed: () {
-
-                      },
-                    ),
-
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.black45,
-                            textStyle: TextStyle(
-                                fontSize: 17,
-                                fontWeight: FontWeight.bold)
+                            ],
+                          ),
                         ),
+                      ),
 
-                        onPressed: (){
-                          setState(() {
-                            Navigator.pushNamed(context, PublicMessagesForms.routeName);
-                          });
-
-                        },
-                        child: Text(S.of(context).home))
-                  ],
-                ),
-              ),
-            ),
+                    )
+                );
+              }
           ),
-        );
-      }
-      ),
+        ),
     );
-  }
+      }
 }

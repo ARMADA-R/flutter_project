@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AddaForm": MessageLookupByLibrary.simpleMessage("Add a Form"),
+        "Content": MessageLookupByLibrary.simpleMessage("Content"),
         "Done": MessageLookupByLibrary.simpleMessage("Done"),
         "EnterSomeText":
             MessageLookupByLibrary.simpleMessage("Enter Some Text"),
@@ -36,11 +37,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("Your Profile"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("Public Messages Forms"),
+        "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "Save": MessageLookupByLibrary.simpleMessage("Save"),
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Text": MessageLookupByLibrary.simpleMessage("Text Message"),
+        "TextMessage": MessageLookupByLibrary.simpleMessage("Text Message"),
+        "TheAddress": MessageLookupByLibrary.simpleMessage("The Address"),
         "TheSendersName":
             MessageLookupByLibrary.simpleMessage("The Sender\'s Name"),
+        "TypeOfSending":
+            MessageLookupByLibrary.simpleMessage("Type Of Sending"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
+        "WhatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "city": MessageLookupByLibrary.simpleMessage("City"),

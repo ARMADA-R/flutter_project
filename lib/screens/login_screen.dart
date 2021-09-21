@@ -1,5 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
+import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:flutter/material.dart';
 import '';
 class LogInScreen extends StatefulWidget {
@@ -51,7 +52,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                 padding: const EdgeInsets.all(15),
                                 child: TextFormField(
                             decoration: const InputDecoration(
-                            hintText: "S.of(context).EnterYourEmail",
+                            hintText: "EnterYourEmail",
                   ),
                                   validator: (String? value){
                                 if(value==null || value.isEmpty){
@@ -89,7 +90,24 @@ class _LogInScreenState extends State<LogInScreen> {
                                   child:  Text(S.of(context).login),
                                 ),
                               ),
+                             Padding(padding: EdgeInsets.all(16),
+                             child: ElevatedButton(
+                                 style: ElevatedButton.styleFrom(
+                                     primary: Colors.black45,
+                                     textStyle: TextStyle(
+                                         fontSize: 17,
+                                         fontWeight: FontWeight.bold)
+                                 ),
 
+                                 onPressed: (){
+                                   setState(() {
+                                     Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
+                                   });
+
+                                 },
+                                 child: Text(S.of(context).ForgetPassword)),
+
+                             )
 
                             ],
                           ),
@@ -149,22 +167,8 @@ class _LogInScreenState extends State<LogInScreen> {
 //},
 //),
 //
-//ElevatedButton(
-//style: ElevatedButton.styleFrom(
-//primary: Colors.black45,
-//textStyle: TextStyle(
-//fontSize: 17,
-//fontWeight: FontWeight.bold)
-//),
-//
-//onPressed: (){
-//setState(() {
-//Navigator.pushNamed(context, ForgetPasswordScreen.routeName);
-//});
-//
-//},
-//child: Text(S.of(context).ForgetPassword)),
-//
+
+
 //
 //ElevatedButton(
 //style: ElevatedButton.styleFrom(

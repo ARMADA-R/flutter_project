@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AddaForm": MessageLookupByLibrary.simpleMessage("أضف قالبًا"),
+        "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
         "Done": MessageLookupByLibrary.simpleMessage("تم"),
         "EnterSomeText": MessageLookupByLibrary.simpleMessage("أدخل نص"),
         "EnterYourEmail":
@@ -35,9 +36,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("حسابك"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("قوالب الرسائل العامة"),
+        "ResetPassword":
+            MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
+        "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "Text": MessageLookupByLibrary.simpleMessage("النص"),
+        "TextMessage": MessageLookupByLibrary.simpleMessage("رسالة نصية"),
+        "TheAddress": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "TypeOfSending": MessageLookupByLibrary.simpleMessage("نوع الإرسال"),
         "Welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
+        "WhatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
         "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),

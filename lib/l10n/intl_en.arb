@@ -32,10 +32,12 @@
   "FormsName": "Form's Name",
   "Text": "Text Message",
   "EnterYourEmail": "Enter Your Email",
-  "EnterSomeText": "Enter Some Text"
-
-
-
-
-
+  "EnterSomeText": "Enter Some Text",
+  "ResetPassword": "Reset Password",
+  "TheAddress": "The Address",
+  "TypeOfSending":"Type Of Sending",
+  "Content": "Content",
+  "Save": "Save",
+  "WhatsApp": "WhatsApp",
+  "TextMessage": "Text Message"
 }
