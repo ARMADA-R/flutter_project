@@ -32,7 +32,14 @@
   "FormsName": "اسم القالب",
   "Text": "النص",
   "EnterYourEmail": "أدخل البريد الإلكتروني",
-  "EnterSomeText": "أدخل نص"
+  "EnterSomeText": "أدخل نص",
+  "ResetPassword": "إعادة تعيين كلمة المرور",
+  "TheAddress": "العنوان",
+  "TypeOfSending":"نوع الإرسال",
+  "WhatsApp": "واتساب",
+  "TextMessage": "رسالة نصية",
+  "Content": "المحتوى",
+  "Save": "حفظ"
 
 
 

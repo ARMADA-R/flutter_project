@@ -1,5 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
+import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:flutter/material.dart';
 import '';
@@ -20,11 +21,8 @@ class _LogInScreenState extends State<LogInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var routeArg = ModalRoute.of(context)!.settings.arguments;
+
     return Scaffold(
-//          appBar: AppBar(
-//
-//          ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -41,7 +39,7 @@ class _LogInScreenState extends State<LogInScreen> {
           return Center(
               child: Container(
             width: width * 0.7,
-            height: height * 0.3,
+            height: height * 0.5,
             child: Card(
               color: Colors.white70,
               child: Form(
@@ -70,7 +68,6 @@ class _LogInScreenState extends State<LogInScreen> {
                           }
                           return null;
                         },
-
                       ),
                     ),
                     Padding(
@@ -78,7 +75,6 @@ class _LogInScreenState extends State<LogInScreen> {
                           left: width * 0.05, right: width * 0.05, bottom: 10),
                       child: TextFormField(
                         controller: passwordController,
-
                         decoration: InputDecoration(
                           hintText: S.of(context).password,
                         ),
@@ -101,14 +97,33 @@ class _LogInScreenState extends State<LogInScreen> {
                           // Validate will return true if the form is valid, or false if
                           // the form is invalid.
                           if (_formKey.currentState!.validate()) {
-                            if(await AuthController().login(emailController.text, passwordController.text)){
-                              Navigator.pushReplacementNamed(context, ProfileScreen.routeName);
+                            if (await AuthController().login(
+                                emailController.text,
+                                passwordController.text)) {
+                              Navigator.pushReplacementNamed(
+                                  context, ProfileScreen.routeName);
                             }
                           }
                         },
                         child: Text(S.of(context).login),
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: width * 0.05, right: width * 0.05, bottom: 10,),
+                      child: TextButton(
+                          style: ElevatedButton.styleFrom(
+//                              primary: Colors.black45,
+                              textStyle: TextStyle(
+                                  fontSize: width*0.03)),
+                          onPressed: () {
+                            setState(() {
+                              Navigator.pushNamed(
+                                  context, ForgetPasswordScreen.routeName);
+                            });
+                          },
+                          child: Text(S.of(context).ForgetPassword)),
+                    )
                   ],
                 ),
               ),

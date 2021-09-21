@@ -389,6 +389,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Reset Password`
+  String get ResetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'ResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The Address`
+  String get TheAddress {
+    return Intl.message(
+      'The Address',
+      name: 'TheAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type Of Sending`
+  String get TypeOfSending {
+    return Intl.message(
+      'Type Of Sending',
+      name: 'TypeOfSending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Content`
+  String get Content {
+    return Intl.message(
+      'Content',
+      name: 'Content',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get Save {
+    return Intl.message(
+      'Save',
+      name: 'Save',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `WhatsApp`
+  String get WhatsApp {
+    return Intl.message(
+      'WhatsApp',
+      name: 'WhatsApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Text Message`
+  String get TextMessage {
+    return Intl.message(
+      'Text Message',
+      name: 'TextMessage',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
