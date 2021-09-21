@@ -39,7 +39,7 @@ class _LogInScreenState extends State<LogInScreen> {
           return Center(
               child: Container(
             width: width * 0.7,
-            height: height * 0.5,
+            height: height * 0.6,
             child: Card(
               color: Colors.white70,
               child: Form(
@@ -115,7 +115,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           style: ElevatedButton.styleFrom(
 //                              primary: Colors.black45,
                               textStyle: TextStyle(
-                                  fontSize: width*0.03)),
+                                  fontSize: 10)),
                           onPressed: () {
                             setState(() {
                               Navigator.pushNamed(
