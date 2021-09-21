@@ -46,10 +46,10 @@ class _UserFormState extends State<UserForm> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(15),
+                              padding: EdgeInsets.symmetric(vertical: height * 0.01,horizontal: width*0.08),
                               child: TextFormField(
-                                decoration: const InputDecoration(
-                                  hintText: "TheAddress",
+                                decoration:  InputDecoration(
+                                  hintText: S.of(context).TheAddress,
                                 ),
                                 validator: (String? value){
                                   if(value==null || value.isEmpty){
@@ -60,7 +60,7 @@ class _UserFormState extends State<UserForm> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(15.0),
+                              padding: EdgeInsets.symmetric(vertical: height * 0.01,horizontal: width*0.08),
                               child: Container(
                                 width: width*0.7,
                                 child: DropdownButton<String>(
@@ -87,19 +87,19 @@ class _UserFormState extends State<UserForm> {
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(16),
+                              padding: EdgeInsets.symmetric(vertical: height * 0.01,horizontal: width*0.08),
                               child: TextFormField(
                                 textAlignVertical: TextAlignVertical.center,
                                 maxLines: 5,
                                 decoration: InputDecoration(
-                                   hintText: S.of(context).Content,                                   focusColor: Colors.black,
+                                   hintText: S.of(context).Content, focusColor: Colors.black,
                                      ),
                                 keyboardType: TextInputType.multiline,
                               ),
                             ),
 
                             Padding(
-                              padding:  EdgeInsets.symmetric(vertical: 16.0),
+                              padding: EdgeInsets.symmetric(vertical: height * 0.01,horizontal: width*0.08),
                               child: ElevatedButton(
                                 onPressed: () {
                                   // Validate will return true if the form is valid, or false if
@@ -108,7 +108,7 @@ class _UserFormState extends State<UserForm> {
                                     AuthController; // Process data.
                                   }
                                 },
-                                child:  Text(S.of(context).login),
+                                child:  Text(S.of(context).Save),
                               ),
                             ),
 
