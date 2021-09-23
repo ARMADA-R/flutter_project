@@ -19,14 +19,11 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final re_passwordController = TextEditingController();
-  final school_number = TextEditingController();
-  final school_Name = TextEditingController();
   final usernameController = TextEditingController();
   final phone = TextEditingController();
   final city = TextEditingController();
   final area = TextEditingController();
-//  final learning_type = TextEditingController();
-  String dropdownValue= S().learningType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,77 +59,6 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                   style: TextStyle(
                                       fontSize: 30,
                                       fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.01,
-                                    horizontal: width * 0.05),
-                                child: TextFormField(
-                                  controller: school_Name,
-                                  decoration: InputDecoration(
-                                    hintText: S
-                                        .of(context)
-                                        .schoolName,
-                                  ),
-                                  validator: (String? value) {
-                                    if (value == null || value.isEmpty) {
-                                      return S
-                                          .of(context)
-                                          .EnterSomeText;
-                                    }
-                                    return null;
-                                  },
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.01,
-                                    horizontal: width * 0.05),
-                                child: TextFormField(
-                                  controller: school_number,
-                                  decoration: InputDecoration(
-                                    hintText: S
-                                        .of(context)
-                                        .ministerialNumber,
-                                  ),
-                                  validator: (String? value) {
-                                    if (value == null || value.isEmpty) {
-                                      return S
-                                          .of(context)
-                                          .EnterSomeText;
-                                    }
-                                    return null;
-                                  },
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: height * 0.01,
-                                    horizontal: width * 0.05),
-                                child: Container(
-                                  width: width*0.7,
-                                  child: DropdownButton<String>(
-                                    value: dropdownValue,
-                                    style: TextStyle(color: Colors.black),
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        dropdownValue = newValue!;
-                                      });
-                                    },
-                                    items: <String>[
-                                      S.of(context).learningType,
-                                      S.of(context).generalEducation,
-                                      S.of(context).memorization,
-                                      S.of(context).materials,
-                                    ].map<DropdownMenuItem<String>>((
-                                        String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: Text(value),
-                                      );
-                                    }).toList(),
-                                  ),
                                 ),
                               ),
                               Padding(
@@ -287,15 +213,14 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     // Validate will return true if the form is valid, or false if
                                     // the form is invalid.
                                     if (_formKey.currentState!.validate()) {
-                                          if(await AuthController().Registrate(schoolName: school_Name.text,
+                                          if(await AuthController().Registrate(
                                               city: city.text, area: area.text,
                                               phone: phone.text,
                                               email: emailController.text,
-                                              learningType: dropdownValue,
                                               password: passwordController.text,
-                                              school_number: school_number.text,
-                                              user_name: school_Name.text,
-                                              re_password: re_passwordController.text)){
+                                              user_name: usernameController.text,
+                                              re_password: re_passwordController.text,
+                                          context: context)){
                                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                                              content: Text('Account created'))
                                             );

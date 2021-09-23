@@ -1,4 +1,3 @@
-import 'package:hive_flutter/adapters.dart';
 import 'dart:io';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';

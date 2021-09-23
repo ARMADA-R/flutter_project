@@ -23,7 +23,6 @@ class _LogInScreenState extends State<LogInScreen> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -100,8 +99,10 @@ class _LogInScreenState extends State<LogInScreen> {
                           // the form is invalid.
                           if (_formKey.currentState!.validate()) {
                             if (await AuthController().login(
-                                emailController.text,
-                                passwordController.text)) {
+                              emailController.text,
+                              passwordController.text,
+                              context: context,
+                            )) {
                               Navigator.pushNamed(
                                   context, SchoolExamsTable.routeName);
                             }
@@ -112,12 +113,14 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                          left: width * 0.05, right: width * 0.05, bottom: 10,),
+                        left: width * 0.05,
+                        right: width * 0.05,
+                        bottom: 10,
+                      ),
                       child: TextButton(
                           style: ElevatedButton.styleFrom(
 //                              primary: Colors.black45,
-                              textStyle: TextStyle(
-                                  fontSize: 10)),
+                              textStyle: TextStyle(fontSize: 10)),
                           onPressed: () {
                             setState(() {
                               Navigator.pushNamed(
@@ -128,12 +131,14 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        left: width * 0.05, right: width * 0.05, bottom: 10,),
+                        left: width * 0.05,
+                        right: width * 0.05,
+                        bottom: 10,
+                      ),
                       child: TextButton(
                           style: ElevatedButton.styleFrom(
 //                              primary: Colors.black45,
-                              textStyle: TextStyle(
-                                  fontSize: 10)),
+                              textStyle: TextStyle(fontSize: 10)),
                           onPressed: () {
                             setState(() {
                               Navigator.pushNamed(
@@ -142,7 +147,6 @@ class _LogInScreenState extends State<LogInScreen> {
                           },
                           child: Text(S.of(context).createAccount)),
                     ),
-
                   ],
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'AuthController.dart';
+
 class AppDeterminants with ChangeNotifier {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   SharedPreferences? prefs;
@@ -8,8 +9,9 @@ class AppDeterminants with ChangeNotifier {
   static String? _userId;
   static String? _token;
   static String? _loginAt;
-  static String? _schoolName;
+  static String? _schoolsIds;
   static String? _username;
+  static String? _email;
   static bool? _lunchedForFirst;
 
   static final AppDeterminants _appDeterminants = AppDeterminants._internal();
@@ -24,9 +26,10 @@ class AppDeterminants with ChangeNotifier {
     await initializeLang();
     await initializeToken();
     await initializeUserId();
-    await initializeSchoolName();
+    await initializeSchoolsIDs();
     await initializeLoginAt();
     await initializeUserName();
+    await initializeEmail();
     await Future.delayed(
       Duration(milliseconds: 400),
     );
@@ -41,12 +44,22 @@ class AppDeterminants with ChangeNotifier {
     _lang = lang;
     notifyListeners();
   }
+
   setUsername(String username) async {
     if (prefs == null) {
       prefs = await _prefs;
     }
     prefs!.setString('username', username);
     _username = username;
+    notifyListeners();
+  }
+
+  setEmail(String email) async {
+    if (prefs == null) {
+      prefs = await _prefs;
+    }
+    prefs!.setString('email', email);
+    _email = email;
     notifyListeners();
   }
 
@@ -77,12 +90,12 @@ class AppDeterminants with ChangeNotifier {
     notifyListeners();
   }
 
-  setSchoolName(String schoolName) async {
+  setSchoolsIDs(String schoolsIds) async {
     if (prefs == null) {
       prefs = await _prefs;
     }
-    prefs!.setString('schoolName', schoolName);
-    _schoolName = schoolName;
+    prefs!.setString('schoolsIds', schoolsIds);
+    _schoolsIds = schoolsIds;
     notifyListeners();
   }
 
@@ -130,18 +143,25 @@ class AppDeterminants with ChangeNotifier {
     return _userId;
   }
 
-  get schoolName {
-    if (_schoolName == null) {
-      _schoolName = "en";
+  get schoolsIds {
+    if (_schoolsIds == null) {
+      _schoolsIds = "";
     }
-    return _schoolName;
+    return _schoolsIds;
   }
 
-  get userName{
-    if (_username==null){
-      _username ="";
+  get userName {
+    if (_username == null) {
+      _username = "";
     }
     return _username;
+  }
+
+  get email {
+    if (_email == null) {
+      _email = "";
+    }
+    return _email;
   }
 
   initializeUserName() async {
@@ -149,6 +169,13 @@ class AppDeterminants with ChangeNotifier {
       prefs = await _prefs;
     }
     _username = (prefs!.getString('username')) ?? "";
+  }
+
+  initializeEmail() async {
+    if (prefs == null) {
+      prefs = await _prefs;
+    }
+    _email = (prefs!.getString('email')) ?? "";
   }
 
   initializeIsLunchesStatus() async {
@@ -179,11 +206,11 @@ class AppDeterminants with ChangeNotifier {
     _userId = (prefs!.getString('userId')) ?? "";
   }
 
-  initializeSchoolName() async {
+  initializeSchoolsIDs() async {
     if (prefs == null) {
       prefs = await _prefs;
     }
-    _schoolName = (prefs!.getString('schoolName')) ?? "";
+    _schoolsIds = (prefs!.getString('schoolsIds')) ?? "";
   }
 
   initializeLoginAt() async {
