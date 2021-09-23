@@ -28,12 +28,12 @@ class IntroScreenState extends State<IntroScreen> {
           done: Text(S.of(context).Done),
           onDone: (){
            AppDeterminants().setFirstLunch();
-           Navigator.pushNamed(context, LogInScreen.routeName,);
+           Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
 
           },
           onSkip: (){
             AppDeterminants().setFirstLunch();
-            Navigator.pushNamed(context, LogInScreen.routeName,);
+            Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
           },
           pages: [
             PageViewModel(

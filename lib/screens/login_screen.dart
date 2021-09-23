@@ -1,7 +1,9 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
+import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
+import 'package:experienceapp/screens/registeration_screen.dart';
 import 'package:flutter/material.dart';
 import '';
 
@@ -100,8 +102,8 @@ class _LogInScreenState extends State<LogInScreen> {
                             if (await AuthController().login(
                                 emailController.text,
                                 passwordController.text)) {
-                              Navigator.pushReplacementNamed(
-                                  context, ProfileScreen.routeName);
+                              Navigator.pushNamed(
+                                  context, SchoolExamsTable.routeName);
                             }
                           }
                         },
@@ -123,7 +125,24 @@ class _LogInScreenState extends State<LogInScreen> {
                             });
                           },
                           child: Text(S.of(context).ForgetPassword)),
-                    )
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: width * 0.05, right: width * 0.05, bottom: 10,),
+                      child: TextButton(
+                          style: ElevatedButton.styleFrom(
+//                              primary: Colors.black45,
+                              textStyle: TextStyle(
+                                  fontSize: 10)),
+                          onPressed: () {
+                            setState(() {
+                              Navigator.pushNamed(
+                                  context, MyRegistrationScreen.routeName);
+                            });
+                          },
+                          child: Text(S.of(context).createAccount)),
+                    ),
+
                   ],
                 ),
               ),

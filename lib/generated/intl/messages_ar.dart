@@ -22,28 +22,55 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AddaForm": MessageLookupByLibrary.simpleMessage("أضف قالبًا"),
+        "ChooseTheDepartment":
+            MessageLookupByLibrary.simpleMessage("اختر القسم"),
+        "ChooseThePriority":
+            MessageLookupByLibrary.simpleMessage("اختر الأولوية"),
+        "ChooseTheType": MessageLookupByLibrary.simpleMessage("اختر النمط"),
+        "Complaints": MessageLookupByLibrary.simpleMessage("شكاوى"),
         "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
+        "Department": MessageLookupByLibrary.simpleMessage("القسم"),
         "Done": MessageLookupByLibrary.simpleMessage("تم"),
+        "ElectronicForms":
+            MessageLookupByLibrary.simpleMessage("النماذج الإلكترونية"),
+        "ElectronicQuestionnaires":
+            MessageLookupByLibrary.simpleMessage("الاستبيانات الإلكترونية"),
         "EnterSomeText": MessageLookupByLibrary.simpleMessage("أدخل نص"),
         "EnterYourEmail":
             MessageLookupByLibrary.simpleMessage("أدخل البريد الإلكتروني"),
+        "ExamsTable": MessageLookupByLibrary.simpleMessage("جدول الاختبارات"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("هل نسيت كلمة المرور؟"),
         "FormsName": MessageLookupByLibrary.simpleMessage("اسم القالب"),
+        "GeneralTable": MessageLookupByLibrary.simpleMessage("الجدول العام"),
+        "Important": MessageLookupByLibrary.simpleMessage("هام"),
+        "MailingTheManagement":
+            MessageLookupByLibrary.simpleMessage("مراسلة الإدارة"),
+        "MailingTheManager":
+            MessageLookupByLibrary.simpleMessage("مراسلة المدير"),
         "Next": MessageLookupByLibrary.simpleMessage("التالي"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("رصيد الإشعارات"),
         "Profile": MessageLookupByLibrary.simpleMessage("حسابك"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("قوالب الرسائل العامة"),
+        "Queries": MessageLookupByLibrary.simpleMessage("استفسارات"),
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
+        "SchoolAlerts":
+            MessageLookupByLibrary.simpleMessage("النتبيهات المدرسية"),
+        "SchoolManagement":
+            MessageLookupByLibrary.simpleMessage("الإدارة المدرسية"),
         "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
+        "Suggestions": MessageLookupByLibrary.simpleMessage("اقتراحات"),
+        "TechnicalSupport": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
         "Text": MessageLookupByLibrary.simpleMessage("النص"),
         "TextMessage": MessageLookupByLibrary.simpleMessage("رسالة نصية"),
         "TheAddress": MessageLookupByLibrary.simpleMessage("العنوان"),
+        "Type": MessageLookupByLibrary.simpleMessage("النمط"),
         "TypeOfSending": MessageLookupByLibrary.simpleMessage("نوع الإرسال"),
+        "VeryImportant": MessageLookupByLibrary.simpleMessage("هام جدًا"),
         "Welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
@@ -64,11 +91,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "memorization": MessageLookupByLibrary.simpleMessage("تحفيظ"),
         "ministerialNumber":
             MessageLookupByLibrary.simpleMessage("الرقم الوزاري"),
+        "passAndRePAssDontMatch":
+            MessageLookupByLibrary.simpleMessage("كلمتا المرور غير متطابقتان"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "phone": MessageLookupByLibrary.simpleMessage("الجوال"),
-        "rePassword": MessageLookupByLibrary.simpleMessage("اعادة كلمة المرور"),
+        "priority": MessageLookupByLibrary.simpleMessage("الأولوية"),
+        "rePassword": MessageLookupByLibrary.simpleMessage("إعادة كلمة المرور"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
-        "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة")
+        "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة"),
+        "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم")
       };
 }

@@ -5,7 +5,9 @@
   "login": "تسجيل الدخول",
   "logout": "تسجيل خروج",
   "email": "البريد الالكتروني",
+  "username": "اسم المستخدم",
   "password": "كلمة المرور",
+  "passAndRePAssDontMatch": "كلمتا المرور غير متطابقتان",
   "home": "الرئيسية",
   "learningType": "نظام التعليم",
   "generalEducation": "تعليم عام",
@@ -16,7 +18,7 @@
   "ministerialNumber": "الرقم الوزاري",
   "city": "المدينة",
   "area": "المنطقة",
-  "rePassword": "اعادة كلمة المرور",
+  "rePassword": "إعادة كلمة المرور",
   "phone": "الجوال",
   "doYouHaveAccount": "هل لديك حساب؟",
   "resetPassword": "إعادة تعيين كلمة المرور",
@@ -39,7 +41,34 @@
   "WhatsApp": "واتساب",
   "TextMessage": "رسالة نصية",
   "Content": "المحتوى",
-  "Save": "حفظ"
+  "Save": "حفظ",
+  "ExamsTable": "جدول الاختبارات",
+  "SchoolManagement": "الإدارة المدرسية",
+  "GeneralTable": "الجدول العام",
+  "ElectronicQuestionnaires": "الاستبيانات الإلكترونية",
+  "ElectronicForms": "النماذج الإلكترونية",
+  "SchoolAlerts": "النتبيهات المدرسية",
+  "TechnicalSupport":"الدعم الفني",
+  "MailingTheManager": "مراسلة المدير",
+  "MailingTheManagement": "مراسلة الإدارة",
+  "Department": "القسم",
+  "priority": "الأولوية",
+  "Suggestions": "اقتراحات",
+  "Queries": "استفسارات",
+  "Complaints": "شكاوى",
+  "Type": "النمط",
+  "Important": "هام",
+  "VeryImportant": "هام جدًا",
+  "ChooseTheType": "اختر النمط",
+  "ChooseThePriority": "اختر الأولوية",
+  "ChooseTheDepartment": "اختر القسم"
+
+
+
+
+
+
+
 
 
 

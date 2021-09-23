@@ -4,7 +4,6 @@ import 'AuthController.dart';
 class AppDeterminants with ChangeNotifier {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
   SharedPreferences? prefs;
-
   static String? _lang;
   static String? _userId;
   static String? _token;

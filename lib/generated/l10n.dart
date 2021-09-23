@@ -110,11 +110,31 @@ class S {
     );
   }
 
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Password`
   String get password {
     return Intl.message(
       'Password',
       name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password and confirm password don't match!`
+  String get passAndRePAssDontMatch {
+    return Intl.message(
+      'Password and confirm password don\'t match!',
+      name: 'passAndRePAssDontMatch',
       desc: '',
       args: [],
     );
@@ -180,10 +200,10 @@ class S {
     );
   }
 
-  /// `School name`
+  /// `School Name`
   String get schoolName {
     return Intl.message(
-      'School name',
+      'School Name',
       name: 'schoolName',
       desc: '',
       args: [],
@@ -455,6 +475,206 @@ class S {
     return Intl.message(
       'Text Message',
       name: 'TextMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exams Table`
+  String get ExamsTable {
+    return Intl.message(
+      'Exams Table',
+      name: 'ExamsTable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `School Management`
+  String get SchoolManagement {
+    return Intl.message(
+      'School Management',
+      name: 'SchoolManagement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General Table`
+  String get GeneralTable {
+    return Intl.message(
+      'General Table',
+      name: 'GeneralTable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Electronic Questionnaires`
+  String get ElectronicQuestionnaires {
+    return Intl.message(
+      'Electronic Questionnaires',
+      name: 'ElectronicQuestionnaires',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Electronic Forms`
+  String get ElectronicForms {
+    return Intl.message(
+      'Electronic Forms',
+      name: 'ElectronicForms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `School Alerts`
+  String get SchoolAlerts {
+    return Intl.message(
+      'School Alerts',
+      name: 'SchoolAlerts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Technical Support`
+  String get TechnicalSupport {
+    return Intl.message(
+      'Technical Support',
+      name: 'TechnicalSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mailing The Manager`
+  String get MailingTheManager {
+    return Intl.message(
+      'Mailing The Manager',
+      name: 'MailingTheManager',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mailing The Management`
+  String get MailingTheManagement {
+    return Intl.message(
+      'Mailing The Management',
+      name: 'MailingTheManagement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Department`
+  String get Department {
+    return Intl.message(
+      'Department',
+      name: 'Department',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Priority`
+  String get priority {
+    return Intl.message(
+      'Priority',
+      name: 'priority',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `suggestions`
+  String get Suggestions {
+    return Intl.message(
+      'suggestions',
+      name: 'Suggestions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Queries`
+  String get Queries {
+    return Intl.message(
+      'Queries',
+      name: 'Queries',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complaints`
+  String get Complaints {
+    return Intl.message(
+      'Complaints',
+      name: 'Complaints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get Type {
+    return Intl.message(
+      'Type',
+      name: 'Type',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Important`
+  String get Important {
+    return Intl.message(
+      'Important',
+      name: 'Important',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `VeryImportant`
+  String get VeryImportant {
+    return Intl.message(
+      'VeryImportant',
+      name: 'VeryImportant',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose The Type`
+  String get ChooseTheType {
+    return Intl.message(
+      'Choose The Type',
+      name: 'ChooseTheType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ChooseThePriority`
+  String get ChooseThePriority {
+    return Intl.message(
+      'ChooseThePriority',
+      name: 'ChooseThePriority',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose The Department`
+  String get ChooseTheDepartment {
+    return Intl.message(
+      'Choose The Department',
+      name: 'ChooseTheDepartment',
       desc: '',
       args: [],
     );

@@ -22,31 +22,59 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "AddaForm": MessageLookupByLibrary.simpleMessage("Add a Form"),
+        "ChooseTheDepartment":
+            MessageLookupByLibrary.simpleMessage("Choose The Department"),
+        "ChooseThePriority":
+            MessageLookupByLibrary.simpleMessage("ChooseThePriority"),
+        "ChooseTheType":
+            MessageLookupByLibrary.simpleMessage("Choose The Type"),
+        "Complaints": MessageLookupByLibrary.simpleMessage("Complaints"),
         "Content": MessageLookupByLibrary.simpleMessage("Content"),
+        "Department": MessageLookupByLibrary.simpleMessage("Department"),
         "Done": MessageLookupByLibrary.simpleMessage("Done"),
+        "ElectronicForms":
+            MessageLookupByLibrary.simpleMessage("Electronic Forms"),
+        "ElectronicQuestionnaires":
+            MessageLookupByLibrary.simpleMessage("Electronic Questionnaires"),
         "EnterSomeText":
             MessageLookupByLibrary.simpleMessage("Enter Some Text"),
         "EnterYourEmail":
             MessageLookupByLibrary.simpleMessage("Enter Your Email"),
+        "ExamsTable": MessageLookupByLibrary.simpleMessage("Exams Table"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "FormsName": MessageLookupByLibrary.simpleMessage("Form\'s Name"),
+        "GeneralTable": MessageLookupByLibrary.simpleMessage("General Table"),
+        "Important": MessageLookupByLibrary.simpleMessage("Important"),
+        "MailingTheManagement":
+            MessageLookupByLibrary.simpleMessage("Mailing The Management"),
+        "MailingTheManager":
+            MessageLookupByLibrary.simpleMessage("Mailing The Manager"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("Number Of Notifications"),
         "Profile": MessageLookupByLibrary.simpleMessage("Your Profile"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("Public Messages Forms"),
+        "Queries": MessageLookupByLibrary.simpleMessage("Queries"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "Save": MessageLookupByLibrary.simpleMessage("Save"),
+        "SchoolAlerts": MessageLookupByLibrary.simpleMessage("School Alerts"),
+        "SchoolManagement":
+            MessageLookupByLibrary.simpleMessage("School Management"),
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "Suggestions": MessageLookupByLibrary.simpleMessage("suggestions"),
+        "TechnicalSupport":
+            MessageLookupByLibrary.simpleMessage("Technical Support"),
         "Text": MessageLookupByLibrary.simpleMessage("Text Message"),
         "TextMessage": MessageLookupByLibrary.simpleMessage("Text Message"),
         "TheAddress": MessageLookupByLibrary.simpleMessage("The Address"),
         "TheSendersName":
             MessageLookupByLibrary.simpleMessage("The Sender\'s Name"),
+        "Type": MessageLookupByLibrary.simpleMessage("Type"),
         "TypeOfSending":
             MessageLookupByLibrary.simpleMessage("Type Of Sending"),
+        "VeryImportant": MessageLookupByLibrary.simpleMessage("VeryImportant"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
         "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
@@ -68,10 +96,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "memorization": MessageLookupByLibrary.simpleMessage("Memorization"),
         "ministerialNumber":
             MessageLookupByLibrary.simpleMessage("Ministerial number"),
+        "passAndRePAssDontMatch": MessageLookupByLibrary.simpleMessage(
+            "Password and confirm password don\'t match!"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "priority": MessageLookupByLibrary.simpleMessage("Priority"),
         "rePassword": MessageLookupByLibrary.simpleMessage("re-enter password"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
-        "schoolName": MessageLookupByLibrary.simpleMessage("School name")
+        "schoolName": MessageLookupByLibrary.simpleMessage("School Name"),
+        "username": MessageLookupByLibrary.simpleMessage("Username")
       };
 }

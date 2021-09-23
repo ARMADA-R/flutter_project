@@ -1,4 +1,5 @@
 import 'package:experienceapp/generated/l10n.dart';
+import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/screens/Form.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,9 +16,17 @@ class MyRegistrationScreen extends StatefulWidget {
 
 class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  String dropdownValue= 'hello';
-
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+  final re_passwordController = TextEditingController();
+  final school_number = TextEditingController();
+  final school_Name = TextEditingController();
+  final usernameController = TextEditingController();
+  final phone = TextEditingController();
+  final city = TextEditingController();
+  final area = TextEditingController();
+//  final learning_type = TextEditingController();
+  String dropdownValue= S().learningType;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,10 +69,32 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: school_Name,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
                                         .schoolName,
+                                  ),
+                                  validator: (String? value) {
+                                    if (value == null || value.isEmpty) {
+                                      return S
+                                          .of(context)
+                                          .EnterSomeText;
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: height * 0.01,
+                                    horizontal: width * 0.05),
+                                child: TextFormField(
+                                  controller: school_number,
+                                  decoration: InputDecoration(
+                                    hintText: S
+                                        .of(context)
+                                        .ministerialNumber,
                                   ),
                                   validator: (String? value) {
                                     if (value == null || value.isEmpty) {
@@ -90,7 +121,6 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                       });
                                     },
                                     items: <String>[
-                                      'hello',
                                       S.of(context).learningType,
                                       S.of(context).generalEducation,
                                       S.of(context).memorization,
@@ -110,8 +140,9 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: usernameController,
                                   decoration: InputDecoration(
-                                    hintText: S.of(context).EnterYourEmail,
+                                    hintText: S.of(context).username,
                                   ),
                                   validator: (String? value) {
                                     if (value == null || value.isEmpty) {
@@ -126,6 +157,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: city,
                                   decoration: InputDecoration(
                                     hintText: S.of(context).city,
                                   ),
@@ -142,6 +174,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: area,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
@@ -162,6 +195,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: emailController,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
@@ -182,6 +216,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: passwordController,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
@@ -202,6 +237,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: re_passwordController,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
@@ -212,6 +248,10 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                       return S
                                           .of(context)
                                           .EnterSomeText;
+                                    }else if(re_passwordController.text != passwordController.text){
+                                      return S
+                                          .of(context)
+                                          .passAndRePAssDontMatch;
                                     }
                                     return null;
                                   },
@@ -222,6 +262,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: TextFormField(
+                                  controller: phone,
                                   decoration: InputDecoration(
                                     hintText: S
                                         .of(context)
@@ -242,16 +283,26 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     vertical: height * 0.01,
                                     horizontal: width * 0.05),
                                 child: ElevatedButton(
-                                  onPressed: () {
+                                  onPressed: () async {
                                     // Validate will return true if the form is valid, or false if
                                     // the form is invalid.
                                     if (_formKey.currentState!.validate()) {
-                                      //    AuthController; // Process data.
+                                          if(await AuthController().Registrate(schoolName: school_Name.text,
+                                              city: city.text, area: area.text,
+                                              phone: phone.text,
+                                              email: emailController.text,
+                                              learningType: dropdownValue,
+                                              password: passwordController.text,
+                                              school_number: school_number.text,
+                                              user_name: school_Name.text,
+                                              re_password: re_passwordController.text)){
+                                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                             content: Text('Account created'))
+                                            );
+                                          }
                                     }
                                   },
-                                  child: Text(S
-                                      .of(context)
-                                      .createAccount),
+                                  child: Text(S.of(context).createAccount),
                                 ),
                               ),
                               Padding(
@@ -267,14 +318,10 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                           textStyle: TextStyle(
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold)),
-                                      child: Text(S
-                                          .of(context)
-                                          .login),
+                                      child: Text(S.of(context).login),
                                       onPressed: () {
-                                        Navigator.pushNamed(
-                                          context,
-                                          LogInScreen.routeName,
-                                        );
+                                        Navigator.pushNamed(context, LogInScreen.routeName);
+//
                                       },
                                     ),
                                     Text(S
@@ -301,6 +348,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                       ),
                     ),
                   ),
+
                 )
                ;
               }

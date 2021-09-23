@@ -51,9 +51,9 @@ class MyApp extends StatelessWidget {
               S.load(Locale(appDeterminants.lang));
              if(appDeterminants.isLunched){
 
-               if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
-                 return ProfileScreen(title: appDeterminants.userName);
-               }
+//               if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
+//                 return ProfileScreen(title: appDeterminants.userName);
+//               }
                return LogInScreen(title: 'LoginScreen');
              }
              else return IntroScreen(title: 'IntroScreen',);
