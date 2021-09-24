@@ -12,14 +12,14 @@ class SchoolAlertsScreen extends StatefulWidget {
 
 class SchoolAlertsScreenState extends State<SchoolAlertsScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  _buildListTile(Icon icon, String title, String subTitle) {
+  _buildListTile( String title, String subTitle, DateTime date) {
     return ListTile(
-      leading: icon,
       title: Text(
         title,
         style: TextStyle(fontSize: 20),
       ),
       subtitle: Text(subTitle),
+      trailing: Text(date.toString()),
     );
   }
   List alerts =[];
@@ -35,7 +35,7 @@ class SchoolAlertsScreenState extends State<SchoolAlertsScreen> {
       ),
       body: Container(
         child: ListView.builder(
-            itemBuilder: (context,index)=> _buildListTile(Icon(Icons.message), alerts[index], 'subTitle'),
+            itemBuilder: (context,index)=> _buildListTile( alerts[index], 'subTitle', DateTime.now()),
         itemCount: alerts.length,
         ),
       )

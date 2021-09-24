@@ -6,34 +6,50 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-class ElectronicForms extends StatefulWidget {
-  const ElectronicForms({Key? key, required this.title}) : super(key: key);
+class PartnersOffers extends StatefulWidget {
+  const PartnersOffers({Key? key, required this.title}) : super(key: key);
   final String title;
-  static final String routeName = 'ElectronicForms';
+  static final String routeName = 'PartnersOffers';
   @override
-  _ElectronicFormsState createState() => _ElectronicFormsState();
+  _PartnersOffersState createState() => _PartnersOffersState();
 }
 
-class _ElectronicFormsState extends State<ElectronicForms> {
+class _PartnersOffersState extends State<PartnersOffers> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  List electronicFormsTable = [];
+  List partnersOffersTable = [];
   @override
   initState() {
     super.initState();
     Future.delayed(Duration.zero,() async{
-      var url = Uri.parse("https://rafi.nobalaa.com/CodeSchoolSystem/Servies/GetForms?school_id=${AppDeterminants().schoolsIds}&page=1&limit=7000");
+      var url = Uri.parse("https://rafi.nobalaa.com/CodeSchoolSystem/Partners/GetPartners?page=1&limit=2000&user_id=${AppDeterminants().userId}");
       var response = await http.get(url, headers: {
         "authorization":AppDeterminants().token,
       });
       var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-      electronicFormsTable=jsonResponse['data'];
+      partnersOffersTable=jsonResponse['data'];
       print (response.body);
       setState(() {});
     } );
   }
-  Widget electronicFormsTableListile(String title,String link ){
+  Widget partnersOffersTableListile(String title,String city,String area, String date,String price, String discount, String link ){
     return ListTile(
       title: Text(title),
+      subtitle: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text("$city : $area"),
+          Text(date),
+        ],
+      ),
+      trailing:Column(
+
+        children: [
+          Text(price),
+          Text(discount),
+        ],
+
+      ) ,
       onTap: () async {
         var urllaunchable = await canLaunch(link); //canLaunch is from url_launcher package
         if(urllaunchable){
@@ -51,20 +67,25 @@ class _ElectronicFormsState extends State<ElectronicForms> {
       key: _scaffoldKey,
       drawer: Drawer1(),
       appBar: AppBar(
-        title: Text(S.of(context).ElectronicForms),
+        title: Text(S.of(context).PartnersOffers),
         centerTitle: true,
       ),
       body: Center(
         child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
               print(index);
-              return electronicFormsTableListile(
-                electronicFormsTable.elementAt(index)["title"],
-                electronicFormsTable.elementAt(index)["link"],
+              return partnersOffersTableListile(
+                partnersOffersTable.elementAt(index)["service_name"],
+                partnersOffersTable.elementAt(index)["city"],
+                partnersOffersTable.elementAt(index)["area"],
+                partnersOffersTable.elementAt(index)["end_date"],
+                partnersOffersTable.elementAt(index)["service_price"],
+                partnersOffersTable.elementAt(index)["discount"],
+                partnersOffersTable.elementAt(index)["image_url"],
               );
             },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: electronicFormsTable.length
+            itemCount: partnersOffersTable.length
         ),
       ),
 

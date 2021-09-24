@@ -1,7 +1,11 @@
 import 'package:experienceapp/generated/l10n.dart';
+import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/NewMessage.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
 class MailingManagerScreen extends StatefulWidget {
   const MailingManagerScreen({Key? key, required this.title}) : super(key: key);
@@ -13,6 +17,40 @@ class MailingManagerScreen extends StatefulWidget {
 
 class _MailingManagerScreenState extends State<MailingManagerScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  List mailingManagerTable = [];
+  @override
+  initState() {
+    super.initState();
+    Future.delayed(Duration.zero,() async{
+      var url = Uri.parse("https://rafi.nobalaa.com/CodeSchoolSystem/Tickets/GetParent"
+          "AdminTicketsById?parent_id=${AppDeterminants().userId}&page=1&limit=8000&status=");
+      var response = await http.get(url, headers: {
+        "authorization":AppDeterminants().token,
+      });
+      var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
+      mailingManagerTable=jsonResponse['data'];
+      print (response.body);
+      setState(() {});
+    } );
+  }
+  Widget mailingManagerTableListile(String title, String? lastReply, String? date,String id ){
+    return ListTile(
+      title: Text(title),
+      subtitle: Text(lastReply == null?"":lastReply),
+      trailing:Text(date == null?"":date),
+//      onTap: () async {
+//        var urllaunchable = await canLaunch(id); //canLaunch is from url_launcher package
+//        if(urllaunchable){
+//          await launch(link); //launch is from url_launcher package to launch URL
+//        } else {
+//          print("URL can't be launched.");
+//        }
+//      },
+    );
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -31,47 +69,18 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
         centerTitle: true,
       ),
       body: Center(
-        child: Column(
-          children: [
-            DataTable(
-                columns: <DataColumn>[
-                  DataColumn(
-                    label: Text(S.of(context).TextMessage,
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
-                  ),
-
-                  DataColumn(
-                    label: Text(
-                      S.of(context).Department,
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
-                  ),
-
-                  DataColumn(
-                    label: Text(
-                      S.of(context).TypeOfSending,
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
-                  ),
-                  DataColumn(
-                    label: Text(
-                      S.of(context).priority,
-                      style: TextStyle(fontStyle: FontStyle.italic),
-                    ),
-                  ),
-                ],
-                rows: const <DataRow>[
-                  DataRow(
-                    cells: <DataCell>[
-                      DataCell(Text('')),
-                      DataCell(Text('')),
-                      DataCell(Text('')),
-                      DataCell(Text('')),
-                    ],
-                  ),
-                ]),
-          ],
+        child: ListView.separated(
+            itemBuilder: (BuildContext context, int index) {
+              print(index);
+              return mailingManagerTableListile(
+                mailingManagerTable.elementAt(index)["ticket_text"],
+                mailingManagerTable.elementAt(index)["reply"],
+                mailingManagerTable.elementAt(index)["date"],
+                mailingManagerTable.elementAt(index)["id"],
+              );
+            },
+            separatorBuilder: (BuildContext context, int index) => const Divider(),
+            itemCount: mailingManagerTable.length
         ),
       ),
 

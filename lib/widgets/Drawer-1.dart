@@ -6,6 +6,7 @@ import 'package:experienceapp/screens/GeneralTableScreen.dart';
 import 'package:experienceapp/screens/MailingManagementScreen.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
+import 'package:experienceapp/screens/paretners_offers.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
 import 'package:experienceapp/screens/registeration_screen.dart';
@@ -59,6 +60,12 @@ class Drawer1 extends StatelessWidget {
           _buildDrawer(
               Icon(Icons.description), S.of(context).MailingTheManagement, () {
              Navigator.pushNamed(context, MailingManagementScreen.routeName);
+          }),
+
+          Card(child: Text(S.of(context).Partners,style: TextStyle(fontSize: 25),),),
+          _buildDrawer(
+              Icon(Icons.description), S.of(context).PartnersOffers, () {
+            Navigator.pushNamed(context, PartnersOffers.routeName);
           }),
 
 

@@ -51,6 +51,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Next": MessageLookupByLibrary.simpleMessage("التالي"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("رصيد الإشعارات"),
+        "Partners": MessageLookupByLibrary.simpleMessage("شركاء النجاح"),
+        "PartnersOffers":
+            MessageLookupByLibrary.simpleMessage("عروض شركاء النجاح"),
         "Profile": MessageLookupByLibrary.simpleMessage("حسابك"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("قوالب الرسائل العامة"),

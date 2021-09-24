@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
@@ -37,13 +35,13 @@ class _SchoolExamsTableState extends State<SchoolExamsTable> {
       convert.jsonDecode(response.body) as Map<String, dynamic>;
       examsTables = jsonResponse['data'];
       print(jsonResponse['data']);
-      print(response.body);
+     // print(response.body);
       setState(() {});
     });
   }
 
   Widget _examTableListile(String title, String subtitle, String trailing, String link){
-  print(0);
+ // print(0);
     return ListTile(
       title: Text(title),
       subtitle: Text(subtitle),
@@ -58,11 +56,6 @@ class _SchoolExamsTableState extends State<SchoolExamsTable> {
       },
     );
   }
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

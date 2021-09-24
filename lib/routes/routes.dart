@@ -8,6 +8,7 @@ import 'package:experienceapp/screens/NewMessage.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
+import 'package:experienceapp/screens/paretners_offers.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
 import 'package:experienceapp/screens/registeration_screen.dart';
@@ -33,4 +34,5 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   MailingManagerScreen.routeName :(context) => MailingManagerScreen(title: 'MailingManagerScreen',),
   MailingManagementScreen.routeName :(context) => MailingManagementScreen(title: 'MailingManagementScreen',),
   NewMessageScreen.routeName :(context) => NewMessageScreen(title: 'NewMessageScreen',),
+  PartnersOffers.routeName :(context) => PartnersOffers(title: 'PartnersOffers',),
 };

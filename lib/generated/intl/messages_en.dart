@@ -53,6 +53,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("Number Of Notifications"),
+        "Partners": MessageLookupByLibrary.simpleMessage("Partners"),
+        "PartnersOffers":
+            MessageLookupByLibrary.simpleMessage("Partners Offers"),
         "Profile": MessageLookupByLibrary.simpleMessage("Your Profile"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("Public Messages Forms"),

@@ -679,6 +679,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Partners Offers`
+  String get PartnersOffers {
+    return Intl.message(
+      'Partners Offers',
+      name: 'PartnersOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Partners`
+  String get Partners {
+    return Intl.message(
+      'Partners',
+      name: 'Partners',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
