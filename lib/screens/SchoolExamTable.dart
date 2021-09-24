@@ -36,18 +36,27 @@ class _SchoolExamsTableState extends State<SchoolExamsTable> {
       var jsonResponse =
       convert.jsonDecode(response.body) as Map<String, dynamic>;
       examsTables = jsonResponse['data'];
-      print(jsonResponse['data']);
-      print(response.body);
+
       setState(() {});
     });
   }
 
-  Widget _examTableListile(String title, String subtitle, String trailing, String link){
-  print(0);
+  Widget _examTableListile(String title, String subtitle, String trailing, String link, String date){
+
     return ListTile(
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: Text(trailing),
+      trailing: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Text("الفصل : $trailing"),
+          Text(date),
+        ],
+      ),
+
+
+
       onTap: () async {
         var urllaunchable = await canLaunch(link); //canLaunch is from url_launcher package
         if(urllaunchable){
@@ -75,12 +84,12 @@ class _SchoolExamsTableState extends State<SchoolExamsTable> {
       body: Center(
         child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
-              print(index);
               return _examTableListile(
                 examsTables.elementAt(index)["class_name"],
                 examsTables.elementAt(index)["school_name"],
                 examsTables.elementAt(index)["semester"],
                 examsTables.elementAt(index)["file_path"],
+                examsTables.elementAt(index)["date"],
               );
             },
             separatorBuilder: (BuildContext context, int index) => const Divider(),
