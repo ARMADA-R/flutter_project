@@ -213,7 +213,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                     // Validate will return true if the form is valid, or false if
                                     // the form is invalid.
                                     if (_formKey.currentState!.validate()) {
-                                          if(await AuthController().Registrate(
+                                          if(await AuthController().register(
                                               city: city.text, area: area.text,
                                               phone: phone.text,
                                               email: emailController.text,

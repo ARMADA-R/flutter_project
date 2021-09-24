@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       supportedLocales: [
-        Locale("ar", "en"), // OR Locale('ar', 'AE') OR Other RTL locales
+        Locale("ar", "EN"), // OR Locale('ar', 'AE') OR Other RTL locales
       ],
       home: FutureBuilder(
         future: appDeterminants.initializeAll(),

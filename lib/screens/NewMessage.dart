@@ -1,7 +1,9 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
+import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
+
 
 class NewMessageScreen extends StatefulWidget {
   const NewMessageScreen({Key? key, required this.title}) : super(key: key);
@@ -14,7 +16,7 @@ class NewMessageScreen extends StatefulWidget {
 class _NewMessageScreenState extends State<NewMessageScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
+  final ticketTextController = TextEditingController();
   String dropdownValue = S().ChooseTheDepartment;
   String dropdownValue1 = S().ChooseTheType;
   String dropdownValue2 = S().ChooseThePriority;
@@ -26,9 +28,7 @@ class _NewMessageScreenState extends State<NewMessageScreen> {
       key: _scaffoldKey,
       drawer: Drawer1(),
       appBar: AppBar(
-        title: Text(S
-            .of(context)
-            .MailingTheManager),
+        title: Text(S.of(context).MailingTheManager),
         centerTitle: true,
       ),
       body: LayoutBuilder(
@@ -50,10 +50,9 @@ class _NewMessageScreenState extends State<NewMessageScreen> {
                           padding: EdgeInsets.symmetric(vertical: height * 0.01,
                               horizontal: width * 0.08),
                           child: TextFormField(
+                            controller: ticketTextController,
                             decoration: InputDecoration(
-                              hintText: S
-                                  .of(context)
-                                  .TextMessage,
+                              hintText: S.of(context).TextMessage,
                             ),
                             maxLines: 4,
                             keyboardType: TextInputType.multiline,
@@ -186,16 +185,19 @@ class _NewMessageScreenState extends State<NewMessageScreen> {
                           padding: EdgeInsets.symmetric(vertical: height * 0.01,
                               horizontal: width * 0.08),
                           child: ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
                               // Validate will return true if the form is valid, or false if
                               // the form is invalid.
                               if (_formKey.currentState!.validate()) {
-                                AuthController; // Process data.
-                              }
-                            },
-                            child: Text(S
-                                .of(context)
-                                .Save),
+                                if(await TicketController().sentParentToAdminTicket(
+                                    ticketText: ticketTextController.text,
+                                    department: dropdownValue,
+                                    type: dropdownValue1,
+                                    priority: dropdownValue2,
+                                    context: context,
+                                    parentId: AppDeterminants().userId)) ;                         }
+                              },
+                            child: Text(S.of(context).Save),
                           ),
                         ),
 
