@@ -8,8 +8,14 @@ import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'routes/routes.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
   runApp(ChangeNotifierProvider(
       create: (context) => AppDeterminants(), child: MyApp()));
 }
@@ -44,6 +50,9 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         S.delegate,
+      ],
+      supportedLocales: [
+        Locale("ar", "en"), // OR Locale('ar', 'AE') OR Other RTL locales
       ],
       home: FutureBuilder(
         future: appDeterminants.initializeAll(),
