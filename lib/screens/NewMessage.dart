@@ -1,5 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
+import 'package:experienceapp/modules/TicketsController.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
@@ -46,61 +47,62 @@ class _NewMessageScreenState extends State<NewMessageScreen> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: height * 0.01,
-                              horizontal: width * 0.08),
-                          child: TextFormField(
-                            controller: ticketTextController,
-                            decoration: InputDecoration(
-                              hintText: S.of(context).TextMessage,
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: height * 0.01,
+                                horizontal: width * 0.08),
+                            child: TextFormField(
+                              controller: ticketTextController,
+                              decoration: InputDecoration(
+                                hintText: S.of(context).TextMessage,
+                              ),
+                              maxLines: 4,
+                              keyboardType: TextInputType.multiline,
+                              validator: (String? value) {
+                                if (value == null || value.isEmpty) {
+                                  return S
+                                      .of(context)
+                                      .EnterSomeText;
+                                }
+                                return null;
+                              },
                             ),
-                            maxLines: 4,
-                            keyboardType: TextInputType.multiline,
-                            validator: (String? value) {
-                              if (value == null || value.isEmpty) {
-                                return S
-                                    .of(context)
-                                    .EnterSomeText;
-                              }
-                              return null;
-                            },
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: height * 0.01,
-                              horizontal: width * 0.08),
-                          child: Container(
-                            width: width * 0.7,
-                            child: Column(
-                              children: [
-                                Text(S.of(context).Department),
-                                DropdownButton<String>(
-                                  value: dropdownValue,
-                                  style: const TextStyle(color: Colors.black),
-                                  onChanged: (String? newValue) {
-                                    setState(() {
-                                      dropdownValue = newValue!;
-                                    });
-                                  },
-                                  items: <String>[S.of(context).ChooseTheDepartment,
-                                    S
-                                        .of(context)
-                                        .Suggestions,
-                                    S
-                                        .of(context)
-                                        .Queries,
-                                    S
-                                        .of(context)
-                                        .Complaints,
-                                  ].map<DropdownMenuItem<String>>((
-                                      String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                ),
-                              ],
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(vertical: height * 0.01,
+                                horizontal: width * 0.08),
+                            child: Container(
+                              width: width * 0.7,
+                              child: Column(
+                                children: [
+                                  Text(S.of(context).Department),
+                                  DropdownButton<String>(
+                                    value: dropdownValue,
+                                    style: const TextStyle(color: Colors.black),
+                                    onChanged: (String? newValue) {
+                                      setState(() {
+                                        dropdownValue = newValue!;
+                                      });
+                                    },
+                                    items: <String>[S.of(context).ChooseTheDepartment,
+                                      S.of(context)
+                                          .Suggestions,
+                                      S.of(context)
+                                          .Queries,
+                                      S.of(context)
+                                          .Complaints,
+                                    ].map<DropdownMenuItem<String>>((
+                                        String value) {
+                                      return DropdownMenuItem<String>(
+                                        value: value,
+                                        child: Text(value),
+                                      );
+                                    }).toList(),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
