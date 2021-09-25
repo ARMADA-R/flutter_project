@@ -43,69 +43,66 @@ class NewParentSchoolTicket extends StatelessWidget {
 //                        MaterialPageRoute(builder: (_) => SuccessScreen()));
                 },
                 child: SingleChildScrollView(
+
                   physics: ClampingScrollPhysics(),
                   child: Padding(
                     padding: const EdgeInsets.all(24.0),
                     child: Column(
-
-//                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                      crossAxisAlignment: CrossAxisAlignment.end,
-
-                      children: [
-                        TextFieldBlocBuilder(
-                          textFieldBloc: form.message,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).TextMessage,
-                            prefixIcon: Icon(
-                              Icons.text_fields,
-                            ),
-                          ),
-                        ),
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.department,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseTheDepartment,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.priority,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseThePriority,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.school,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseTheSchool,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-                        Row(
                           children: [
-                            Expanded(
-                              child: OutlinedButton(
-                                style:  ButtonStyle(
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(20.0),
-                                            side: BorderSide(color: Colors.red)
-                                        )
-                                    )
+                            TextFieldBlocBuilder(
+                              textFieldBloc: form.message,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).TextMessage,
+                                prefixIcon: Icon(
+                                  Icons.text_fields,
                                 ),
-                                onPressed: form.submit,
-                                child: Text(S.of(context).Save),
                               ),
+                            ),
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.department,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseTheDepartment,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.priority,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseThePriority,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.school,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseTheSchool,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: OutlinedButton(
+                                    style:  ButtonStyle(
+                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.circular(20.0),
+                                                side: BorderSide(color: Colors.red)
+                                            )
+                                        )
+                                    ),
+                                    onPressed: form.submit,
+                                    child: Text(S.of(context).Save),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
-                    ),
                   ),
                 ),
               ),

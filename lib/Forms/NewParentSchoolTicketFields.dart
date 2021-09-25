@@ -45,13 +45,13 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
       department,
       priority,
       school,
-    ])
+    ]);
   }
 
-  @override
-  void onLoading() {
-    print("onLoading");
-  }
+//  @override
+//  void onLoading() {
+//    print("onLoading");
+//  }
 
 
   @override
