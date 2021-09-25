@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose The Department"),
         "ChooseThePriority":
             MessageLookupByLibrary.simpleMessage("ChooseThePriority"),
+        "ChooseTheSchool":
+            MessageLookupByLibrary.simpleMessage("Choose The School"),
         "ChooseTheType":
             MessageLookupByLibrary.simpleMessage("Choose The Type"),
         "Complaints": MessageLookupByLibrary.simpleMessage("Complaints"),

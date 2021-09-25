@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اختر القسم"),
         "ChooseThePriority":
             MessageLookupByLibrary.simpleMessage("اختر الأولوية"),
+        "ChooseTheSchool": MessageLookupByLibrary.simpleMessage("اختر المدرسة"),
         "ChooseTheType": MessageLookupByLibrary.simpleMessage("اختر النمط"),
         "Complaints": MessageLookupByLibrary.simpleMessage("شكاوى"),
         "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
