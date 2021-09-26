@@ -13,9 +13,12 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   String dropdownValue1 = S().ChooseTheType;
   String dropdownValue2 = S().ChooseThePriority;
 
-  final message = TextFieldBloc();
+  final message = TextFieldBloc(
+    name: "message"
+  );
 
   final department = SelectFieldBloc(
+    name: 'department',
     items: [
       S().Suggestions,
       S().Queries,
@@ -24,6 +27,7 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   );
 
   final priority = SelectFieldBloc(
+    name: "priority",
     items: [
       S().ChooseThePriority,
       S().Important,
@@ -32,12 +36,13 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   );
 
   var school = SelectFieldBloc(
+    name: "school",
     items: [
-      "0",
+      "70",
     ],
   );
 
-  NewParentSchoolTicketFields() {;
+  NewParentSchoolTicketFields() {
 
 //  super(isLoading: false);
     addFieldBlocs(fieldBlocs: [

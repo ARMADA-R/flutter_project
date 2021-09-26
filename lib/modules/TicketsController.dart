@@ -74,6 +74,20 @@ class TicketController {
     if (response.statusCode == 200) {
       status = true;
       print (status);
+      var jsonResponse =
+      convert.jsonDecode(response.body) as Map<String, dynamic>;
+
+      if (context != null) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.green[600],
+          content: Text(
+            jsonResponse['msg'],
+            textAlign: TextAlign.center,
+          ),
+          duration: Duration(milliseconds: 4000),
+        ));
+      }
+
     }
     else {
       print(status);

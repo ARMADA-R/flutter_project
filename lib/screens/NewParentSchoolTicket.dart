@@ -7,9 +7,46 @@ import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
-class NewParentSchoolTicket extends StatelessWidget {
+class NewParentSchoolTicket extends StatefulWidget {
   static final String routeName = 'NewParentSchoolMessageScreen';
+
+  @override
+  _NewParentSchoolTicketState createState() => _NewParentSchoolTicketState();
+}
+
+class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
+  var form;
+
+  Map schoolPare = {};
+
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration.zero, () async {
+      var url = Uri.parse(
+          'https://rafi.nobalaa.com/CodeSchoolSystem/schools/GetSchoolsParent?schools_id=${AppDeterminants().schoolsIds}&parent_id=${AppDeterminants().userId}');
+      var response = await http
+          .get(url, headers: {"authorization": AppDeterminants().token});
+      var jsonResponse =
+          convert.jsonDecode(response.body) as Map<String, dynamic>;
+
+      List data = jsonResponse['data'];
+      List<String> schools = [];
+      data.forEach((element) {
+        schools.add(element["school_name"] as String);
+        schoolPare[element["school_name"]] = element["school_id"];
+      });
+
+      if (form != null) {
+        form.school.updateItems(schools);
+      }
+      setState(() {});
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +54,7 @@ class NewParentSchoolTicket extends StatelessWidget {
       create: (context) => NewParentSchoolTicketFields(),
       child: Builder(
         builder: (context) {
-          final form = BlocProvider.of<NewParentSchoolTicketFields>(context);
+          form = form ?? BlocProvider.of<NewParentSchoolTicketFields>(context);
           return Theme(
             data: Theme.of(context).copyWith(
               inputDecorationTheme: InputDecorationTheme(
@@ -34,7 +71,18 @@ class NewParentSchoolTicket extends StatelessWidget {
               body:
                   FormBlocListener<NewParentSchoolTicketFields, String, String>(
                 onSubmitting: (context, state) {
-
+                  var dataAsJson = state.toJson();
+                  print(schoolPare[dataAsJson['school']]);
+                  print(schoolPare);
+                  TicketController().sentParentToSchoolTicket(
+                      ticketText: dataAsJson['message'],
+                      department: dataAsJson['department'],
+                      type: "-",
+                      priority: dataAsJson['priority'],
+                      parentId: AppDeterminants().userId,
+                      schoolId: schoolPare[dataAsJson['school']]?? '',
+                      context: context,
+                  );
                 },
                 onSuccess: (context, state) {
 //                        LoadingDialog.hide(context);
@@ -42,67 +90,72 @@ class NewParentSchoolTicket extends StatelessWidget {
 //                        Navigator.of(context).pushReplacement(
 //                        MaterialPageRoute(builder: (_) => SuccessScreen()));
                 },
-                child: SingleChildScrollView(
-
-                  physics: ClampingScrollPhysics(),
-                  child: Padding(
-                    padding: const EdgeInsets.all(24.0),
+                child: Container(
+                  height: double.infinity,
+                  padding: const EdgeInsets.all(24.0),
+                  child: SingleChildScrollView(
+                    physics: ClampingScrollPhysics(),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        TextFieldBlocBuilder(
+                          textFieldBloc: form.message,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).TextMessage,
+                            prefixIcon: Icon(
+                              Icons.text_fields,
+                            ),
+                          ),
+                        ),
+                        DropdownFieldBlocBuilder<String>(
+                          selectFieldBloc: form.department,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).ChooseTheDepartment,
+                            prefixIcon: Icon(Icons.sentiment_satisfied),
+                          ),
+                          itemBuilder: (context, value) => value,
+                        ),
+                        DropdownFieldBlocBuilder<String>(
+                          selectFieldBloc: form.priority,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).ChooseThePriority,
+                            prefixIcon: Icon(Icons.sentiment_satisfied),
+                          ),
+                          itemBuilder: (context, value) => value,
+                        ),
+                        DropdownFieldBlocBuilder<String>(
+                          selectFieldBloc: form.school,
+                          decoration: InputDecoration(
+                            labelText: S.of(context).ChooseTheSchool,
+                            prefixIcon: Icon(Icons.sentiment_satisfied),
+                          ),
+                          itemBuilder: (context, value) => value,
+                        ),
+                        Row(
                           children: [
-                            TextFieldBlocBuilder(
-                              textFieldBloc: form.message,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).TextMessage,
-                                prefixIcon: Icon(
-                                  Icons.text_fields,
-                                ),
-                              ),
-                            ),
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.department,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseTheDepartment,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.priority,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseThePriority,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.school,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseTheSchool,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: OutlinedButton(
-                                    style:  ButtonStyle(
-                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                            RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.circular(20.0),
-                                                side: BorderSide(color: Colors.red)
-                                            )
-                                        )
+                            Expanded(
+                              child: OutlinedButton(
+                                style: ButtonStyle(
+                                    padding:
+                                        MaterialStateProperty.all<EdgeInsets>(
+                                      EdgeInsets.symmetric(vertical: 25),
                                     ),
-                                    onPressed: form.submit,
-                                    child: Text(S.of(context).Save),
-                                  ),
-                                ),
-                              ],
+                                    shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                        RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(20.0),
+                                            side: BorderSide(
+                                                color: Colors.red)))),
+                                onPressed: form.submit,
+                                child: Text(S.of(context).Save),
+                              ),
                             ),
                           ],
                         ),
+                      ],
+                    ),
                   ),
                 ),
               ),
