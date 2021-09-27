@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:experienceapp/Forms/NewParentSchoolTicketFields.dart';
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/TicketsController.dart';
@@ -12,20 +12,15 @@ import 'dart:convert' as convert;
 
 class NewParentSchoolTicket extends StatefulWidget {
   static final String routeName = 'NewParentSchoolMessageScreen';
-
   @override
   _NewParentSchoolTicketState createState() => _NewParentSchoolTicketState();
 }
-
 class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
   var form;
-
   Map schoolPare = {};
-
   @override
   void initState() {
     super.initState();
-
     Future.delayed(Duration.zero, () async {
       var url = Uri.parse(
           'https://rafi.nobalaa.com/CodeSchoolSystem/schools/GetSchoolsParent?schools_id=${AppDeterminants().schoolsIds}&parent_id=${AppDeterminants().userId}');
@@ -33,7 +28,6 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
           .get(url, headers: {"authorization": AppDeterminants().token});
       var jsonResponse =
           convert.jsonDecode(response.body) as Map<String, dynamic>;
-
       List data = jsonResponse['data'];
       List<String> schools = [];
       data.forEach((element) {
@@ -65,7 +59,7 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
             ),
             child: Scaffold(
               appBar: AppBar(
-                title: Text(S.of(context).MailingTheManager),
+                title: Text(S.of(context).MailingTheManagement),
                 centerTitle: true,
               ),
               body:
@@ -90,16 +84,16 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
 //                        Navigator.of(context).pushReplacement(
 //                        MaterialPageRoute(builder: (_) => SuccessScreen()));
                 },
-                child: Container(
+                    child: Container(
                   height: double.infinity,
                   padding: const EdgeInsets.all(24.0),
-                  child: SingleChildScrollView(
+                      child: SingleChildScrollView(
                     physics: ClampingScrollPhysics(),
-                    child: Column(
+                        child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        TextFieldBlocBuilder(
+                          TextFieldBlocBuilder(
                           textFieldBloc: form.message,
                           decoration: InputDecoration(
                             labelText: S.of(context).TextMessage,

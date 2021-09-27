@@ -45,8 +45,8 @@ dependencies:
   path_provider:
   http:
   fluttertoast: ^8.0.8
-  flutter_form_bloc: ^0.20.6
-
+  flutter_form_bloc:
+  flutter_bloc: ^7.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

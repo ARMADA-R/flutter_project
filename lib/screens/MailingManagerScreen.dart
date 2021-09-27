@@ -1,6 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
-import 'package:experienceapp/screens/NewMessage.dart';
+import 'package:experienceapp/screens/NewParentManagerTicket.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -62,7 +62,7 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
       appBar: AppBar(
        actions: [
          FloatingActionButton(child: Icon(Icons.add),onPressed:(){
-           Navigator.pushNamed(context, NewMessageScreen.routeName);
+           Navigator.pushNamed(context, NewParentManagerTicket.routeName);
          } ,),
        ],
         title: Text(S.of(context).MailingTheManager),

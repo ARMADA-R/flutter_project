@@ -10,7 +10,6 @@ class TicketController {
   Future<bool> sentParentToAdminTicket({
     required String ticketText,
     required String department,
-    required String type,
     required String priority,
     required String parentId ,context
   }) async {
@@ -21,7 +20,6 @@ class TicketController {
     }, body: {
       'ticket_text': ticketText,
       'department': department,
-      'type':type,
       'prority':priority,
       'parent_id':parentId,
     } );

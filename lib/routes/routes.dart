@@ -4,7 +4,7 @@ import 'package:experienceapp/screens/Form.dart';
 import 'package:experienceapp/screens/GeneralTableScreen.dart';
 import 'package:experienceapp/screens/MailingManagementScreen.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
-import 'package:experienceapp/screens/NewMessage.dart';
+import 'package:experienceapp/screens/NewParentManagerTicket.dart';
 import 'package:experienceapp/screens/NewParentSchoolTicket.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
@@ -34,7 +34,7 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   ElectronicQuestionnaires.routeName :(context) => ElectronicQuestionnaires(title: 'ElectronicQuestionnaires',),
   MailingManagerScreen.routeName :(context) => MailingManagerScreen(title: 'MailingManagerScreen',),
   MailingManagementScreen.routeName :(context) => MailingManagementScreen(title: 'MailingManagementScreen',),
-  NewMessageScreen.routeName :(context) => NewMessageScreen(title: 'NewMessageScreen',),
+  NewParentManagerTicket.routeName :(context) => NewParentManagerTicket(title: 'NewParentManagerTicket',),
   PartnersOffers.routeName :(context) => PartnersOffers(title: 'PartnersOffers',),
   NewParentSchoolTicket.routeName :(context) => NewParentSchoolTicket(),
 };
