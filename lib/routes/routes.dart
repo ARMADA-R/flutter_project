@@ -9,10 +9,11 @@ import 'package:experienceapp/screens/NewParentSchoolTicket.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
+import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/paretners_offers.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
-import 'package:experienceapp/screens/registeration_screen.dart';
+import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:experienceapp/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import '/screens/login_screen.dart';
@@ -37,4 +38,5 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   NewParentManagerTicket.routeName :(context) => NewParentManagerTicket(title: 'NewParentManagerTicket',),
   PartnersOffers.routeName :(context) => PartnersOffers(title: 'PartnersOffers',),
   NewParentSchoolTicket.routeName :(context) => NewParentSchoolTicket(),
+  LogInScreen2.routeName :(context) => LogInScreen2(title: 'LogInScreen2',),
 };

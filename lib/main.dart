@@ -1,6 +1,7 @@
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
+import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -64,7 +65,7 @@ class MyApp extends StatelessWidget {
               if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
                 return SchoolExamsTable(title: appDeterminants.userName);
               }
-               return LogInScreen(title: 'LoginScreen');
+               return LogInScreen2(title: 'LoginScreen2');
              }
              else return IntroScreen(title: 'IntroScreen',);
             }

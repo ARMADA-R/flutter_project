@@ -1,6 +1,7 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
+import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -28,12 +29,12 @@ class IntroScreenState extends State<IntroScreen> {
           done: Text(S.of(context).Done),
           onDone: (){
            AppDeterminants().setFirstLunch();
-           Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
+           Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
 
           },
           onSkip: (){
             AppDeterminants().setFirstLunch();
-            Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
+            Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
           },
           pages: [
             PageViewModel(

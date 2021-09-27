@@ -2,11 +2,8 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/forgetPassword.dart';
-import 'package:experienceapp/screens/profileScreen.dart';
-import 'package:experienceapp/screens/registeration_screen.dart';
+import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
-import '';
-
 class LogInScreen extends StatefulWidget {
   const LogInScreen({Key? key, required this.title}) : super(key: key);
   final String title;

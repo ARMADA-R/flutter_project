@@ -2,7 +2,7 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/screens/HomeScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
-import 'package:experienceapp/screens/registeration_screen.dart';
+import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 class ForgetPasswordScreen extends StatefulWidget {
