@@ -1,26 +1,20 @@
 import 'package:experienceapp/generated/l10n.dart';
-import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/modules/TicketsController.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
-import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import '../Forms/NewParentManagerTicketFields.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
+
 class NewParentManagerTicket extends StatelessWidget {
    NewParentManagerTicket({Key? key, required this.title}) : super(key: key);
   final String title;
   static final String routeName = 'NewParentManagerTicket';
   var form1;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final ticketTextController = TextEditingController();
-  String dropdownValue = S().ChooseTheDepartment;
-  String dropdownValue1 = S().ChooseTheType;
-  String dropdownValue2 = S().ChooseThePriority;
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(create: (context) => NewParentManagerTicketFields(),
@@ -44,12 +38,14 @@ class NewParentManagerTicket extends StatelessWidget {
                     body: FormBlocListener<NewParentManagerTicketFields,
                         String,
                         String>(
-                      onSubmitting: (context, state) async {
+                      onSubmitting: (context, state)  {
                         var dataAsJson = state.toJson();
-                      await  TicketController().sentParentToAdminTicket(
-                          ticketText: dataAsJson['ticketText'],
+                        print(dataAsJson);
+                        print(AppDeterminants().userId);
+                      TicketController().sentParentToAdminTicket(
+                          ticketText: dataAsJson['ticket_text'],
                           department: dataAsJson['department'],
-                          priority: dataAsJson['prority'],
+                          priority: dataAsJson['priority'],
                           parentId: AppDeterminants().userId,
                           context: context,
                         );

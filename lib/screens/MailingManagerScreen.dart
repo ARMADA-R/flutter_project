@@ -30,7 +30,6 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
       });
       var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
       mailingManagerTable=jsonResponse['data'];
-      print (response.body);
       setState(() {});
     } );
   }
@@ -71,7 +70,6 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
       body: Center(
         child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
-              print(index);
               return mailingManagerTableListile(
                 mailingManagerTable.elementAt(index)["ticket_text"],
                 mailingManagerTable.elementAt(index)["reply"],

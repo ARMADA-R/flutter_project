@@ -5,12 +5,6 @@ import 'dart:io';
 
 class NewParentManagerTicketFields extends FormBloc<String, String> {
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final ticketTextController = TextEditingController();
-  String dropdownValue = S().ChooseTheDepartment;
-  String dropdownValue1 = S().ChooseTheType;
-  String dropdownValue2 = S().ChooseThePriority;
 
   final ticketText = TextFieldBloc(
       name: "ticket_text"
@@ -54,7 +48,6 @@ class NewParentManagerTicketFields extends FormBloc<String, String> {
   void onSubmitting() async {
     try {
       await Future<void>.delayed(Duration(milliseconds: 500));
-
       emitSuccess(canSubmitAgain: true);
     } catch (e) {
       emitFailure();
