@@ -38,5 +38,5 @@ Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
   NewParentManagerTicket.routeName :(context) => NewParentManagerTicket(title: 'NewParentManagerTicket',),
   PartnersOffers.routeName :(context) => PartnersOffers(title: 'PartnersOffers',),
   NewParentSchoolTicket.routeName :(context) => NewParentSchoolTicket(),
-  LogInScreen2.routeName :(context) => LogInScreen2(title: 'LogInScreen2',),
+  LogInScreen2.routeName :(context) => LogInScreen2(),
 };

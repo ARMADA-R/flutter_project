@@ -5,12 +5,6 @@ import 'dart:io';
 
 class NewParentSchoolTicketFields extends FormBloc<String, String> {
 
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final ticketTextController = TextEditingController();
-  String dropdownValue = S().ChooseTheDepartment;
-  String dropdownValue1 = S().ChooseTheType;
-  String dropdownValue2 = S().ChooseThePriority;
 
   final message = TextFieldBloc(
     name: "message"
@@ -37,7 +31,7 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   var school = SelectFieldBloc(
     name: "school",
     items: [
-      "70",
+
     ],
   );
 

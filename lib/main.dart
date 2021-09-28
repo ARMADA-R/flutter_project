@@ -65,7 +65,7 @@ class MyApp extends StatelessWidget {
               if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
                 return SchoolExamsTable(title: appDeterminants.userName);
               }
-               return LogInScreen2(title: 'LoginScreen2');
+               return LogInScreen2();
              }
              else return IntroScreen(title: 'IntroScreen',);
             }

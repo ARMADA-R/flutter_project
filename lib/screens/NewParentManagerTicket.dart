@@ -37,8 +37,6 @@ class NewParentManagerTicket extends StatelessWidget {
                         String>(
                       onSubmitting: (context, state)  {
                         var dataAsJson = state.toJson();
-                        print(dataAsJson);
-                        print(AppDeterminants().userId);
                       TicketController().sentParentToAdminTicket(
                           ticketText: dataAsJson['ticket_text'],
                           department: dataAsJson['department'],
