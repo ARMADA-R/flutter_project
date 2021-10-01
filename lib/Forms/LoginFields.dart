@@ -4,8 +4,19 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'dart:io';
 
 class LoginFields extends FormBloc<String, String> {
-  final email = TextFieldBloc(name: "email");
-  final password = TextFieldBloc(name: "password");
+  final email = TextFieldBloc(
+      name: "email",
+    validators: [
+      FieldBlocValidators.required,
+      FieldBlocValidators.email
+    ],
+  );
+  final password = TextFieldBloc(
+      name: "password",
+    validators: [
+      FieldBlocValidators.required,
+    ],
+  );
 
   LoginFields() {
     addFieldBlocs(fieldBlocs: [

@@ -59,11 +59,7 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
       key: _scaffoldKey,
       drawer: Drawer1(),
       appBar: AppBar(
-       actions: [
-         FloatingActionButton(child: Icon(Icons.add),onPressed:(){
-           Navigator.pushNamed(context, NewParentManagerTicket.routeName);
-         } ,),
-       ],
+
         title: Text(S.of(context).MailingTheManager),
         centerTitle: true,
       ),
@@ -81,6 +77,9 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
             itemCount: mailingManagerTable.length
         ),
       ),
+      floatingActionButton:  FloatingActionButton(child: Icon(Icons.add),onPressed:(){
+        Navigator.pushNamed(context, NewParentManagerTicket.routeName);
+      } ,),
 
     );
   }

@@ -10,11 +10,14 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
+import 'package:provider/provider.dart';
+
 class NewParentSchoolTicket extends StatefulWidget {
   static final String routeName = 'NewParentSchoolMessageScreen';
   @override
   _NewParentSchoolTicketState createState() => _NewParentSchoolTicketState();
 }
+
 class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
   var form;
   Map schoolPare = {};
@@ -69,86 +72,84 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
                   print(schoolPare[dataAsJson['school']]);
                   print(schoolPare);
                   TicketController().sentParentToSchoolTicket(
-                      ticketText: dataAsJson['message'],
-                      department: dataAsJson['department'],
-                      type: "-",
-                      priority: dataAsJson['priority'],
-                      parentId: AppDeterminants().userId,
-                      schoolId: schoolPare[dataAsJson['school']]?? '',
-                      context: context,
+                    ticketText: dataAsJson['message'],
+                    department: dataAsJson['department'],
+                    type: "-",
+                    priority: dataAsJson['priority'],
+                    parentId: Provider.of<AppDeterminants>(context).userId,
+                    schoolId: schoolPare[dataAsJson['school']] ?? '',
+                    context: context,
                   );
                 },
-                onSuccess: (context, state) {
-//                        LoadingDialog.hide(context);
-
-//                        Navigator.of(context).pushReplacement(
-//                        MaterialPageRoute(builder: (_) => SuccessScreen()));
-                },
-                    child: Container(
-                  height: double.infinity,
-                  padding: const EdgeInsets.all(24.0),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 600),
+                    child: Padding(
+                      padding: const EdgeInsets.all(24.0),
                       child: SingleChildScrollView(
-                    physics: ClampingScrollPhysics(),
                         child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                          TextFieldBlocBuilder(
-                          textFieldBloc: form.message,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).TextMessage,
-                            prefixIcon: Icon(
-                              Icons.text_fields,
-                            ),
-                          ),
-                        ),
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.department,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseTheDepartment,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.priority,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseThePriority,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-                        DropdownFieldBlocBuilder<String>(
-                          selectFieldBloc: form.school,
-                          decoration: InputDecoration(
-                            labelText: S.of(context).ChooseTheSchool,
-                            prefixIcon: Icon(Icons.sentiment_satisfied),
-                          ),
-                          itemBuilder: (context, value) => value,
-                        ),
-                        Row(
                           children: [
-                            Expanded(
-                              child: OutlinedButton(
-                                style: ButtonStyle(
-                                    padding:
-                                        MaterialStateProperty.all<EdgeInsets>(
-                                      EdgeInsets.symmetric(vertical: 25),
-                                    ),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(20.0),
-                                            side: BorderSide(
-                                                color: Colors.red)))),
-                                onPressed: form.submit,
-                                child: Text(S.of(context).Save),
+                            TextFieldBlocBuilder(
+                              textFieldBloc: form.message,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).TextMessage,
+                                prefixIcon: Icon(
+                                  Icons.text_fields,
+                                ),
                               ),
+                            ),
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.department,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseTheDepartment,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.priority,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseThePriority,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+                            DropdownFieldBlocBuilder<String>(
+                              selectFieldBloc: form.school,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).ChooseTheSchool,
+                                prefixIcon: Icon(Icons.sentiment_satisfied),
+                              ),
+                              itemBuilder: (context, value) => value,
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: OutlinedButton(
+                                    style: ButtonStyle(
+                                        padding:
+                                            MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.symmetric(vertical: 25),
+                                        ),
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                                side: BorderSide(
+                                                    color: Colors.red)))),
+                                    onPressed: form.submit,
+                                    child: Text(S.of(context).submit),
+                                  ),
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),

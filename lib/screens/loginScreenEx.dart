@@ -15,7 +15,6 @@ class LogInScreen2 extends StatelessWidget {
   const LogInScreen2({Key? key}) : super(key: key);
   static final String routeName = 'LogInScreen2';
 
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -31,10 +30,10 @@ class LogInScreen2 extends StatelessWidget {
               ),
             ),
             child: Scaffold(
-              appBar: AppBar(
-                title: Text(S.of(context).login),
-                centerTitle: true,
-              ),
+              // appBar: AppBar(
+              //   title: Text(S.of(context).login),
+              //   centerTitle: true,
+              // ),
               body: FormBlocListener<LoginFields, String, String>(
                 onSubmitting: (context, state) async {
                   var dataAsJson = state.toJson();
@@ -45,47 +44,64 @@ class LogInScreen2 extends StatelessWidget {
                     Navigator.pushNamed(context, SchoolExamsTable.routeName);
                   }
                 },
-                child: Padding(
-                  padding: EdgeInsets.all(24.0),
-                  child: Column(
-                    children: <Widget>[
-                      TextFieldBlocBuilder(
-                        textFieldBloc: formBloc.email,
-                        decoration: InputDecoration(
-                          labelText: 'Your Email',
-                          prefixIcon: Icon(Icons.text_fields),
-                        ),
-                      ),
-                      TextFieldBlocBuilder(
-                        textFieldBloc: formBloc.password,
-                        decoration: InputDecoration(
-                          labelText: 'Your Password',
-                          prefixIcon: Icon(Icons.text_fields),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: OutlinedButton(
-                              style: ButtonStyle(
-                                  padding:
-                                      MaterialStateProperty.all<EdgeInsets>(
-                                    EdgeInsets.symmetric(vertical: 25),
-                                  ),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(20.0),
-                                          side:
-                                              BorderSide(color: Colors.red)))),
-                              onPressed: formBloc.submit,
-                              child: Text(S.of(context).login),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: 600),
+                    child: Padding(
+                      padding: EdgeInsets.all(24.0),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: <Widget>[
+                            Text(
+                              S.of(context).login,
+                              style: TextStyle(fontSize: 30),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              height: 10,
+                            ),
+                            TextFieldBlocBuilder(
+                              textFieldBloc: formBloc.email,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).email,
+                                prefixIcon: Icon(Icons.text_fields),
+                              ),
+                            ),
+                            TextFieldBlocBuilder(
+                              textFieldBloc: formBloc.password,
+                              decoration: InputDecoration(
+                                labelText: S.of(context).password,
+                                prefixIcon: Icon(Icons.text_fields),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: OutlinedButton(
+                                    style: ButtonStyle(
+                                        padding:
+                                            MaterialStateProperty.all<EdgeInsets>(
+                                          EdgeInsets.symmetric(vertical: 25),
+                                        ),
+                                        shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                                side: BorderSide(
+                                                    color: Colors.red)))),
+                                    onPressed: formBloc.submit,
+                                    child: Text(S.of(context).login),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),

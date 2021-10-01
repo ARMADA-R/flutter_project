@@ -2,8 +2,6 @@ import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/introduction_screen.dart';
 import 'package:experienceapp/screens/loginScreenEx.dart';
-import 'package:experienceapp/screens/login_screen.dart';
-import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
@@ -22,29 +20,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-  // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
-
-  AppDeterminants appDeterminants = AppDeterminants();
-  String? lang;
-
-  // langfun() async {
-  //
-  //   print(await AppDeterminants().lang);
-  //   return await AppDeterminants().lang;
-  // }
 
   @override
   Widget build(BuildContext context) {
-//    Future.delayed(Duration.zero, () async {
-//      this.lang = await AppDeterminants().lang;
-//      S.load(Locale(this.lang!));
-//    });
 
     return MaterialApp(
-      //home: InputScreen(),
+
       debugShowCheckedModeBanner: false,
-//      initialRoute: Splash.routeName,
       routes: routes,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
@@ -53,17 +35,18 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       supportedLocales: [
-        Locale("ar", "EN"), // OR Locale('ar', 'AE') OR Other RTL locales
+        Locale("ar", "AE"),
+        Locale("en", "US"),
       ],
       home: FutureBuilder(
-        future: appDeterminants.initializeAll(),
+        future: Provider.of<AppDeterminants>(context).initializeAll(),
           builder: (context, snapshot) {
             if (snapshot.hasData){
-              S.load(Locale(appDeterminants.lang));
-             if(appDeterminants.isLunched){
+              S.load(Locale(Provider.of<AppDeterminants>(context).lang));
+             if(Provider.of<AppDeterminants>(context).isLunched){
 
-              if(appDeterminants.token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(appDeterminants.loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
-                return SchoolExamsTable(title: appDeterminants.userName);
+              if(Provider.of<AppDeterminants>(context).token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(Provider.of<AppDeterminants>(context).loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
+                return SchoolExamsTable(title: Provider.of<AppDeterminants>(context).userName);
               }
                return LogInScreen2();
              }

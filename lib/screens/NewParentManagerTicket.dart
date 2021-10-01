@@ -5,6 +5,7 @@ import 'package:experienceapp/screens/MailingManagerScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
+import 'package:provider/provider.dart';
 import '../Forms/NewParentManagerTicketFields.dart';
 class NewParentManagerTicket extends StatelessWidget {
    NewParentManagerTicket({Key? key, required this.title}) : super(key: key);
@@ -41,7 +42,7 @@ class NewParentManagerTicket extends StatelessWidget {
                           ticketText: dataAsJson['ticket_text'],
                           department: dataAsJson['department'],
                           priority: dataAsJson['priority'],
-                          parentId: AppDeterminants().userId,
+                          parentId: Provider.of<AppDeterminants>(context).userId,
                           context: context,
                         );
                       },
@@ -51,65 +52,73 @@ class NewParentManagerTicket extends StatelessWidget {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => MailingManagerScreen(title: 'MailingManagerScreen',)));
                       },
 
-                      child: Container(
-                        height: double.infinity,
-                        padding: const EdgeInsets.all(24.0),
-                        child: SingleChildScrollView(
-                          physics: ClampingScrollPhysics(),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              TextFieldBlocBuilder(
-                                textFieldBloc: form1.ticketText,
-                                decoration: InputDecoration(
-                                  labelText: S.of(context).TextMessage,
-                                  prefixIcon: Icon(
-                                    Icons.text_fields,
-                                  ),
-                                ),
-                              ),
-                              DropdownFieldBlocBuilder<String>(
-                                selectFieldBloc: form1.department,
-                                decoration: InputDecoration(
-                                  labelText: S.of(context).ChooseTheDepartment,
-                                  prefixIcon: Icon(Icons.sentiment_satisfied),
-                                ),
-                                itemBuilder: (context, value) => value,
-                              ),
-                              DropdownFieldBlocBuilder<String>(
-                                selectFieldBloc: form1.priority,
-                                decoration: InputDecoration(
-                                  labelText: S.of(context).ChooseThePriority,
-                                  prefixIcon: Icon(Icons.sentiment_satisfied),
-                                ),
-                                itemBuilder: (context, value) => value,
-                              ),
-                              Row(
+                      child: Center(
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 600),
+                          child: Padding(
+                            padding: const EdgeInsets.all(24.0),
+                            child: SingleChildScrollView(
+                              child: Column(
                                 children: [
-                                  Expanded(
-                                    child: OutlinedButton(
-                                      style: ButtonStyle(
-                                          padding:
-                                          MaterialStateProperty.all<EdgeInsets>(
-                                            EdgeInsets.symmetric(vertical: 25),
-                                          ),
-                                          shape: MaterialStateProperty.all<
-                                              RoundedRectangleBorder>(
-                                              RoundedRectangleBorder(
-                                                  borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                                  side: BorderSide(
-                                                      color: Colors.red)))),
-                                      onPressed: form1.submit,
-
-                                          //(){print ('fdhd');},
-                                      child: Text(S.of(context).Save),
+                                  TextFieldBlocBuilder(
+                                    textFieldBloc: form1.ticketText,
+                                    decoration: InputDecoration(
+                                      labelText: S.of(context).TextMessage,
+                                      prefixIcon: Icon(
+                                        Icons.text_fields,
+                                      ),
                                     ),
+                                  ),
+                                  DropdownFieldBlocBuilder<String>(
+                                    selectFieldBloc: form1.department,
+                                    decoration: InputDecoration(
+                                      labelText: S.of(context).ChooseTheDepartment,
+                                      prefixIcon: Icon(Icons.sentiment_satisfied),
+                                    ),
+                                    itemBuilder: (context, value) => value,
+                                  ),
+                                  DropdownFieldBlocBuilder<String>(
+                                    selectFieldBloc: form1.priority,
+                                    decoration: InputDecoration(
+                                      labelText: S.of(context).ChooseThePriority,
+                                      prefixIcon: Icon(Icons.sentiment_satisfied),
+                                    ),
+                                    itemBuilder: (context, value) => value,
+                                  ),
+                                  SizedBox(
+                                    height: 30,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Expanded(
+                                        child: OutlinedButton(
+                                          style: ButtonStyle(
+                                              padding:
+                                              MaterialStateProperty.all<EdgeInsets>(
+                                                EdgeInsets.symmetric(vertical: 25),
+                                              ),
+                                              shape: MaterialStateProperty.all<
+                                                  RoundedRectangleBorder>(
+                                                  RoundedRectangleBorder(
+                                                      borderRadius:
+                                                      BorderRadius.circular(20.0),
+                                                      side: BorderSide(
+                                                          color: Colors.red,
+                                                      )
+                                                    ,)
+                                                ,)
+                                            ,),
+                                          onPressed: form1.submit,
+
+                                              //(){print ('fdhd');},
+                                          child: Text(S.of(context).submit),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
                       ),

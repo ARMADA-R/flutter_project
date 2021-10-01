@@ -126,6 +126,7 @@ class AppDeterminants with ChangeNotifier {
     if (_lang == null) {
       _lang = "en";
     }
+    print(_lang);
     return _lang;
   }
 

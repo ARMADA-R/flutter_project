@@ -49,8 +49,8 @@
   "ElectronicForms": "Electronic Forms",
   "SchoolAlerts": "School Alerts",
   "TechnicalSupport":"Technical Support",
-  "MailingTheManager": "Mailing The Manager",
-  "MailingTheManagement": "Mailing The Management",
+  "MailingTheManager": "Mailing Admins",
+  "MailingTheManagement": "Mailing School Management",
   "Department": "Department",
   "priority": "Priority",
   "Suggestions": "suggestions",
@@ -64,5 +64,6 @@
   "ChooseTheDepartment": "Choose The Department",
   "PartnersOffers": "Partners Offers",
   "Partners": "Partners",
-  "ChooseTheSchool": "Choose The School"
+  "ChooseTheSchool": "Choose The School",
+  "submit": "Submit"
 }

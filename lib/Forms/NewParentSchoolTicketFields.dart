@@ -22,7 +22,6 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   final priority = SelectFieldBloc(
     name: "priority",
     items: [
-      S().ChooseThePriority,
       S().Important,
       S().VeryImportant,
     ],
@@ -31,7 +30,7 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
   var school = SelectFieldBloc(
     name: "school",
     items: [
-
+        ''
     ],
   );
 

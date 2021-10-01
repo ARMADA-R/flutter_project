@@ -46,9 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GeneralTable": MessageLookupByLibrary.simpleMessage("الجدول العام"),
         "Important": MessageLookupByLibrary.simpleMessage("هام"),
         "MailingTheManagement":
-            MessageLookupByLibrary.simpleMessage("مراسلة الإدارة"),
+            MessageLookupByLibrary.simpleMessage("مراسلة إدارة المدرسة"),
         "MailingTheManager":
-            MessageLookupByLibrary.simpleMessage("مراسلة المدير"),
+            MessageLookupByLibrary.simpleMessage("مراسلة إدارة النظام"),
         "Next": MessageLookupByLibrary.simpleMessage("التالي"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("رصيد الإشعارات"),
@@ -63,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "Save": MessageLookupByLibrary.simpleMessage("حفظ"),
         "SchoolAlerts":
-            MessageLookupByLibrary.simpleMessage("النتبيهات المدرسية"),
+            MessageLookupByLibrary.simpleMessage("التنبيهات المدرسية"),
         "SchoolManagement":
             MessageLookupByLibrary.simpleMessage("الإدارة المدرسية"),
         "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
@@ -104,6 +104,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة"),
+        "submit": MessageLookupByLibrary.simpleMessage("ارسال"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم")
       };
 }

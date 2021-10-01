@@ -6,6 +6,7 @@ import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 class IntroScreen extends StatefulWidget {
   const IntroScreen({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -28,12 +29,12 @@ class IntroScreenState extends State<IntroScreen> {
           skip: Text(S.of(context).Skip),
           done: Text(S.of(context).Done),
           onDone: (){
-           AppDeterminants().setFirstLunch();
+           Provider.of<AppDeterminants>(context, listen: false).setFirstLunch();
            Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
 
           },
           onSkip: (){
-            AppDeterminants().setFirstLunch();
+            Provider.of<AppDeterminants>(context, listen: false).setFirstLunch();
             Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
           },
           pages: [

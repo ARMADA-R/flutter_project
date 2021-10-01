@@ -49,9 +49,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "GeneralTable": MessageLookupByLibrary.simpleMessage("General Table"),
         "Important": MessageLookupByLibrary.simpleMessage("Important"),
         "MailingTheManagement":
-            MessageLookupByLibrary.simpleMessage("Mailing The Management"),
+            MessageLookupByLibrary.simpleMessage("Mailing School Management"),
         "MailingTheManager":
-            MessageLookupByLibrary.simpleMessage("Mailing The Manager"),
+            MessageLookupByLibrary.simpleMessage("Mailing Admins"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("Number Of Notifications"),
@@ -109,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "rePassword": MessageLookupByLibrary.simpleMessage("re-enter password"),
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "schoolName": MessageLookupByLibrary.simpleMessage("School Name"),
+        "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "username": MessageLookupByLibrary.simpleMessage("Username")
       };
 }

@@ -47,10 +47,10 @@
   "GeneralTable": "الجدول العام",
   "ElectronicQuestionnaires": "الاستبيانات الإلكترونية",
   "ElectronicForms": "النماذج الإلكترونية",
-  "SchoolAlerts": "النتبيهات المدرسية",
+  "SchoolAlerts": "التنبيهات المدرسية",
   "TechnicalSupport":"الدعم الفني",
-  "MailingTheManager": "مراسلة المدير",
-  "MailingTheManagement": "مراسلة الإدارة",
+  "MailingTheManager": "مراسلة إدارة النظام",
+  "MailingTheManagement": "مراسلة إدارة المدرسة",
   "Department": "القسم",
   "priority": "الأولوية",
   "Suggestions": "اقتراحات",
@@ -64,6 +64,7 @@
   "ChooseTheDepartment": "اختر القسم",
   "PartnersOffers": "عروض شركاء النجاح",
   "Partners": "شركاء النجاح",
-  "ChooseTheSchool": "اختر المدرسة"
+  "ChooseTheSchool": "اختر المدرسة",
+  "submit": "ارسال"
 
 }

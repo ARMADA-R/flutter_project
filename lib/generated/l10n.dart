@@ -550,20 +550,20 @@ class S {
     );
   }
 
-  /// `Mailing The Manager`
+  /// `Mailing Admins`
   String get MailingTheManager {
     return Intl.message(
-      'Mailing The Manager',
+      'Mailing Admins',
       name: 'MailingTheManager',
       desc: '',
       args: [],
     );
   }
 
-  /// `Mailing The Management`
+  /// `Mailing School Management`
   String get MailingTheManagement {
     return Intl.message(
-      'Mailing The Management',
+      'Mailing School Management',
       name: 'MailingTheManagement',
       desc: '',
       args: [],
@@ -705,6 +705,16 @@ class S {
     return Intl.message(
       'Choose The School',
       name: 'ChooseTheSchool',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
       desc: '',
       args: [],
     );
