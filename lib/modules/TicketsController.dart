@@ -11,7 +11,8 @@ class TicketController {
     required String ticketText,
     required String department,
     required String priority,
-    required String parentId ,context
+    required String parentId ,
+    context,
   }) async {
     bool status = false;
     var url = Uri.parse('https://rafi.nobalaa.com/CodeSchoolSystem/Tickets/AddParentAdminTicket');

@@ -4,10 +4,11 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'dart:io';
 
 class NewParentSchoolTicketFields extends FormBloc<String, String> {
-
-
   final message = TextFieldBloc(
-    name: "message"
+    name: "message",
+    validators: [
+      FieldBlocValidators.required,
+    ],
   );
 
   final department = SelectFieldBloc(
@@ -17,6 +18,9 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
       S().Queries,
       S().Complaints,
     ],
+    validators: [
+      FieldBlocValidators.required,
+    ],
   );
 
   final priority = SelectFieldBloc(
@@ -25,18 +29,21 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
       S().Important,
       S().VeryImportant,
     ],
+    validators: [
+      FieldBlocValidators.required,
+    ],
   );
 
   var school = SelectFieldBloc(
     name: "school",
-    items: [
-        ''
+    items: [''],
+    validators: [
+      FieldBlocValidators.required,
     ],
   );
 
   NewParentSchoolTicketFields() {
 
-//  super(isLoading: false);
     addFieldBlocs(fieldBlocs: [
       message,
       department,
@@ -49,7 +56,6 @@ class NewParentSchoolTicketFields extends FormBloc<String, String> {
 //  void onLoading() {
 //    print("onLoading");
 //  }
-
 
   @override
   void onSubmitting() async {

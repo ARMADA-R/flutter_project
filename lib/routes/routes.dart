@@ -20,12 +20,12 @@ import '/screens/login_screen.dart';
 import '../screens/HomeScreen.dart';
 
 Map<String, WidgetBuilder>   routes =  <String, WidgetBuilder> {
-  LogInScreen.routeName : (context) => LogInScreen(title: 'LogInScreen',),
+//  LogInScreen.routeName : (context) => LogInScreen(title: 'LogInScreen',),
   MySchool.routeName :(context) => MySchool(title: 'MySchool',),
   MyRegistrationScreen.routeName :(context) => MyRegistrationScreen(title: 'MyRegistrationScreen',),
  // Splash.routeName :(context) => Splash(),
   IntroScreen.routeName :(context) => IntroScreen(title: 'IntroScreen',),
-  ForgetPasswordScreen.routeName :(context) => ForgetPasswordScreen(title: 'ForgetPassword',),
+//  ForgetPasswordScreen.routeName :(context) => ForgetPasswordScreen(title: 'ForgetPassword',),
   ProfileScreen.routeName :(context) => ProfileScreen(title: 'ProfileScreen',),
   PublicMessagesForms.routeName :(context) => PublicMessagesForms(title: 'PublicMessagesForms',),
   UserForm.routeName :(context) => UserForm(title: 'UserForm',),

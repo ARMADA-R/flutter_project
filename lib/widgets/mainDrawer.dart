@@ -1,10 +1,10 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
+import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
 import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
-import '/screens/login_screen.dart';
 import 'package:http/http.dart';
 
 class MainDrawer extends StatelessWidget {
@@ -52,7 +52,7 @@ class MainDrawer extends StatelessWidget {
                 AppDeterminants().setUsername('');
                 AppDeterminants().setToken('');
                 AppDeterminants().setUserId('');
-                Navigator.pushReplacementNamed(context, LogInScreen.routeName);
+                Navigator.pushReplacementNamed(context, LogInScreen2.routeName);
 
           }),
 

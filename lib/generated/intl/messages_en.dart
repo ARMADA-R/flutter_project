@@ -32,8 +32,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Choose The Type"),
         "Complaints": MessageLookupByLibrary.simpleMessage("Complaints"),
         "Content": MessageLookupByLibrary.simpleMessage("Content"),
+        "CreateOne": MessageLookupByLibrary.simpleMessage("Create one"),
         "Department": MessageLookupByLibrary.simpleMessage("Department"),
         "Done": MessageLookupByLibrary.simpleMessage("Done"),
+        "DontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t Have An Account?"),
         "ElectronicForms":
             MessageLookupByLibrary.simpleMessage("Electronic Forms"),
         "ElectronicQuestionnaires":
@@ -52,12 +55,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Mailing School Management"),
         "MailingTheManager":
             MessageLookupByLibrary.simpleMessage("Mailing Admins"),
+        "MessageText": MessageLookupByLibrary.simpleMessage("Message Text"),
         "Next": MessageLookupByLibrary.simpleMessage("Next"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("Number Of Notifications"),
         "Partners": MessageLookupByLibrary.simpleMessage("Partners"),
         "PartnersOffers":
             MessageLookupByLibrary.simpleMessage("Partners Offers"),
+        "Priority": MessageLookupByLibrary.simpleMessage("Priority"),
         "Profile": MessageLookupByLibrary.simpleMessage("Your Profile"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("Public Messages Forms"),
@@ -67,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SchoolAlerts": MessageLookupByLibrary.simpleMessage("School Alerts"),
         "SchoolManagement":
             MessageLookupByLibrary.simpleMessage("School Management"),
+        "SendResetLink":
+            MessageLookupByLibrary.simpleMessage("Send Reset Link"),
         "Skip": MessageLookupByLibrary.simpleMessage("Skip"),
         "Suggestions": MessageLookupByLibrary.simpleMessage("suggestions"),
         "TechnicalSupport":
@@ -89,6 +96,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do you have account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "generalEducation":
             MessageLookupByLibrary.simpleMessage("General education"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),

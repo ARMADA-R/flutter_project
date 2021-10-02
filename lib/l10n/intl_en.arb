@@ -65,5 +65,11 @@
   "PartnersOffers": "Partners Offers",
   "Partners": "Partners",
   "ChooseTheSchool": "Choose The School",
+  "Priority": "Priority",
+  "SendResetLink": "Send Reset Link",
+  "CreateOne": "Create one",
+  "DontHaveAnAccount": "Don't Have An Account?",
+  "MessageText": "Message Text",
+  "forgetPassword": "Forget Password?",
   "submit": "Submit"
 }

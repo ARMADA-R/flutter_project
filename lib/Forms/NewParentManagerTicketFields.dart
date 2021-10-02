@@ -7,7 +7,10 @@ class NewParentManagerTicketFields extends FormBloc<String, String> {
 
 
   final ticketText = TextFieldBloc(
-      name: "ticket_text"
+      name: "ticket_text",
+    validators: [
+      FieldBlocValidators.required,
+    ],
   );
 
   final department = SelectFieldBloc(
@@ -17,20 +20,23 @@ class NewParentManagerTicketFields extends FormBloc<String, String> {
       S().Queries,
       S().Complaints,
     ],
+    validators: [
+      FieldBlocValidators.required,
+    ],
   );
 
   final priority = SelectFieldBloc(
     name: "priority",
     items: [
-      S().ChooseThePriority,
       S().Important,
       S().VeryImportant,
+    ],
+    validators: [
+      FieldBlocValidators.required,
     ],
   );
 
   NewParentManagerTicketFields() {
-
-//  super(isLoading: false);
     addFieldBlocs(fieldBlocs: [
       ticketText,
       department,

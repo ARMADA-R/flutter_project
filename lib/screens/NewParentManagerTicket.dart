@@ -42,7 +42,7 @@ class NewParentManagerTicket extends StatelessWidget {
                           ticketText: dataAsJson['ticket_text'],
                           department: dataAsJson['department'],
                           priority: dataAsJson['priority'],
-                          parentId: Provider.of<AppDeterminants>(context).userId,
+                          parentId: Provider.of<AppDeterminants>(context, listen: false).userId,
                           context: context,
                         );
                       },
@@ -63,7 +63,7 @@ class NewParentManagerTicket extends StatelessWidget {
                                   TextFieldBlocBuilder(
                                     textFieldBloc: form1.ticketText,
                                     decoration: InputDecoration(
-                                      labelText: S.of(context).TextMessage,
+                                      labelText: S.of(context).MessageText,
                                       prefixIcon: Icon(
                                         Icons.text_fields,
                                       ),
@@ -72,7 +72,7 @@ class NewParentManagerTicket extends StatelessWidget {
                                   DropdownFieldBlocBuilder<String>(
                                     selectFieldBloc: form1.department,
                                     decoration: InputDecoration(
-                                      labelText: S.of(context).ChooseTheDepartment,
+                                      labelText: S.of(context).Department,
                                       prefixIcon: Icon(Icons.sentiment_satisfied),
                                     ),
                                     itemBuilder: (context, value) => value,
@@ -80,7 +80,7 @@ class NewParentManagerTicket extends StatelessWidget {
                                   DropdownFieldBlocBuilder<String>(
                                     selectFieldBloc: form1.priority,
                                     decoration: InputDecoration(
-                                      labelText: S.of(context).ChooseThePriority,
+                                      labelText: S.of(context).Priority,
                                       prefixIcon: Icon(Icons.sentiment_satisfied),
                                     ),
                                     itemBuilder: (context, value) => value,

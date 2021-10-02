@@ -76,7 +76,7 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
                     department: dataAsJson['department'],
                     type: "-",
                     priority: dataAsJson['priority'],
-                    parentId: Provider.of<AppDeterminants>(context).userId,
+                    parentId: Provider.of<AppDeterminants>(context, listen: false).userId,
                     schoolId: schoolPare[dataAsJson['school']] ?? '',
                     context: context,
                   );

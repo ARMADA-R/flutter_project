@@ -30,8 +30,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "ChooseTheType": MessageLookupByLibrary.simpleMessage("اختر النمط"),
         "Complaints": MessageLookupByLibrary.simpleMessage("شكاوى"),
         "Content": MessageLookupByLibrary.simpleMessage("المحتوى"),
+        "CreateOne": MessageLookupByLibrary.simpleMessage("أنشئ واحداً"),
         "Department": MessageLookupByLibrary.simpleMessage("القسم"),
         "Done": MessageLookupByLibrary.simpleMessage("تم"),
+        "DontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟"),
         "ElectronicForms":
             MessageLookupByLibrary.simpleMessage("النماذج الإلكترونية"),
         "ElectronicQuestionnaires":
@@ -49,12 +52,14 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مراسلة إدارة المدرسة"),
         "MailingTheManager":
             MessageLookupByLibrary.simpleMessage("مراسلة إدارة النظام"),
+        "MessageText": MessageLookupByLibrary.simpleMessage("نص الرسالة"),
         "Next": MessageLookupByLibrary.simpleMessage("التالي"),
         "NumberOfNotifications":
             MessageLookupByLibrary.simpleMessage("رصيد الإشعارات"),
         "Partners": MessageLookupByLibrary.simpleMessage("شركاء النجاح"),
         "PartnersOffers":
             MessageLookupByLibrary.simpleMessage("عروض شركاء النجاح"),
+        "Priority": MessageLookupByLibrary.simpleMessage("الأولوية"),
         "Profile": MessageLookupByLibrary.simpleMessage("حسابك"),
         "PublicMessagesForms":
             MessageLookupByLibrary.simpleMessage("قوالب الرسائل العامة"),
@@ -66,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("التنبيهات المدرسية"),
         "SchoolManagement":
             MessageLookupByLibrary.simpleMessage("الإدارة المدرسية"),
+        "SendResetLink":
+            MessageLookupByLibrary.simpleMessage("ارسل رابط اعادة الضبط"),
         "Skip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "Suggestions": MessageLookupByLibrary.simpleMessage("اقتراحات"),
         "TechnicalSupport": MessageLookupByLibrary.simpleMessage("الدعم الفني"),
@@ -84,6 +91,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "forgetPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "generalEducation": MessageLookupByLibrary.simpleMessage("تعليم عام"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "homeScreenTitle": MessageLookupByLibrary.simpleMessage(

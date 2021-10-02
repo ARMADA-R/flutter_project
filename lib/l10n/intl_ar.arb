@@ -65,6 +65,12 @@
   "PartnersOffers": "عروض شركاء النجاح",
   "Partners": "شركاء النجاح",
   "ChooseTheSchool": "اختر المدرسة",
+  "Priority": "الأولوية",
+  "CreateOne": "أنشئ واحداً",
+  "SendResetLink": "ارسل رابط اعادة الضبط",
+  "DontHaveAnAccount": "ليس لديك حساب؟",
+  "MessageText": "نص الرسالة",
+  "forgetPassword": "نسيت كلمة المرور؟",
   "submit": "ارسال"
 
 }

@@ -8,6 +8,7 @@ import 'package:experienceapp/screens/GeneralTableScreen.dart';
 import 'package:experienceapp/screens/MailingManagementScreen.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
+import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/paretners_offers.dart';
 import 'package:experienceapp/screens/profileScreen.dart';
 import 'package:experienceapp/screens/public_messages_forms.dart';
@@ -123,7 +124,7 @@ class Drawer1 extends StatelessWidget {
                         Provider.of<AppDeterminants>(context, listen: false)
                             .setUserId('');
                         Navigator.pushReplacementNamed(
-                            context, LogInScreen.routeName);
+                            context, LogInScreen2.routeName);
                       },
                       child: Text(S.of(context).logout),
                     ),

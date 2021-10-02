@@ -710,6 +710,66 @@ class S {
     );
   }
 
+  /// `Priority`
+  String get Priority {
+    return Intl.message(
+      'Priority',
+      name: 'Priority',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Reset Link`
+  String get SendResetLink {
+    return Intl.message(
+      'Send Reset Link',
+      name: 'SendResetLink',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create one`
+  String get CreateOne {
+    return Intl.message(
+      'Create one',
+      name: 'CreateOne',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't Have An Account?`
+  String get DontHaveAnAccount {
+    return Intl.message(
+      'Don\'t Have An Account?',
+      name: 'DontHaveAnAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message Text`
+  String get MessageText {
+    return Intl.message(
+      'Message Text',
+      name: 'MessageText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password?`
+  String get forgetPassword {
+    return Intl.message(
+      'Forget Password?',
+      name: 'forgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Submit`
   String get submit {
     return Intl.message(
