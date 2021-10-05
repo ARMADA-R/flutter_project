@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'AuthController.dart';
 
 class AppDeterminants with ChangeNotifier {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
@@ -190,7 +189,7 @@ class AppDeterminants with ChangeNotifier {
     if (prefs == null) {
       prefs = await _prefs;
     }
-    _lang = (prefs!.getString('lang')) ?? "en";
+    setLang((prefs!.getString('lang')) ?? "en");
   }
 
   initializeToken() async {

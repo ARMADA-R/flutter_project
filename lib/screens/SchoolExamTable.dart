@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
@@ -54,9 +53,6 @@ class _SchoolExamsTableState extends State<SchoolExamsTable> {
           Text(date),
         ],
       ),
-
-
-
       onTap: () async {
         var urllaunchable = await canLaunch(link); //canLaunch is from url_launcher package
         if(urllaunchable){

@@ -1,5 +1,5 @@
 {
-  "appTitle": "SMS",
+  "appTitle": "Educate",
   "homeScreenTitle" : "Al-Mobarmejon for manage schools",
   "PublicMessagesForms": "Public Messages Forms",
   "login": "Log in",
@@ -71,5 +71,14 @@
   "DontHaveAnAccount": "Don't Have An Account?",
   "MessageText": "Message Text",
   "forgetPassword": "Forget Password?",
-  "submit": "Submit"
+  "submit" : "Submit",
+  "followingUpChildrensEducation": "Following up children's education",
+  "followUpYourChildrenAndContactWithManagement": "Follow up your children and contact with management",
+  "newCurriculumAndQualifiedStaff": "New curriculum and qualified staff",
+  "childrenseducation": "Children's education",
+  "variousServices": "Various Services",
+  "ActivitiesAndEvents":"Activities and events"
+
+
+
 }

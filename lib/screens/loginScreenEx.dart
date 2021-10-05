@@ -4,7 +4,6 @@ import 'package:experienceapp/Forms/LoginFields.dart';
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/AuthController.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
-import 'package:experienceapp/screens/forgetPassword.dart';
 import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:experienceapp/widgets/Clipper.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,8 +12,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LogInScreen2 extends StatelessWidget {
-  LogInScreen2({Key? key}) : super(key: key);
+class LogInScreen extends StatelessWidget {
+  LogInScreen({Key? key}) : super(key: key);
   static final String routeName = 'LogInScreen2';
 
   String forgetPasswordLink =
@@ -101,7 +100,7 @@ class LogInScreen2 extends StatelessWidget {
                                             print("URL can't be launched.");
                                           }
                                         },
-                                        child: Text(S.of(context).forgetPassword)),
+                                        child: Text(S.of(context).ForgetPassword)),
                                   ],
                                 ),
                                 SizedBox(
@@ -151,7 +150,7 @@ class LogInScreen2 extends StatelessWidget {
                                                             .routeName);
                                                   },
                                                   child: Text(
-                                                    S.of(context).CreateOne,
+                                                    S.of(context).createAccount,
                                                     softWrap: false,
                                                     textAlign: TextAlign.center,
                                                     overflow: TextOverflow.visible,

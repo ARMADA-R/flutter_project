@@ -8,15 +8,15 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-class MailingManagementScreen extends StatefulWidget {
-  const MailingManagementScreen({Key? key, required this.title}) : super(key: key);
+class MailingSchoolManagementScreen extends StatefulWidget {
+  const MailingSchoolManagementScreen({Key? key, required this.title}) : super(key: key);
   final String title;
-  static final String routeName = 'MailingManagementScreen';
+  static final String routeName = 'MailingSchoolManagementScreen';
   @override
-  _MailingManagementScreenState createState() => _MailingManagementScreenState();
+  _MailingSchoolManagementScreenState createState() => _MailingSchoolManagementScreenState();
 }
 
-class _MailingManagementScreenState extends State<MailingManagementScreen> {
+class _MailingSchoolManagementScreenState extends State<MailingSchoolManagementScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 

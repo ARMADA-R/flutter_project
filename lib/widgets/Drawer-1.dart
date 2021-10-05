@@ -1,21 +1,18 @@
-import 'dart:html';
 
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/Electronic_Forms.dart';
 import 'package:experienceapp/screens/Electronic_Questionnaire.dart';
 import 'package:experienceapp/screens/GeneralTableScreen.dart';
-import 'package:experienceapp/screens/MailingManagementScreen.dart';
+import 'package:experienceapp/screens/MailingSchoolManagementScreen.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/paretners_offers.dart';
-import 'package:experienceapp/screens/profileScreen.dart';
-import 'package:experienceapp/screens/public_messages_forms.dart';
+
 import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '/screens/login_screen.dart';
 import 'package:http/http.dart';
 
 class Drawer1 extends StatelessWidget {
@@ -89,7 +86,7 @@ class Drawer1 extends StatelessWidget {
                     Icon(Icons.description), S.of(context).MailingTheManagement,
                     () {
                   Navigator.pushNamed(
-                      context, MailingManagementScreen.routeName);
+                      context, MailingSchoolManagementScreen.routeName);
                 }),
 
                 Divider(
@@ -124,7 +121,7 @@ class Drawer1 extends StatelessWidget {
                         Provider.of<AppDeterminants>(context, listen: false)
                             .setUserId('');
                         Navigator.pushReplacementNamed(
-                            context, LogInScreen2.routeName);
+                            context, LogInScreen.routeName);
                       },
                       child: Text(S.of(context).logout),
                     ),

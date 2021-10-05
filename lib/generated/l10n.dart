@@ -50,10 +50,10 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `SMS`
+  /// `Educate`
   String get appTitle {
     return Intl.message(
-      'SMS',
+      'Educate',
       name: 'appTitle',
       desc: '',
       args: [],
@@ -775,6 +775,66 @@ class S {
     return Intl.message(
       'Submit',
       name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Following up children's education`
+  String get followingUpChildrensEducation {
+    return Intl.message(
+      'Following up children\'s education',
+      name: 'followingUpChildrensEducation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow up your children and contact with management`
+  String get followUpYourChildrenAndContactWithManagement {
+    return Intl.message(
+      'Follow up your children and contact with management',
+      name: 'followUpYourChildrenAndContactWithManagement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New curriculum and qualified staff`
+  String get newCurriculumAndQualifiedStaff {
+    return Intl.message(
+      'New curriculum and qualified staff',
+      name: 'newCurriculumAndQualifiedStaff',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Children's education`
+  String get childrenseducation {
+    return Intl.message(
+      'Children\'s education',
+      name: 'childrenseducation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Various Services`
+  String get variousServices {
+    return Intl.message(
+      'Various Services',
+      name: 'variousServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activities and events`
+  String get ActivitiesAndEvents {
+    return Intl.message(
+      'Activities and events',
+      name: 'ActivitiesAndEvents',
       desc: '',
       args: [],
     );

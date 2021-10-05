@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
       ],
       home: FutureBuilder(
         future: Provider.of<AppDeterminants>(context).initializeAll(),
+
           builder: (context, snapshot) {
             if (snapshot.hasData){
               S.load(Locale(Provider.of<AppDeterminants>(context).lang));
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
               if(Provider.of<AppDeterminants>(context).token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(Provider.of<AppDeterminants>(context).loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
                 return SchoolExamsTable(title: Provider.of<AppDeterminants>(context).userName);
               }
-               return LogInScreen2();
+               return LogInScreen();
              }
              else return IntroScreen(title: 'IntroScreen',);
             }

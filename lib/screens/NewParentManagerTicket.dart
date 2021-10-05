@@ -63,7 +63,7 @@ class NewParentManagerTicket extends StatelessWidget {
                                   TextFieldBlocBuilder(
                                     textFieldBloc: form1.ticketText,
                                     decoration: InputDecoration(
-                                      labelText: S.of(context).MessageText,
+                                      labelText: S.of(context).TextMessage,
                                       prefixIcon: Icon(
                                         Icons.text_fields,
                                       ),
@@ -80,7 +80,7 @@ class NewParentManagerTicket extends StatelessWidget {
                                   DropdownFieldBlocBuilder<String>(
                                     selectFieldBloc: form1.priority,
                                     decoration: InputDecoration(
-                                      labelText: S.of(context).Priority,
+                                      labelText: S.of(context).priority,
                                       prefixIcon: Icon(Icons.sentiment_satisfied),
                                     ),
                                     itemBuilder: (context, value) => value,

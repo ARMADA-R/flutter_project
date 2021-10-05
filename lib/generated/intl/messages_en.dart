@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ActivitiesAndEvents":
+            MessageLookupByLibrary.simpleMessage("Activities and events"),
         "AddaForm": MessageLookupByLibrary.simpleMessage("Add a Form"),
         "ChooseTheDepartment":
             MessageLookupByLibrary.simpleMessage("Choose The Department"),
@@ -89,13 +91,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "VeryImportant": MessageLookupByLibrary.simpleMessage("VeryImportant"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
-        "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("Educate"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
+        "childrenseducation":
+            MessageLookupByLibrary.simpleMessage("Children\'s education"),
         "city": MessageLookupByLibrary.simpleMessage("City"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("Do you have account?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "followUpYourChildrenAndContactWithManagement":
+            MessageLookupByLibrary.simpleMessage(
+                "Follow up your children and contact with management"),
+        "followingUpChildrensEducation": MessageLookupByLibrary.simpleMessage(
+            "Following up children\'s education"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password?"),
         "generalEducation":
@@ -110,6 +119,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "memorization": MessageLookupByLibrary.simpleMessage("Memorization"),
         "ministerialNumber":
             MessageLookupByLibrary.simpleMessage("Ministerial number"),
+        "newCurriculumAndQualifiedStaff": MessageLookupByLibrary.simpleMessage(
+            "New curriculum and qualified staff"),
         "passAndRePAssDontMatch": MessageLookupByLibrary.simpleMessage(
             "Password and confirm password don\'t match!"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -119,6 +130,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
         "schoolName": MessageLookupByLibrary.simpleMessage("School Name"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
-        "username": MessageLookupByLibrary.simpleMessage("Username")
+        "username": MessageLookupByLibrary.simpleMessage("Username"),
+        "variousServices":
+            MessageLookupByLibrary.simpleMessage("Various Services")
       };
 }
