@@ -91,7 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VeryImportant": MessageLookupByLibrary.simpleMessage("VeryImportant"),
         "Welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
-        "appTitle": MessageLookupByLibrary.simpleMessage("Educate"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("EDUCATE"),
         "area": MessageLookupByLibrary.simpleMessage("Area"),
         "childrenseducation":
             MessageLookupByLibrary.simpleMessage("Children\'s education"),

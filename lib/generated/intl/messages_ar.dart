@@ -86,7 +86,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "VeryImportant": MessageLookupByLibrary.simpleMessage("هام جدًا"),
         "Welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
-        "appTitle": MessageLookupByLibrary.simpleMessage("Educate"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("EDUCATE"),
         "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
         "childrenseducation":
             MessageLookupByLibrary.simpleMessage("تعليم الأطفال"),
