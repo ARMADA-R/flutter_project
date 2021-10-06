@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:experienceapp/Forms/NewParentSchoolTicketFields.dart';
 import 'package:experienceapp/generated/l10n.dart';
@@ -14,6 +15,7 @@ import 'package:provider/provider.dart';
 
 class NewParentSchoolTicket extends StatefulWidget {
   static final String routeName = 'NewParentSchoolMessageScreen';
+
   @override
   _NewParentSchoolTicketState createState() => _NewParentSchoolTicketState();
 }
@@ -21,6 +23,7 @@ class NewParentSchoolTicket extends StatefulWidget {
 class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
   var form;
   Map schoolPare = {};
+
   @override
   void initState() {
     super.initState();
@@ -62,97 +65,107 @@ class _NewParentSchoolTicketState extends State<NewParentSchoolTicket> {
             ),
             child: Scaffold(
               appBar: AppBar(
+                backgroundColor: Colors.blue[300],
                 title: Text(S.of(context).MailingTheManagement),
                 centerTitle: true,
               ),
-              body:
+              body: Stack(
+                children: [
+                  PagesBackground(),
                   FormBlocListener<NewParentSchoolTicketFields, String, String>(
-                onSubmitting: (context, state) {
-                  var dataAsJson = state.toJson();
-                  print(schoolPare[dataAsJson['school']]);
-                  print(schoolPare);
-                  TicketController().sentParentToSchoolTicket(
-                    ticketText: dataAsJson['message'],
-                    department: dataAsJson['department'],
-                    type: "-",
-                    priority: dataAsJson['priority'],
-                    parentId: Provider.of<AppDeterminants>(context, listen: false).userId,
-                    schoolId: schoolPare[dataAsJson['school']] ?? '',
-                    context: context,
-                  );
-                },
-                child: Center(
-                  child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 600),
-                    child: Padding(
-                      padding: const EdgeInsets.all(24.0),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            TextFieldBlocBuilder(
-                              textFieldBloc: form.message,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).TextMessage,
-                                prefixIcon: Icon(
-                                  Icons.text_fields,
-                                ),
-                              ),
-                            ),
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.department,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseTheDepartment,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.priority,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseThePriority,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-                            DropdownFieldBlocBuilder<String>(
-                              selectFieldBloc: form.school,
-                              decoration: InputDecoration(
-                                labelText: S.of(context).ChooseTheSchool,
-                                prefixIcon: Icon(Icons.sentiment_satisfied),
-                              ),
-                              itemBuilder: (context, value) => value,
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Row(
+                    onSubmitting: (context, state) {
+                      var dataAsJson = state.toJson();
+                      print(schoolPare[dataAsJson['school']]);
+                      print(schoolPare);
+                      TicketController().sentParentToSchoolTicket(
+                        ticketText: dataAsJson['message'],
+                        department: dataAsJson['department'],
+                        type: "-",
+                        priority: dataAsJson['priority'],
+                        parentId:
+                            Provider.of<AppDeterminants>(context, listen: false)
+                                .userId,
+                        schoolId: schoolPare[dataAsJson['school']] ?? '',
+                        context: context,
+                      );
+                    },
+                    child: Center(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: 600),
+                        child: Padding(
+                          padding: const EdgeInsets.all(24.0),
+                          child: SingleChildScrollView(
+                            child: Column(
                               children: [
-                                Expanded(
-                                  child: OutlinedButton(
-                                    style: ButtonStyle(
-                                        padding:
-                                            MaterialStateProperty.all<EdgeInsets>(
-                                          EdgeInsets.symmetric(vertical: 25),
-                                        ),
-                                        shape: MaterialStateProperty.all<
-                                                RoundedRectangleBorder>(
-                                            RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(20.0),
-                                                side: BorderSide(
-                                                    color: Colors.red)))),
-                                    onPressed: form.submit,
-                                    child: Text(S.of(context).submit),
+                                TextFieldBlocBuilder(
+                                  textFieldBloc: form.message,
+                                  decoration: InputDecoration(
+                                    labelText: S.of(context).TextMessage,
+                                    prefixIcon: Icon(
+                                      Icons.text_fields,
+                                    ),
                                   ),
+                                ),
+                                DropdownFieldBlocBuilder<String>(
+                                  selectFieldBloc: form.department,
+                                  decoration: InputDecoration(
+                                    labelText:
+                                        S.of(context).ChooseTheDepartment,
+                                    prefixIcon: Icon(Icons.sentiment_satisfied),
+                                  ),
+                                  itemBuilder: (context, value) => value,
+                                ),
+                                DropdownFieldBlocBuilder<String>(
+                                  selectFieldBloc: form.priority,
+                                  decoration: InputDecoration(
+                                    labelText: S.of(context).ChooseThePriority,
+                                    prefixIcon: Icon(Icons.sentiment_satisfied),
+                                  ),
+                                  itemBuilder: (context, value) => value,
+                                ),
+                                DropdownFieldBlocBuilder<String>(
+                                  selectFieldBloc: form.school,
+                                  decoration: InputDecoration(
+                                    labelText: S.of(context).ChooseTheSchool,
+                                    prefixIcon: Icon(Icons.sentiment_satisfied),
+                                  ),
+                                  itemBuilder: (context, value) => value,
+                                ),
+                                SizedBox(
+                                  height: 30,
+                                ),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: OutlinedButton(
+                                        style: ButtonStyle(
+                                            padding: MaterialStateProperty.all<
+                                                EdgeInsets>(
+                                              EdgeInsets.symmetric(
+                                                  vertical: 25),
+                                            ),
+                                            shape: MaterialStateProperty.all<
+                                                    RoundedRectangleBorder>(
+                                                RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20.0),
+                                                    side: BorderSide(
+                                                        color: Colors.red)))),
+                                        onPressed: form.submit,
+                                        child: Text(S.of(context).submit),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
             ),
           );

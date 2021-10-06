@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'AuthController.dart';
 
 class AppDeterminants with ChangeNotifier {
   Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
@@ -31,7 +30,7 @@ class AppDeterminants with ChangeNotifier {
     await initializeUserName();
     await initializeEmail();
     await Future.delayed(
-      Duration(milliseconds: 800),
+      Duration(milliseconds: 400),
     );
     return true;
   }
@@ -126,7 +125,6 @@ class AppDeterminants with ChangeNotifier {
     if (_lang == null) {
       _lang = "en";
     }
-    print(_lang);
     return _lang;
   }
 

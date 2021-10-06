@@ -21,6 +21,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "ActivitiesAndEvents":
+            MessageLookupByLibrary.simpleMessage("أنشطة ومناسبات"),
         "AddaForm": MessageLookupByLibrary.simpleMessage("أضف قالبًا"),
         "ChooseTheDepartment":
             MessageLookupByLibrary.simpleMessage("اختر القسم"),
@@ -84,13 +86,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "VeryImportant": MessageLookupByLibrary.simpleMessage("هام جدًا"),
         "Welcome": MessageLookupByLibrary.simpleMessage("أهلاً بك"),
         "WhatsApp": MessageLookupByLibrary.simpleMessage("واتساب"),
-        "appTitle": MessageLookupByLibrary.simpleMessage("SMS"),
+        "appTitle": MessageLookupByLibrary.simpleMessage("Educate"),
         "area": MessageLookupByLibrary.simpleMessage("المنطقة"),
+        "childrenseducation":
+            MessageLookupByLibrary.simpleMessage("تعليم الأطفال"),
         "city": MessageLookupByLibrary.simpleMessage("المدينة"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "doYouHaveAccount":
             MessageLookupByLibrary.simpleMessage("هل لديك حساب؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
+        "followUpYourChildrenAndContactWithManagement":
+            MessageLookupByLibrary.simpleMessage(
+                "تابع أطفالك وتواصل مع الإدارة"),
+        "followingUpChildrensEducation":
+            MessageLookupByLibrary.simpleMessage("متابعة تعليم الأطفال"),
         "forgetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "generalEducation": MessageLookupByLibrary.simpleMessage("تعليم عام"),
@@ -104,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "memorization": MessageLookupByLibrary.simpleMessage("تحفيظ"),
         "ministerialNumber":
             MessageLookupByLibrary.simpleMessage("الرقم الوزاري"),
+        "newCurriculumAndQualifiedStaff":
+            MessageLookupByLibrary.simpleMessage("مناهج حديثة وكوادر مؤهلة"),
         "passAndRePAssDontMatch":
             MessageLookupByLibrary.simpleMessage("كلمتا المرور غير متطابقتان"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -113,7 +124,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("إعادة تعيين كلمة المرور"),
         "schoolName": MessageLookupByLibrary.simpleMessage("اسم المدرسة"),
-        "submit": MessageLookupByLibrary.simpleMessage("ارسال"),
-        "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم")
+        "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
+        "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "variousServices": MessageLookupByLibrary.simpleMessage("خدمات متنوعة")
       };
 }

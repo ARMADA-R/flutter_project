@@ -1,6 +1,7 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -67,26 +68,32 @@ class _PartnersOffersState extends State<PartnersOffers> {
       key: _scaffoldKey,
       drawer: Drawer1(),
       appBar: AppBar(
+        backgroundColor: Colors.blue[300],
         title: Text(S.of(context).PartnersOffers),
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.separated(
-            itemBuilder: (BuildContext context, int index) {
-              print(index);
-              return partnersOffersTableListile(
-                partnersOffersTable.elementAt(index)["service_name"],
-                partnersOffersTable.elementAt(index)["city"],
-                partnersOffersTable.elementAt(index)["area"],
-                partnersOffersTable.elementAt(index)["end_date"],
-                partnersOffersTable.elementAt(index)["service_price"],
-                partnersOffersTable.elementAt(index)["discount"],
-                partnersOffersTable.elementAt(index)["image_url"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: partnersOffersTable.length
-        ),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  print(index);
+                  return partnersOffersTableListile(
+                    partnersOffersTable.elementAt(index)["service_name"],
+                    partnersOffersTable.elementAt(index)["city"],
+                    partnersOffersTable.elementAt(index)["area"],
+                    partnersOffersTable.elementAt(index)["end_date"],
+                    partnersOffersTable.elementAt(index)["service_price"],
+                    partnersOffersTable.elementAt(index)["discount"],
+                    partnersOffersTable.elementAt(index)["image_url"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: partnersOffersTable.length
+            ),
+          ),
+        ],
       ),
 
     );

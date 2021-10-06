@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 

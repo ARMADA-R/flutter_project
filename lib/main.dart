@@ -10,7 +10,6 @@ import 'routes/routes.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -20,12 +19,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
+//    var clang = Provider.of<AppDeterminants>(context).lang;
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
       routes: routes,
       localizationsDelegates: [
@@ -40,29 +37,44 @@ class MyApp extends StatelessWidget {
       ],
       locale: Locale(Provider.of<AppDeterminants>(context).lang),
       home: FutureBuilder(
-        future: Provider.of<AppDeterminants>(context).initializeAll(),
+          future: Provider.of<AppDeterminants>(context).initializeAll(),
           builder: (context, snapshot) {
-            if (snapshot.hasData){
-              S.load(Locale(Provider.of<AppDeterminants>(context).lang));
-             if(Provider.of<AppDeterminants>(context).isLunched){
+            if (snapshot.hasData) {
+//              print(clang +"||"+ Provider.of<AppDeterminants>(context).lang);
+//              if (clang != Provider.of<AppDeterminants>(context).lang) {
+//              print(clang +"/\\"+ Provider.of<AppDeterminants>(context).lang);
+//                Provider.of<AppDeterminants>(context)
+//                    .setLang(Provider.of<AppDeterminants>(context).lang);
+//              }
 
-              if(Provider.of<AppDeterminants>(context).token != "" && DateTime.fromMillisecondsSinceEpoch(int.parse(Provider.of<AppDeterminants>(context).loginAt)).isAfter( DateTime.now().subtract(const Duration(days: 3)))){
-                return SchoolExamsTable(title: Provider.of<AppDeterminants>(context).userName);
-              }
-               return LogInScreen2();
-             }
-             else return IntroScreen(title: 'IntroScreen',);
+              S.load(Locale(Provider.of<AppDeterminants>(context).lang));
+              if (Provider.of<AppDeterminants>(context).isLunched) {
+                if (Provider.of<AppDeterminants>(context).token != "" &&
+                    DateTime.fromMillisecondsSinceEpoch(int.parse(
+                            Provider.of<AppDeterminants>(context).loginAt))
+                        .isAfter(
+                            DateTime.now().subtract(const Duration(days: 3)))) {
+                  return SchoolExamsTable(
+                      title: Provider.of<AppDeterminants>(context).userName);
+                }
+                return LogInScreen();
+              } else
+                return IntroScreen(
+                  title: 'IntroScreen',
+                );
             }
 
             return Center(
               child: Container(
                 color: Colors.white,
                 alignment: Alignment.center,
-                child: Icon(Icons.school, size: 80,),
+                child: Icon(
+                  Icons.school,
+                  size: 80,
+                ),
               ),
             );
-
-            }),
+          }),
     );
   }
 }

@@ -1,5 +1,5 @@
 {
-  "appTitle": "SMS",
+  "appTitle": "Educate",
   "homeScreenTitle": "نظام المبرمجون لادارة المدارس",
   "PublicMessagesForms": "قوالب الرسائل العامة",
   "login": "تسجيل الدخول",
@@ -71,6 +71,12 @@
   "DontHaveAnAccount": "ليس لديك حساب؟",
   "MessageText": "نص الرسالة",
   "forgetPassword": "نسيت كلمة المرور؟",
-  "submit": "ارسال"
+  "submit" : "إرسال",
+  "followingUpChildrensEducation": "متابعة تعليم الأطفال",
+  "followUpYourChildrenAndContactWithManagement": "تابع أطفالك وتواصل مع الإدارة",
+  "newCurriculumAndQualifiedStaff": "مناهج حديثة وكوادر مؤهلة",
+  "childrenseducation": "تعليم الأطفال",
+  "variousServices": "خدمات متنوعة",
+  "ActivitiesAndEvents":"أنشطة ومناسبات"
 
 }

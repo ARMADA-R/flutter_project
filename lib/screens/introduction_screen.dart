@@ -1,8 +1,6 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
-import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/loginScreenEx.dart';
-import 'package:experienceapp/screens/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:flutter/material.dart';
@@ -30,12 +28,12 @@ class IntroScreenState extends State<IntroScreen> {
           done: Text(S.of(context).Done),
           onDone: (){
            Provider.of<AppDeterminants>(context, listen: false).setFirstLunch();
-           Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
+           Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
 
           },
           onSkip: (){
             Provider.of<AppDeterminants>(context, listen: false).setFirstLunch();
-            Navigator.pushReplacementNamed(context, LogInScreen2.routeName,);
+            Navigator.pushReplacementNamed(context, LogInScreen.routeName,);
           },
           pages: [
             PageViewModel(
@@ -51,8 +49,8 @@ class IntroScreenState extends State<IntroScreen> {
             ),
             PageViewModel(
               image: Image.asset('images/school2.jpeg', width: 600, height: 600,) ,
-              title: 'تتبع أولياء الأمور',
-              body: 'تتبع طفلك وتواصل مع الإداريين',
+              title: S.of(context).followingUpChildrensEducation,
+              body: S.of(context).followUpYourChildrenAndContactWithManagement,
               footer: Text(''),
               decoration: const PageDecoration(
                 pageColor:  Colors.white54,
@@ -63,8 +61,8 @@ class IntroScreenState extends State<IntroScreen> {
 
             PageViewModel(
               image: Image.asset('images/school3.jpg', width: 600, height: 600,) ,
-              title: 'تعليم الأطفال',
-              body: 'مناهج حديثة وكوادر مؤهلة',
+              title: S.of(context).childrenseducation,
+              body: S.of(context).newCurriculumAndQualifiedStaff,
               footer: Text(''),
               decoration: const PageDecoration(
                 pageColor:  Colors.white54,
@@ -74,8 +72,9 @@ class IntroScreenState extends State<IntroScreen> {
             ),
             PageViewModel(
               image: Image.asset('images/school4.jpg', width: 600, height: 600,) ,
-              title: 'خدمات متنوعة',
-              body: 'أنشطة ومناسبات',
+              title: S.of(context).variousServices,
+              body: S.of(context).ActivitiesAndEvents,
+
               footer: Text(''),
               decoration: const PageDecoration(
                 pageColor:  Colors.white54,
@@ -83,17 +82,6 @@ class IntroScreenState extends State<IntroScreen> {
                 titleTextStyle: TextStyle(fontSize: 45),
               ),
             ),
-//            PageViewModel(
-//              image: Image.asset('images/school2.jpeg', width: 500, height: 500,) ,
-//              title: 'تتبع أولياء الأمور',
-//              body: 'تتبع طفلك وتواصل مع الإداريين',
-//              footer: Text('fsd'),
-//              decoration: const PageDecoration(
-//                pageColor:  Colors.black26,
-//              ),
-//            ),
-
-
           ],
         ),
       );

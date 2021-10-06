@@ -2,21 +2,22 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/NewParentSchoolTicket.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
-class MailingManagementScreen extends StatefulWidget {
-  const MailingManagementScreen({Key? key, required this.title}) : super(key: key);
+class MailingSchoolManagementScreen extends StatefulWidget {
+  const MailingSchoolManagementScreen({Key? key, required this.title}) : super(key: key);
   final String title;
-  static final String routeName = 'MailingManagementScreen';
+  static final String routeName = 'MailingSchoolManagementScreen';
   @override
-  _MailingManagementScreenState createState() => _MailingManagementScreenState();
+  _MailingSchoolManagementScreenState createState() => _MailingSchoolManagementScreenState();
 }
 
-class _MailingManagementScreenState extends State<MailingManagementScreen> {
+class _MailingSchoolManagementScreenState extends State<MailingSchoolManagementScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 
@@ -56,20 +57,26 @@ class _MailingManagementScreenState extends State<MailingManagementScreen> {
 
       appBar: AppBar(
         title: Text(S.of(context).MailingTheManagement),
+        backgroundColor: Colors.blue[300],
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.separated(
-            itemBuilder: (BuildContext context, int index) {
-              print(index);
-              return mailingManagementTableListile(
-                mailingManagementTable.elementAt(index)["school_name"],
-                mailingManagementTable.elementAt(index)["school_id"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: mailingManagementTable.length
-        ),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  print(index);
+                  return mailingManagementTableListile(
+                    mailingManagementTable.elementAt(index)["school_name"],
+                    mailingManagementTable.elementAt(index)["school_id"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: mailingManagementTable.length
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed:(){
         Navigator.pushNamed(context, NewParentSchoolTicket.routeName);

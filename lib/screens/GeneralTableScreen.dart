@@ -1,6 +1,7 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
@@ -62,22 +63,28 @@ class _GeneralTableScreenState extends State<GeneralTableScreen> {
       drawer: Drawer1(),
       appBar: AppBar(
         title: Text(S.of(context).GeneralTable),
+        backgroundColor: Colors.blue[300],
         centerTitle: true,
       ),
-      body: Center(
-        child:ListView.separated(
-            itemBuilder:  (BuildContext context, int index) {
-              print(index);
-              return generalTableListile(
-                generalTable.elementAt(index)["class_name"],
-                generalTable.elementAt(index)["school_name"],
-                generalTable.elementAt(index)["semester"],
-                generalTable.elementAt(index)["date"],
-                generalTable.elementAt(index)["file_path"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: generalTable.length),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child:ListView.separated(
+                itemBuilder:  (BuildContext context, int index) {
+                  print(index);
+                  return generalTableListile(
+                    generalTable.elementAt(index)["class_name"],
+                    generalTable.elementAt(index)["school_name"],
+                    generalTable.elementAt(index)["semester"],
+                    generalTable.elementAt(index)["date"],
+                    generalTable.elementAt(index)["file_path"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: generalTable.length),
+          ),
+        ],
       ),
     );
   }
