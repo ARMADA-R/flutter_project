@@ -2,6 +2,7 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/NewParentManagerTicket.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -60,22 +61,28 @@ class _MailingManagerScreenState extends State<MailingManagerScreen> {
       drawer: Drawer1(),
       appBar: AppBar(
 
+        backgroundColor: Colors.blue[300],
         title: Text(S.of(context).MailingTheManager),
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.separated(
-            itemBuilder: (BuildContext context, int index) {
-              return mailingManagerTableListile(
-                mailingManagerTable.elementAt(index)["ticket_text"],
-                mailingManagerTable.elementAt(index)["reply"],
-                mailingManagerTable.elementAt(index)["date"],
-                mailingManagerTable.elementAt(index)["id"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: mailingManagerTable.length
-        ),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  return mailingManagerTableListile(
+                    mailingManagerTable.elementAt(index)["ticket_text"],
+                    mailingManagerTable.elementAt(index)["reply"],
+                    mailingManagerTable.elementAt(index)["date"],
+                    mailingManagerTable.elementAt(index)["id"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: mailingManagerTable.length
+            ),
+          ),
+        ],
       ),
       floatingActionButton:  FloatingActionButton(child: Icon(Icons.add),onPressed:(){
         Navigator.pushNamed(context, NewParentManagerTicket.routeName);

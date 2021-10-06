@@ -125,7 +125,6 @@ class AppDeterminants with ChangeNotifier {
     if (_lang == null) {
       _lang = "en";
     }
-    print(_lang);
     return _lang;
   }
 
@@ -189,7 +188,7 @@ class AppDeterminants with ChangeNotifier {
     if (prefs == null) {
       prefs = await _prefs;
     }
-    setLang((prefs!.getString('lang')) ?? "en");
+    _lang = (prefs!.getString('lang')) ?? "en";
   }
 
   initializeToken() async {

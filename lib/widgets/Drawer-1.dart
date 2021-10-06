@@ -1,3 +1,4 @@
+
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/Electronic_Forms.dart';
@@ -8,8 +9,12 @@ import 'package:experienceapp/screens/MailingManagerScreen.dart';
 import 'package:experienceapp/screens/SchoolExamTable.dart';
 import 'package:experienceapp/screens/loginScreenEx.dart';
 import 'package:experienceapp/screens/paretners_offers.dart';
+
+import 'package:experienceapp/screens/registration_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart';
+
 class Drawer1 extends StatelessWidget {
   _buildDrawer(Icon icon, String title, Function() onTap) {
     return ListTile(
@@ -21,6 +26,7 @@ class Drawer1 extends StatelessWidget {
       onTap: onTap,
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -33,7 +39,7 @@ class Drawer1 extends StatelessWidget {
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 30),
                     child: Text(
-                     S.of(context).appTitle,
+                     "SMS",
                       style: TextStyle(fontSize: 25),
                     ),
                   ),

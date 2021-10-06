@@ -2,56 +2,65 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/TicketsController.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/MailingManagerScreen.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'package:provider/provider.dart';
 import '../Forms/NewParentManagerTicketFields.dart';
+
 class NewParentManagerTicket extends StatelessWidget {
-   NewParentManagerTicket({Key? key, required this.title}) : super(key: key);
+  NewParentManagerTicket({Key? key, required this.title}) : super(key: key);
   final String title;
   static final String routeName = 'NewParentManagerTicket';
   var form1;
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(create: (context) => NewParentManagerTicketFields(),
-        child: Builder(
-            builder: (context) {
-              form1 = form1 ?? BlocProvider.of<NewParentManagerTicketFields>(context);
-              return Theme(data: Theme.of(context).copyWith(
+    return BlocProvider(
+        create: (context) => NewParentManagerTicketFields(),
+        child: Builder(builder: (context) {
+          form1 =
+              form1 ?? BlocProvider.of<NewParentManagerTicketFields>(context);
+          return Theme(
+              data: Theme.of(context).copyWith(
                 inputDecorationTheme: InputDecorationTheme(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
               ),
-                  child: Scaffold(
-                    appBar: AppBar(
-                      title: Text(S
-                          .of(context)
-                          .MailingTheManager),
-                      centerTitle: true,
-                    ),
-                    body: FormBlocListener<NewParentManagerTicketFields,
-                        String,
+              child: Scaffold(
+                appBar: AppBar(
+                  backgroundColor: Colors.blue[300],
+                  title: Text(S.of(context).MailingTheManager),
+                  centerTitle: true,
+                ),
+                body: Stack(
+                  children: [
+                    PagesBackground(),
+                    FormBlocListener<NewParentManagerTicketFields, String,
                         String>(
-                      onSubmitting: (context, state)  {
+                      onSubmitting: (context, state) {
                         var dataAsJson = state.toJson();
-                      TicketController().sentParentToAdminTicket(
+                        TicketController().sentParentToAdminTicket(
                           ticketText: dataAsJson['ticket_text'],
                           department: dataAsJson['department'],
                           priority: dataAsJson['priority'],
-                          parentId: Provider.of<AppDeterminants>(context, listen: false).userId,
+                          parentId: Provider.of<AppDeterminants>(context,
+                                  listen: false)
+                              .userId,
                           context: context,
                         );
                       },
                       onSuccess: (context, state) {
 //                        LoadingDialog.hide(context);
 
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => MailingManagerScreen(title: 'MailingManagerScreen',)));
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(
+                            builder: (_) => MailingManagerScreen(
+                                  title: 'MailingManagerScreen',
+                                )));
                       },
-
                       child: Center(
                         child: ConstrainedBox(
                           constraints: BoxConstraints(maxWidth: 600),
@@ -73,7 +82,8 @@ class NewParentManagerTicket extends StatelessWidget {
                                     selectFieldBloc: form1.department,
                                     decoration: InputDecoration(
                                       labelText: S.of(context).Department,
-                                      prefixIcon: Icon(Icons.sentiment_satisfied),
+                                      prefixIcon:
+                                          Icon(Icons.sentiment_satisfied),
                                     ),
                                     itemBuilder: (context, value) => value,
                                   ),
@@ -81,7 +91,8 @@ class NewParentManagerTicket extends StatelessWidget {
                                     selectFieldBloc: form1.priority,
                                     decoration: InputDecoration(
                                       labelText: S.of(context).priority,
-                                      prefixIcon: Icon(Icons.sentiment_satisfied),
+                                      prefixIcon:
+                                          Icon(Icons.sentiment_satisfied),
                                     ),
                                     itemBuilder: (context, value) => value,
                                   ),
@@ -93,24 +104,25 @@ class NewParentManagerTicket extends StatelessWidget {
                                       Expanded(
                                         child: OutlinedButton(
                                           style: ButtonStyle(
-                                              padding:
-                                              MaterialStateProperty.all<EdgeInsets>(
-                                                EdgeInsets.symmetric(vertical: 25),
+                                            padding: MaterialStateProperty.all<
+                                                EdgeInsets>(
+                                              EdgeInsets.symmetric(
+                                                  vertical: 25),
+                                            ),
+                                            shape: MaterialStateProperty.all<
+                                                RoundedRectangleBorder>(
+                                              RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(20.0),
+                                                side: BorderSide(
+                                                  color: Colors.red,
+                                                ),
                                               ),
-                                              shape: MaterialStateProperty.all<
-                                                  RoundedRectangleBorder>(
-                                                  RoundedRectangleBorder(
-                                                      borderRadius:
-                                                      BorderRadius.circular(20.0),
-                                                      side: BorderSide(
-                                                          color: Colors.red,
-                                                      )
-                                                    ,)
-                                                ,)
-                                            ,),
+                                            ),
+                                          ),
                                           onPressed: form1.submit,
 
-                                              //(){print ('fdhd');},
+                                          //(){print ('fdhd');},
                                           child: Text(S.of(context).submit),
                                         ),
                                       ),
@@ -122,17 +134,10 @@ class NewParentManagerTicket extends StatelessWidget {
                           ),
                         ),
                       ),
-
-
-
                     ),
-                  )
-
-              );
-            }
-
-        )
-    );
+                  ],
+                ),
+              ));
+        }));
   }
 }
-

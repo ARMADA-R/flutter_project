@@ -35,7 +35,7 @@ class _MailingSchoolManagementScreenState extends State<MailingSchoolManagementS
       setState(() {});
     } );
   }
-  Widget mailingSchoolManagementTableListile(String title, String id ){
+  Widget mailingManagementTableListile(String title, String id ){
     return ListTile(
       title: Text(title),
 //      onTap: () async {
@@ -62,7 +62,7 @@ class _MailingSchoolManagementScreenState extends State<MailingSchoolManagementS
         child: ListView.separated(
             itemBuilder: (BuildContext context, int index) {
               print(index);
-              return mailingSchoolManagementTableListile(
+              return mailingManagementTableListile(
                 mailingManagementTable.elementAt(index)["school_name"],
                 mailingManagementTable.elementAt(index)["school_id"],
               );

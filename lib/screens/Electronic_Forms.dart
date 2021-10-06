@@ -1,6 +1,7 @@
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -52,20 +53,26 @@ class _ElectronicFormsState extends State<ElectronicForms> {
       drawer: Drawer1(),
       appBar: AppBar(
         title: Text(S.of(context).ElectronicForms),
+        backgroundColor: Colors.blue[300],
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.separated(
-            itemBuilder: (BuildContext context, int index) {
-              print(index);
-              return electronicFormsTableListile(
-                electronicFormsTable.elementAt(index)["title"],
-                electronicFormsTable.elementAt(index)["link"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: electronicFormsTable.length
-        ),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  print(index);
+                  return electronicFormsTableListile(
+                    electronicFormsTable.elementAt(index)["title"],
+                    electronicFormsTable.elementAt(index)["link"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: electronicFormsTable.length
+            ),
+          ),
+        ],
       ),
 
     );
