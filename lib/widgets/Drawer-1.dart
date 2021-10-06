@@ -30,8 +30,8 @@ class Drawer1 extends StatelessWidget {
     return Drawer(
 
       child: Container(
-        color: Colors.blue[100],
-        
+        color: Colors.blue[50],
+
         child: Stack(
           children: [
             ClipPath(
