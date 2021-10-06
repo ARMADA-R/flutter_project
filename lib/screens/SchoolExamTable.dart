@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';

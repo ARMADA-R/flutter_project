@@ -31,7 +31,7 @@ class AppDeterminants with ChangeNotifier {
     await initializeUserName();
     await initializeEmail();
     await Future.delayed(
-      Duration(milliseconds: 400),
+      Duration(milliseconds: 800),
     );
     return true;
   }

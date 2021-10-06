@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
@@ -61,16 +60,16 @@ class Drawer1 extends StatelessWidget {
                 }),
                 _buildDrawer(Icon(Icons.table_chart_outlined),
                     S.of(context).GeneralTable, () {
-                  Navigator.pushNamed(context, GeneralTableScreen.routeName);
+                  Navigator.pushReplacementNamed(context, GeneralTableScreen.routeName);
                 }),
                 _buildDrawer(Icon(Icons.description),
                     S.of(context).ElectronicQuestionnaires, () {
-                  Navigator.pushNamed(
+                  Navigator.pushReplacementNamed(
                       context, ElectronicQuestionnaires.routeName);
                 }),
                 _buildDrawer(
                     Icon(Icons.description), S.of(context).ElectronicForms, () {
-                  Navigator.pushNamed(context, ElectronicForms.routeName);
+                  Navigator.pushReplacementNamed(context, ElectronicForms.routeName);
                 }),
 
                 // Card(child: Text(S.of(context).TechnicalSupport,style: TextStyle(fontSize: 25),),),
@@ -83,12 +82,12 @@ class Drawer1 extends StatelessWidget {
                 _buildDrawer(
                     Icon(Icons.description), S.of(context).MailingTheManager,
                     () {
-                  Navigator.pushNamed(context, MailingManagerScreen.routeName);
+                  Navigator.pushReplacementNamed(context, MailingManagerScreen.routeName);
                 }),
                 _buildDrawer(
                     Icon(Icons.description), S.of(context).MailingTheManagement,
                     () {
-                  Navigator.pushNamed(
+                  Navigator.pushReplacementNamed(
                       context, MailingManagementScreen.routeName);
                 }),
 
@@ -102,7 +101,7 @@ class Drawer1 extends StatelessWidget {
                 // Card(child: Text(S.of(context).Partners,style: TextStyle(fontSize: 25),),),
                 _buildDrawer(
                     Icon(Icons.description), S.of(context).PartnersOffers, () {
-                  Navigator.pushNamed(context, PartnersOffers.routeName);
+                  Navigator.pushReplacementNamed(context, PartnersOffers.routeName);
                 }),
               ],
             ),

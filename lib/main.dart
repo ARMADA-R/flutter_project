@@ -35,9 +35,10 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       supportedLocales: [
-        Locale("ar", "AE"),
-        Locale("en", "US"),
+        Locale("en", ""),
+        Locale("ar", ""),
       ],
+      locale: Locale(Provider.of<AppDeterminants>(context).lang),
       home: FutureBuilder(
         future: Provider.of<AppDeterminants>(context).initializeAll(),
           builder: (context, snapshot) {
@@ -54,8 +55,11 @@ class MyApp extends StatelessWidget {
             }
 
             return Center(
-              child: Icon(Icons.school) ,
-
+              child: Container(
+                color: Colors.white,
+                alignment: Alignment.center,
+                child: Icon(Icons.school, size: 80,),
+              ),
             );
 
             }),
