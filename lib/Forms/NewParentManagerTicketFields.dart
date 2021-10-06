@@ -4,8 +4,6 @@ import 'package:flutter_form_bloc/flutter_form_bloc.dart';
 import 'dart:io';
 
 class NewParentManagerTicketFields extends FormBloc<String, String> {
-
-
   final ticketText = TextFieldBloc(
       name: "ticket_text",
     validators: [

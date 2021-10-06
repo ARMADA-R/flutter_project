@@ -1,14 +1,10 @@
-
 import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
-
 import 'package:url_launcher/url_launcher.dart';
-
-
 class SchoolExamsTable extends StatefulWidget {
   const SchoolExamsTable({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -16,7 +12,6 @@ class SchoolExamsTable extends StatefulWidget {
   @override
   _SchoolExamsTableState createState() => _SchoolExamsTableState();
 }
-
 class _SchoolExamsTableState extends State<SchoolExamsTable> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
