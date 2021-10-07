@@ -2,6 +2,7 @@ import 'package:experienceapp/generated/l10n.dart';
 import 'package:experienceapp/modules/app_determinants.dart';
 import 'package:experienceapp/screens/NewParentSchoolTicket.dart';
 import 'package:experienceapp/widgets/Drawer-1.dart';
+import 'package:experienceapp/widgets/PagesBackground.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -56,20 +57,26 @@ class _MailingSchoolManagementScreenState extends State<MailingSchoolManagementS
 
       appBar: AppBar(
         title: Text(S.of(context).MailingTheManagement),
+        backgroundColor: Colors.blue[300],
         centerTitle: true,
       ),
-      body: Center(
-        child: ListView.separated(
-            itemBuilder: (BuildContext context, int index) {
-              print(index);
-              return mailingManagementTableListile(
-                mailingManagementTable.elementAt(index)["school_name"],
-                mailingManagementTable.elementAt(index)["school_id"],
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) => const Divider(),
-            itemCount: mailingManagementTable.length
-        ),
+      body: Stack(
+        children: [
+          PagesBackground(),
+          Center(
+            child: ListView.separated(
+                itemBuilder: (BuildContext context, int index) {
+                  print(index);
+                  return mailingManagementTableListile(
+                    mailingManagementTable.elementAt(index)["school_name"],
+                    mailingManagementTable.elementAt(index)["school_id"],
+                  );
+                },
+                separatorBuilder: (BuildContext context, int index) => const Divider(),
+                itemCount: mailingManagementTable.length
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(child: Icon(Icons.add),onPressed:(){
         Navigator.pushNamed(context, NewParentSchoolTicket.routeName);

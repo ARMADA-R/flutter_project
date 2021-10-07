@@ -57,118 +57,124 @@ class LogInScreen extends StatelessWidget {
                         Navigator.pushNamed(context, SchoolExamsTable.routeName);
                       }
                     },
-                    child: Center(
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxWidth: 600),
-                        child: Padding(
-                          padding: EdgeInsets.all(24.0),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: <Widget>[
-                                Text(
-                                  S.of(context).login,
-                                  style: TextStyle(fontSize: 30),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                TextFieldBlocBuilder(
-                                  textFieldBloc: formBloc.email,
-                                  decoration: InputDecoration(
-                                    labelText: S.of(context).email,
-                                    prefixIcon: Icon(Icons.text_fields),
-                                  ),
-                                ),
-                                TextFieldBlocBuilder(
-                                  textFieldBloc: formBloc.password,
-                                  decoration: InputDecoration(
-                                    labelText: S.of(context).password,
-                                    prefixIcon: Icon(Icons.text_fields),
-                                  ),
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    TextButton(
-                                        onPressed: () async {
-                                          var urllaunchable = await canLaunch(
-                                              forgetPasswordLink); //canLaunch is from url_launcher package
-                                          if (urllaunchable) {
-                                            await launch(
-                                                forgetPasswordLink); //launch is from url_launcher package to launch URL
-                                          } else {
-                                            print("URL can't be launched.");
-                                          }
-                                        },
-                                        child: Text(S.of(context).ForgetPassword)),
-                                  ],
-                                ),
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: OutlinedButton(
-                                        style: ButtonStyle(
-                                            padding: MaterialStateProperty.all<
-                                                EdgeInsets>(
-                                              EdgeInsets.symmetric(vertical: 25),
+                    child: StreamBuilder<Object>(
+                      stream: null,
+                      builder: (context, snapshot) {
+                        return Center(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 600),
+                            child: Padding(
+                              padding: EdgeInsets.all(24.0),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                      S.of(context).login,
+                                      style: TextStyle(fontSize: 30),
+                                    ),
+                                    SizedBox(
+                                      height: 10,
+                                    ),
+                                    TextFieldBlocBuilder(
+                                      textFieldBloc: formBloc.email,
+                                      decoration: InputDecoration(
+                                        labelText: S.of(context).email,
+                                        prefixIcon: Icon(Icons.text_fields),
+                                      ),
+                                    ),
+                                    TextFieldBlocBuilder(
+                                      textFieldBloc: formBloc.password,
+                                      suffixButton: SuffixButton.obscureText,
+                                      decoration: InputDecoration(
+                                        labelText: S.of(context).password,
+                                        prefixIcon: Icon(Icons.text_fields),
+                                      ),
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.start,
+                                      children: [
+                                        TextButton(
+                                            onPressed: () async {
+                                              var urllaunchable = await canLaunch(
+                                                  forgetPasswordLink); //canLaunch is from url_launcher package
+                                              if (urllaunchable) {
+                                                await launch(
+                                                    forgetPasswordLink); //launch is from url_launcher package to launch URL
+                                              } else {
+                                                print("URL can't be launched.");
+                                              }
+                                            },
+                                            child: Text(S.of(context).ForgetPassword)),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 30,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: OutlinedButton(
+                                            style: ButtonStyle(
+                                                padding: MaterialStateProperty.all<
+                                                    EdgeInsets>(
+                                                  EdgeInsets.symmetric(vertical: 25),
+                                                ),
+                                                shape: MaterialStateProperty.all<
+                                                        RoundedRectangleBorder>(
+                                                    RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.circular(20.0),
+                                                        side: BorderSide(
+                                                            color: Colors.red)))),
+                                            onPressed: formBloc.submit,
+                                            child: Text(S.of(context).login),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Align(
+                                      alignment: Alignment.bottomCenter,
+                                      heightFactor: 4,
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Text(S.of(context).DontHaveAnAccount),
+                                                Row(
+                                                  children: [
+                                                    TextButton(
+                                                      onPressed: () {
+                                                        Navigator.pushNamed(
+                                                            context,
+                                                            MyRegistrationScreen
+                                                                .routeName);
+                                                      },
+                                                      child: Text(
+                                                        S.of(context).createAccount,
+                                                        softWrap: false,
+                                                        textAlign: TextAlign.center,
+                                                        overflow: TextOverflow.visible,
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
                                             ),
-                                            shape: MaterialStateProperty.all<
-                                                    RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(20.0),
-                                                    side: BorderSide(
-                                                        color: Colors.red)))),
-                                        onPressed: formBloc.submit,
-                                        child: Text(S.of(context).login),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ],
                                 ),
-                                Align(
-                                  alignment: Alignment.bottomCenter,
-                                  heightFactor: 4,
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Text(S.of(context).DontHaveAnAccount),
-                                            Row(
-                                              children: [
-                                                TextButton(
-                                                  onPressed: () {
-                                                    Navigator.pushNamed(
-                                                        context,
-                                                        MyRegistrationScreen
-                                                            .routeName);
-                                                  },
-                                                  child: Text(
-                                                    S.of(context).createAccount,
-                                                    softWrap: false,
-                                                    textAlign: TextAlign.center,
-                                                    overflow: TextOverflow.visible,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                              ),
                             ),
                           ),
-                        ),
-                      ),
+                        );
+                      }
                     ),
                   ),
                 ],

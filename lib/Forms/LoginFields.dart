@@ -26,8 +26,6 @@ class LoginFields extends FormBloc<String, String> {
   @override
   void onSubmitting() async {
     try {
-      await Future<void>.delayed(Duration(milliseconds: 500));
-
       emitSuccess(canSubmitAgain: true);
     } catch (e) {
       emitFailure();

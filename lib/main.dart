@@ -23,6 +23,14 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 //    var clang = Provider.of<AppDeterminants>(context).lang;
     return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blue[300],
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.blue[300],
+        )
+      ),
       debugShowCheckedModeBanner: false,
       routes: routes,
       localizationsDelegates: [

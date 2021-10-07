@@ -136,6 +136,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                 ),
                                 TextFieldBlocBuilder(
                                   textFieldBloc: formBloc.password,
+                                  suffixButton: SuffixButton.obscureText,
                                   decoration: InputDecoration(
                                     labelText: S
                                         .of(context)
@@ -145,6 +146,7 @@ class _MyRegistrationScreenState extends State<MyRegistrationScreen> {
                                 ),
                                 TextFieldBlocBuilder(
                                   textFieldBloc: formBloc.rePassword,
+                                  suffixButton: SuffixButton.obscureText,
                                   decoration: InputDecoration(
                                     labelText: S
                                         .of(context)

@@ -25,7 +25,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  introduction_screen:
+  introduction_screen: ^2.1.0
   provider:
   url_launcher:
   intro_views_flutter:
@@ -69,6 +69,25 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/images/new/
+    - educate-child.jpg
+    - educate-child8.jpg
+    - educate-child5.jpg
+    - educate-child6.jpg
+    - educate-child7.jpg
+#    - assets/images/educate-child.jpg
+#    - assets/images/educate-child1.jpg
+#    - assets/images/educate-child2.jpg
+#    - assets/images/educate-child3.jpg
+#    - assets/images/educate-child4.jpg
+#    - assets/images/educate-child5.jpg
+#    - assets/images/educate-child6.jpg
+#    - assets/images/educate-child7.jpg
+#    - assets/images/educate-child8.jpg
+#    - assets/images/school1.jpg
+#    - assets/images/school2.jpg
+#    - assets/images/school3.jpg
+#    - assets/images/school4.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
